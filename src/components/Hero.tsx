@@ -20,7 +20,7 @@ export default function Hero() {
   return (
     <section className="px-2 sm:px-4 pt-2">
       {/* Rounded hero container */}
-      <div className="relative min-h-screen lg:min-h-[85vh] rounded-[20px] overflow-hidden bg-primary">
+      <div className="relative min-h-[85vh] sm:min-h-screen lg:min-h-[85vh] rounded-[20px] overflow-hidden bg-primary">
         {/* Background image */}
         <motion.div
           initial={{ scale: 1.08 }}
@@ -163,14 +163,14 @@ export default function Hero() {
         </div>
 
         {/* ====== HERO CONTENT — bottom-left ====== */}
-        <div className="relative z-10 flex flex-col justify-end min-h-screen lg:min-h-[85vh] px-6 sm:px-12 lg:px-20 2xl:px-28 pb-12 lg:pb-16 2xl:pb-24">
+        <div className="relative z-10 flex flex-col justify-end min-h-[85vh] sm:min-h-screen lg:min-h-[85vh] px-5 sm:px-12 lg:px-20 2xl:px-28 pb-8 sm:pb-12 lg:pb-16 2xl:pb-24">
           <div className="max-w-xl xl:max-w-3xl 2xl:max-w-4xl">
             {/* Overline */}
             <motion.div
               initial={{ opacity: 0, x: -30 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.6, delay: 0.3, ease }}
-              className="flex items-center gap-3 mb-4"
+              className="flex items-center gap-3 mb-3 sm:mb-4"
             >
               <span className="h-px w-12 bg-white/50" />
               <span className="font-secondary text-white/80 font-medium text-sm uppercase tracking-[0.2em]">
@@ -183,7 +183,7 @@ export default function Hero() {
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.7, delay: 0.5, ease }}
-              className="text-3xl sm:text-4xl lg:text-5xl xl:text-[56px] 2xl:text-[72px] font-bold text-white leading-[1.2] mb-4 2xl:mb-6 whitespace-nowrap"
+              className="text-[26px] sm:text-4xl lg:text-5xl xl:text-[56px] 2xl:text-[72px] font-bold text-white leading-[1.2] mb-3 sm:mb-4 2xl:mb-6"
             >
               Votre nouvel <span className="text-accent">art de vivre</span>
             </motion.h1>
@@ -193,7 +193,7 @@ export default function Hero() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.7, ease }}
-              className="text-base 2xl:text-lg text-white/75 max-w-lg 2xl:max-w-xl mb-8 2xl:mb-10 leading-relaxed"
+              className="text-sm sm:text-base 2xl:text-lg text-white/75 max-w-lg 2xl:max-w-xl mb-6 sm:mb-8 2xl:mb-10 leading-relaxed"
             >
               Des fenêtres et portes d&apos;exception, alliant savoir-faire
               traditionnel suisse et technologies de pointe pour un confort

@@ -21,7 +21,7 @@ export default function ServiceArea() {
         <div className="grid lg:grid-cols-2 gap-10 lg:gap-16 items-start">
           {/* Map — appears after text on mobile, left on desktop */}
           <FadeIn direction="left" className="order-2 lg:order-1">
-            <div className="relative rounded-[20px] overflow-hidden aspect-[4/3] lg:aspect-auto lg:h-full lg:min-h-[480px] shadow-2xl">
+            <div className="relative rounded-[20px] overflow-hidden h-[280px] sm:h-[350px] lg:h-full lg:min-h-[480px] shadow-2xl">
               {/* Badge */}
               <div className="absolute top-4 left-4 z-10">
                 <span className="bg-white text-primary font-bold text-xs px-4 py-2 rounded-full shadow-md uppercase tracking-wider">
