@@ -104,6 +104,15 @@ export default function WhyReplace() {
                         className="overflow-hidden"
                       >
                         <div className="pb-5">
+                          {/* Image inside accordion — mobile/tablet only */}
+                          <div className="lg:hidden relative rounded-xl overflow-hidden aspect-[16/9] mb-4">
+                            <Image
+                              src={reason.image}
+                              alt={reason.title}
+                              fill
+                              className="object-cover"
+                            />
+                          </div>
                           <p className="text-gray-500 leading-relaxed mb-4">
                             {reason.description}
                           </p>
@@ -122,8 +131,8 @@ export default function WhyReplace() {
             })}
           </div>
 
-          {/* Image right — changes with active item, flush to right edge */}
-          <FadeIn direction="right" delay={0.3} className="lg:-mr-[calc((100vw-80rem)/2+2rem)] lg:-mb-28">
+          {/* Image right — desktop only, flush to right edge */}
+          <FadeIn direction="right" delay={0.3} className="hidden lg:block lg:-mr-[calc((100vw-80rem)/2+2rem)] lg:-mb-28">
             <div className="relative rounded-l-2xl overflow-hidden aspect-[4/3] lg:aspect-auto lg:h-full lg:min-h-[600px]">
               <AnimatePresence mode="wait">
                 <motion.div
