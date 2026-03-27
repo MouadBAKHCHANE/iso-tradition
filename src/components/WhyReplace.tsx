@@ -40,13 +40,13 @@ export default function WhyReplace() {
   const [activeIndex, setActiveIndex] = useState(0);
 
   return (
-    <section className="py-14 lg:py-10 xl:py-16 bg-white overflow-clip">
+    <section className="py-14 lg:py-8 xl:py-12 bg-white overflow-clip">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="grid lg:grid-cols-2 gap-10 lg:gap-6 xl:gap-16 items-start">
           {/* Accordion left */}
           <div>
             <FadeIn>
-              <div className="flex items-center gap-3 mb-4">
+              <div className="flex items-center gap-3 mb-2">
                 <span className="h-px w-10 bg-primary" />
                 <span className="font-secondary text-primary/60 font-medium text-sm uppercase tracking-[0.2em]">
                   Pourquoi changer ?
@@ -54,7 +54,7 @@ export default function WhyReplace() {
               </div>
             </FadeIn>
             <FadeIn delay={0.1}>
-              <h2 className="text-2xl sm:text-3xl lg:text-3xl xl:text-5xl 2xl:text-6xl font-bold text-primary leading-tight mb-6 lg:mb-6 xl:mb-10">
+              <h2 className="text-2xl sm:text-3xl lg:text-3xl xl:text-4xl 2xl:text-5xl font-bold text-primary leading-tight mb-4 lg:mb-4 xl:mb-6">
                 Pourquoi remplacer vos{" "}
                 <span className="text-accent">portes & fenêtres ?</span>
               </h2>
@@ -68,7 +68,7 @@ export default function WhyReplace() {
                 >
                   <button
                     onClick={() => setActiveIndex(i)}
-                    className="w-full flex items-center justify-between py-5 text-left group cursor-pointer"
+                    className="w-full flex items-center justify-between py-3 xl:py-4 text-left group cursor-pointer"
                   >
                     <span
                       className={`font-bold text-lg transition-colors duration-300 ${
@@ -103,7 +103,7 @@ export default function WhyReplace() {
                         transition={{ duration: 0.35, ease: [0.25, 0.1, 0.25, 1] }}
                         className="overflow-hidden"
                       >
-                        <div className="pb-5">
+                        <div className="pb-3 xl:pb-4">
                           {/* Image inside accordion — mobile/tablet only */}
                           <div className="lg:hidden relative rounded-xl overflow-hidden aspect-[16/9] mb-4">
                             <Image
@@ -132,7 +132,7 @@ export default function WhyReplace() {
           </div>
 
           {/* Image right — desktop only, flush to right edge */}
-          <FadeIn direction="right" delay={0.3} className="hidden lg:block lg:-mr-[calc((100vw-1024px)/2+2rem)] xl:-mr-[calc((100vw-80rem)/2+2rem)] lg:-mb-28 lg:mt-20 xl:mt-14">
+          <FadeIn direction="right" delay={0.3} className="hidden lg:block lg:-mr-[calc((100vw-1024px)/2+2rem)] xl:-mr-[calc((100vw-80rem)/2+2rem)] lg:-mb-28 lg:mt-16 xl:mt-10">
             <div className="relative rounded-l-2xl overflow-hidden aspect-[4/3] lg:aspect-auto lg:h-[calc(100%-6rem)] xl:h-full lg:min-h-[400px] xl:min-h-[600px]">
               <AnimatePresence mode="wait">
                 <motion.div
