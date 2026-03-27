@@ -20,21 +20,21 @@ function CardWrap({ children, i, className = "" }: { children: React.ReactNode; 
 
 export default function Strengths() {
   return (
-    <section className="py-16 lg:py-20 bg-white">
+    <section className="py-16 lg:py-20 bg-secondary">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         {/* Header — left text + right CTA */}
         <div className="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-6 mb-10">
           <div className="max-w-xl">
             <FadeIn>
               <div className="flex items-center gap-3 mb-3">
-                <span className="h-px w-10 bg-accent" />
-                <span className="font-secondary text-accent font-light text-sm uppercase tracking-[0.2em]">
+                <span className="h-px w-10 bg-primary/40" />
+                <span className="font-secondary text-primary/60 font-medium text-sm uppercase tracking-[0.2em]">
                   Nos atouts
                 </span>
               </div>
             </FadeIn>
             <FadeIn delay={0.1}>
-              <h2 className="text-2xl sm:text-3xl lg:text-5xl font-bold text-primary leading-tight mb-4">
+              <h2 className="text-2xl sm:text-3xl lg:text-5xl 2xl:text-6xl font-bold text-primary leading-tight mb-4">
                 Pourquoi choisir{" "}
                 <span className="text-accent">Iso Tradition ?</span>
               </h2>
@@ -74,7 +74,7 @@ export default function Strengths() {
                 </div>
               </div>
               <div>
-                <h3 className="text-accent font-bold text-xl mb-1">
+                <h3 className="text-white font-bold text-xl mb-1">
                   Portes &amp; fenêtres posées
                 </h3>
                 <p className="text-white/60 text-[14px] leading-relaxed">
@@ -100,7 +100,7 @@ export default function Strengths() {
           {/* ===== Row 1, Col 3: Light stat card ===== */}
           <CardWrap i={2} className="h-full">
             <div className="relative bg-secondary rounded-[20px] p-8 flex flex-col justify-center h-full">
-              <span className="text-4xl font-bold text-accent mb-2">100%</span>
+              <span className="text-4xl font-bold text-primary mb-2">100%</span>
               <h3 className="font-bold text-primary text-lg mb-2">
                 Pose par nos équipes internes
               </h3>
@@ -162,7 +162,7 @@ export default function Strengths() {
 
           <CardWrap i={6} className="h-full">
             <div className="relative bg-primary rounded-[20px] p-8 flex flex-col justify-center h-full">
-              <span className="text-4xl font-bold text-accent mb-2 block">+35</span>
+              <span className="text-4xl font-bold text-white mb-2 block">+35</span>
               <h3 className="font-bold text-white text-lg mb-2">
                 Années d&apos;expérience
               </h3>

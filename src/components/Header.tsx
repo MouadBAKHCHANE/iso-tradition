@@ -43,12 +43,12 @@ export default function Header() {
             />
           </a>
 
-          <ul className="hidden lg:flex items-center gap-8 absolute left-1/2 -translate-x-1/2">
+          <ul className="hidden lg:flex items-center gap-4 lg:gap-5 xl:gap-8 absolute left-1/2 -translate-x-1/2">
             {navLinks.map((link) => (
               <li key={link.label}>
                 <a
                   href={link.href}
-                  className="font-medium text-[15px] text-primary/70 hover:text-primary transition-colors relative after:absolute after:bottom-[-4px] after:left-0 after:h-[2px] after:w-0 hover:after:w-full after:bg-accent after:transition-all"
+                  className="font-medium text-[12px] xl:text-[14px] text-primary/70 hover:text-primary transition-colors relative after:absolute after:bottom-[-4px] after:left-0 after:h-[2px] after:w-0 hover:after:w-full after:bg-accent after:transition-all whitespace-nowrap"
                 >
                   {link.label}
                 </a>
@@ -60,7 +60,7 @@ export default function Header() {
             href="https://form.typeform.com/to/astTYipT"
             target="_blank"
             rel="noopener noreferrer"
-            className="hidden lg:inline-flex items-center gap-2 bg-accent hover:bg-accent-hover text-primary-dark font-bold px-6 py-2.5 rounded-full text-sm transition-colors group"
+            className="hidden lg:inline-flex items-center gap-2 bg-accent hover:bg-accent-hover text-primary-dark font-bold px-4 xl:px-6 py-2 xl:py-2.5 rounded-full text-xs xl:text-sm transition-colors group whitespace-nowrap"
           >
             Demander une offre
             <span className="flex items-center justify-center w-6 h-6 rounded-full bg-primary-dark/15 transition-transform group-hover:translate-x-0.5">

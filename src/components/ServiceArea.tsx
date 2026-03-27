@@ -5,7 +5,7 @@ import { FadeIn } from "./Motion";
 
 export default function ServiceArea() {
   return (
-    <section className="relative py-20 lg:py-28 overflow-hidden">
+    <section className="relative py-14 lg:py-20 overflow-hidden">
       {/* Background Swiss landscape */}
       <div className="absolute inset-0">
         <Image
@@ -45,14 +45,14 @@ export default function ServiceArea() {
           <div className="order-1 lg:order-2">
             <FadeIn direction="right">
               <div className="flex items-center gap-3 mb-3">
-                <span className="h-px w-10 bg-accent" />
-                <span className="font-secondary text-accent font-light text-sm uppercase tracking-[0.2em]">
+                <span className="h-px w-10 bg-white/40" />
+                <span className="font-secondary text-white/70 font-medium text-sm uppercase tracking-[0.2em]">
                   Zone d&apos;intervention
                 </span>
               </div>
             </FadeIn>
             <FadeIn direction="right" delay={0.1}>
-              <h2 className="text-2xl sm:text-3xl lg:text-5xl font-bold text-white leading-tight mb-5">
+              <h2 className="text-2xl sm:text-3xl lg:text-5xl 2xl:text-6xl font-bold text-white leading-tight mb-5">
                 Nous intervenons dans toute la{" "}
                 <span className="text-accent">Suisse romande</span>
               </h2>

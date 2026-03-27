@@ -192,7 +192,15 @@ export default function Footer() {
             <a href="#" className="hover:text-white transition-colors">Confidentialité &amp; Cookies</a>
           </div>
           <p className="text-white/40 text-[13px]">
-            © 2025 Iso Tradition. Tous droits réservés.
+            © 2025 Iso Tradition. Tous droits réservés. By{" "}
+            <a
+              href="https://wa.me/212611714711"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="hover:text-accent transition-colors"
+            >
+              MouaDev
+            </a>
           </p>
         </div>
       </div>

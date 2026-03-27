@@ -48,21 +48,21 @@ function DownArrow() {
 
 export default function ProjectCTA() {
   return (
-    <section className="py-20 lg:py-28 bg-white">
+    <section className="py-14 lg:py-20 bg-white">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="grid lg:grid-cols-[1fr_1.2fr] gap-12 lg:gap-20 items-start">
           {/* Left — sticky text */}
           <div className="lg:sticky lg:top-32">
             <FadeIn>
               <div className="flex items-center gap-3 mb-3">
-                <span className="h-px w-10 bg-accent" />
-                <span className="font-secondary text-accent font-light text-sm uppercase tracking-[0.2em]">
+                <span className="h-px w-10 bg-primary/40" />
+                <span className="font-secondary text-primary/60 font-medium text-sm uppercase tracking-[0.2em]">
                   Comment ça marche
                 </span>
               </div>
             </FadeIn>
             <FadeIn delay={0.1}>
-              <h2 className="text-2xl sm:text-3xl lg:text-5xl font-bold text-primary leading-tight mb-5">
+              <h2 className="text-2xl sm:text-3xl lg:text-5xl 2xl:text-6xl font-bold text-primary leading-tight mb-5">
                 Un process 100% interne{" "}
                 <span className="text-accent">par nos équipes</span>
               </h2>

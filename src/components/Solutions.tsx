@@ -1,7 +1,7 @@
 "use client";
 
 import Image from "next/image";
-import { useRef } from "react";
+import { useRef, useState, useEffect } from "react";
 import { motion, useScroll, useTransform } from "framer-motion";
 import { FadeIn } from "./Motion";
 import BrandIcon from "./BrandIcon";
@@ -78,41 +78,54 @@ export default function Solutions() {
   });
 
   // Desktop: smaller translate, Mobile: larger to reach last card
-  const x = useTransform(scrollYProgress, [0.05, 0.85], ["0%", "-30%"]);
+  // Adjust translate based on viewport width
+  const [desktopEnd, setDesktopEnd] = useState("-40%");
+  useEffect(() => {
+    const update = () => {
+      const w = window.innerWidth;
+      if (w < 1280) setDesktopEnd("-55%");      // 1024-1279
+      else if (w < 1536) setDesktopEnd("-35%");  // 1280-1535 (1440px range)
+      else setDesktopEnd("-25%");                 // 1536+ (4K)
+    };
+    update();
+    window.addEventListener("resize", update);
+    return () => window.removeEventListener("resize", update);
+  }, []);
+  const x = useTransform(scrollYProgress, [0.05, 0.85], ["0%", desktopEnd]);
   const xMobile = useTransform(scrollYProgress, [0.05, 0.85], ["0%", "-75%"]);
   const scrollHintOpacity = useTransform(scrollYProgress, [0, 0.15], [1, 0]);
 
   return (
     <section id="services">
-      <div ref={sectionRef} className="relative h-[250vh] sm:h-[250vh] lg:h-[200vh]">
-        <div className="sticky top-0 h-screen flex flex-col justify-center overflow-hidden bg-secondary">
+      <div ref={sectionRef} className="relative h-[250vh] sm:h-[250vh] lg:h-[280vh] xl:h-[200vh]">
+        <div className="sticky top-0 h-screen flex flex-col justify-center overflow-hidden bg-white">
           {/* Background decorative icon */}
-          <div className="absolute top-1/2 -translate-y-1/2 -left-20 opacity-[0.03] pointer-events-none">
+          <div className="absolute top-1/2 -translate-y-1/2 -left-20 opacity-[0.07] pointer-events-none">
             <BrandIcon className="w-[600px]" color="#215e84" />
           </div>
 
           {/* Section header */}
-          <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 text-center mb-6 relative z-10">
+          <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 text-center mb-3 lg:mb-4 xl:mb-6 relative z-10">
             <FadeIn>
               <div className="flex items-center justify-center gap-3 mb-3">
-                <span className="h-px w-10 bg-accent" />
-                <span className="font-secondary text-accent font-light text-sm uppercase tracking-[0.2em]">
+                <span className="h-px w-10 bg-primary/40" />
+                <span className="font-secondary text-primary/60 font-medium text-sm uppercase tracking-[0.2em]">
                   Nos solutions
                 </span>
-                <span className="h-px w-10 bg-accent" />
+                <span className="h-px w-10 bg-primary/40" />
               </div>
             </FadeIn>
             <FadeIn delay={0.1}>
-              <h2 className="text-2xl sm:text-3xl lg:text-5xl font-bold text-primary leading-tight mb-4">
+              <h2 className="text-2xl sm:text-3xl lg:text-4xl xl:text-5xl 2xl:text-6xl font-bold text-primary leading-tight mb-3 lg:mb-2 xl:mb-4">
                 Des solutions pour chaque{" "}
                 <span className="text-accent">besoin</span>
               </h2>
             </FadeIn>
             <FadeIn delay={0.15}>
-              <div className="flex items-center justify-center gap-4 mt-4">
+              <div className="flex items-center justify-center gap-4 mt-2 lg:mt-2 xl:mt-4">
                 <a
                   href="#services"
-                  className="inline-flex items-center gap-2 border-2 border-primary/30 hover:border-primary text-primary font-semibold px-6 py-2.5 rounded-full transition-colors text-sm uppercase tracking-wider group"
+                  className="inline-flex items-center gap-2 bg-accent hover:bg-accent-hover text-primary-dark font-semibold px-6 py-2.5 rounded-full transition-colors text-sm uppercase tracking-wider group"
                 >
                   Toutes nos solutions
                   <svg className="w-3.5 h-3.5 transition-transform group-hover:translate-x-1" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
@@ -135,7 +148,7 @@ export default function Solutions() {
           </motion.div>
           <motion.div
             style={{ x }}
-            className="hidden lg:flex gap-5 pl-[8vw] w-max relative z-10 items-center mt-4"
+            className="hidden lg:flex gap-5 pl-[8vw] w-max relative z-10 items-center mt-2 lg:mt-2 xl:mt-4"
           >
             {solutions.map((sol) => (
               <Card key={sol.title} sol={sol} />
@@ -146,20 +159,21 @@ export default function Solutions() {
           {/* Scroll hint */}
           <motion.div
             style={{ opacity: scrollHintOpacity }}
-            className="absolute bottom-6 left-1/2 -translate-x-1/2 flex flex-col items-center gap-1.5 text-primary"
+            className="absolute bottom-4 lg:bottom-6 xl:bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2"
           >
-            <span className="text-sm uppercase tracking-widest font-secondary font-semibold">
+            <span className="text-[13px] uppercase tracking-[0.2em] font-bold text-primary">
               Scroll
             </span>
             <motion.div
-              animate={{ y: [0, 6, 0] }}
+              animate={{ y: [0, 8, 0] }}
               transition={{
                 repeat: Infinity,
                 duration: 1.5,
                 ease: "easeInOut",
               }}
+              className="w-8 h-8 rounded-full border-2 border-primary flex items-center justify-center"
             >
-              <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+              <svg className="w-4 h-4 text-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={3}>
                 <path strokeLinecap="round" strokeLinejoin="round" d="M19.5 13.5L12 21m0 0l-7.5-7.5M12 21V3" />
               </svg>
             </motion.div>

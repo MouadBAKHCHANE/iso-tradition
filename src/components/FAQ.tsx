@@ -36,22 +36,22 @@ export default function FAQ() {
   const [openIndex, setOpenIndex] = useState(0);
 
   return (
-    <section className="py-20 lg:py-28 bg-secondary/50">
+    <section className="py-14 lg:py-20 bg-secondary/50">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="grid lg:grid-cols-[280px_1fr] gap-10 lg:gap-20">
           {/* Left — Title */}
           <FadeIn>
             <div>
               <div className="flex items-center gap-3 mb-4">
-                <span className="h-px w-10 bg-accent" />
-                <span className="font-secondary text-accent font-light text-sm uppercase tracking-[0.2em]">
+                <span className="h-px w-10 bg-primary/40" />
+                <span className="font-secondary text-primary/60 font-medium text-sm uppercase tracking-[0.2em]">
                   FAQ
                 </span>
               </div>
-              <h2 className="text-2xl sm:text-3xl lg:text-5xl font-bold text-primary leading-tight">
+              <h2 className="text-2xl sm:text-3xl lg:text-5xl 2xl:text-6xl font-bold text-primary leading-tight">
                 Questions
                 <br />
-                fréquentes
+                <span className="text-accent">fréquentes</span>
               </h2>
             </div>
           </FadeIn>
@@ -79,7 +79,7 @@ export default function FAQ() {
                       <div
                         className={`w-8 h-8 rounded-full flex items-center justify-center flex-shrink-0 transition-colors duration-300 ${
                           isOpen
-                            ? "bg-accent text-white"
+                            ? "bg-accent text-primary-dark"
                             : "bg-primary/10 text-primary"
                         }`}
                       >

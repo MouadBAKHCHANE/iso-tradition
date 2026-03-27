@@ -2,11 +2,16 @@
 
 import Image from "next/image";
 import { FadeIn } from "./Motion";
+import BrandIcon from "./BrandIcon";
 
 export default function AboutPreview() {
   return (
-    <section id="apropos" className="py-24 lg:py-32 bg-white overflow-hidden">
-      <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-start">
+    <section id="apropos" className="py-14 lg:py-20 bg-white overflow-hidden relative">
+      {/* Background brand icon — right side */}
+      <div className="absolute bottom-8 right-4 lg:right-8 xl:right-16 pointer-events-none opacity-[0.06]">
+        <BrandIcon className="w-40 lg:w-52 xl:w-64" color="#f8ad0c" />
+      </div>
+      <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-start relative">
         {/* ===== Left — Image flush to left edge ===== */}
         <FadeIn direction="left" className="relative">
           <div className="relative rounded-r-[20px] overflow-hidden lg:ml-0">
@@ -34,27 +39,27 @@ export default function AboutPreview() {
           </FadeIn>
 
           {/* ===== Right — Content ===== */}
-          <div className="flex flex-col gap-8 lg:justify-between px-6 sm:px-10 lg:pr-16">
+          <div className="flex flex-col gap-5 lg:gap-4 xl:gap-6 lg:justify-between px-6 sm:px-10 lg:pr-16">
             {/* Top block: title + description + CTA */}
             <div>
               <FadeIn direction="right" delay={0.05}>
                 <div className="flex items-center gap-3 mb-4">
-                  <span className="h-px w-10 bg-accent" />
-                  <span className="font-secondary text-accent font-light text-sm uppercase tracking-[0.2em]">
+                  <span className="h-px w-10 bg-primary/40" />
+                  <span className="font-secondary text-primary/60 font-medium text-sm uppercase tracking-[0.2em]">
                     Qui sommes-nous
                   </span>
                 </div>
               </FadeIn>
               <FadeIn direction="right" delay={0.1}>
-                <h2 className="text-2xl sm:text-3xl lg:text-[44px] font-bold text-primary leading-[1.3] mb-6">
-                  L&apos;excellence suisse
+                <h2 className="text-2xl sm:text-3xl lg:text-[32px] xl:text-[44px] 2xl:text-[56px] font-bold text-primary leading-[1.3] mb-3 lg:mb-3 xl:mb-6">
+                  L&apos;excellence <span className="text-accent">suisse</span>
                   <br />
                   au service de votre habitat
                 </h2>
               </FadeIn>
 
               <FadeIn direction="right" delay={0.2}>
-                <p className="text-gray-500 leading-[1.6] text-[15px] mb-8 max-w-lg">
+                <p className="text-gray-500 leading-[1.6] text-[14px] lg:text-[13px] xl:text-[15px] mb-4 lg:mb-3 xl:mb-6 max-w-lg">
                   Basés à Mies, Route de Suisse 7A, nous intervenons dans toute la
                   Suisse romande avec une équipe de professionnels certifiés.
                   Notre mission : allier tradition artisanale et technologies
@@ -65,7 +70,7 @@ export default function AboutPreview() {
               <FadeIn direction="right" delay={0.3}>
                 <a
                   href="#apropos"
-                  className="inline-flex items-center gap-2 bg-primary hover:bg-primary-dark text-white font-semibold px-6 py-3 rounded-full transition-colors text-[15px] group"
+                  className="inline-flex items-center gap-2 bg-accent hover:bg-accent-hover text-primary-dark font-semibold px-5 lg:px-5 xl:px-6 py-2.5 lg:py-2 xl:py-3 rounded-full transition-colors text-[13px] lg:text-[13px] xl:text-[15px] group"
                 >
                   En savoir plus
                   <svg
@@ -88,7 +93,7 @@ export default function AboutPreview() {
             {/* Bottom block: avatar stack + rating + tagline */}
             <div>
               <FadeIn direction="up" delay={0.4}>
-                <div className="flex items-center gap-6 mb-8">
+                <div className="flex items-center gap-4 lg:gap-4 xl:gap-6 mb-4 lg:mb-3 xl:mb-6">
                   {/* Avatar stack */}
                   <div className="flex -space-x-4">
                     {[
@@ -98,7 +103,7 @@ export default function AboutPreview() {
                     ].map((bg, i) => (
                       <div
                         key={i}
-                        className={`w-16 h-16 rounded-full ${bg} border-[3px] border-white flex items-center justify-center`}
+                        className={`w-12 h-12 lg:w-11 lg:h-11 xl:w-14 xl:h-14 rounded-full ${bg} border-[3px] border-white flex items-center justify-center`}
                       >
                         <svg
                           className="w-6 h-6 text-primary/50"
@@ -146,7 +151,7 @@ export default function AboutPreview() {
               </FadeIn>
 
               <FadeIn direction="up" delay={0.5}>
-                <p className="text-gray-500 leading-[1.6] text-[15px] max-w-lg">
+                <p className="text-gray-500 leading-[1.6] text-[14px] lg:text-[13px] xl:text-[15px] max-w-lg">
                   Nous offrons des solutions fiables, adossées à des décennies
                   de savoir-faire, garantissant des résultats de qualité
                   supérieure pour chaque projet.

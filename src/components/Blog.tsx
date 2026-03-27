@@ -27,29 +27,29 @@ const posts = [
 
 export default function Blog() {
   return (
-    <section id="actualites" className="py-20 lg:py-28 bg-white">
+    <section id="actualites" className="py-14 lg:py-20 bg-white">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         {/* Header */}
         <div className="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-6 mb-12">
           <div>
             <FadeIn>
               <div className="flex items-center gap-3 mb-3">
-                <span className="h-px w-10 bg-accent" />
-                <span className="font-secondary text-accent font-light text-sm uppercase tracking-[0.2em]">
+                <span className="h-px w-10 bg-primary/40" />
+                <span className="font-secondary text-primary/60 font-medium text-sm uppercase tracking-[0.2em]">
                   Actualités
                 </span>
               </div>
             </FadeIn>
             <FadeIn delay={0.1}>
-              <h2 className="text-2xl sm:text-3xl lg:text-5xl font-bold text-primary leading-tight">
-                Nos derniers articles
+              <h2 className="text-2xl sm:text-3xl lg:text-5xl 2xl:text-6xl font-bold text-primary leading-tight">
+                Nos derniers <span className="text-accent">articles</span>
               </h2>
             </FadeIn>
           </div>
           <FadeIn delay={0.15}>
             <a
               href="#actualites"
-              className="inline-flex items-center gap-2 border-2 border-primary/30 hover:border-primary text-primary font-semibold px-6 py-2.5 rounded-full transition-colors text-sm group"
+              className="inline-flex items-center gap-2 bg-accent hover:bg-accent-hover text-primary-dark font-semibold px-6 py-2.5 rounded-full transition-colors text-sm group"
             >
               Voir tout
               <svg className="w-3.5 h-3.5 transition-transform group-hover:translate-x-1" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>

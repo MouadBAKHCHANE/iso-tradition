@@ -3,7 +3,6 @@
 import { useState } from "react";
 import Image from "next/image";
 import { motion, AnimatePresence } from "framer-motion";
-import BrandIcon from "./BrandIcon";
 
 const ease = [0.25, 0.1, 0.25, 1] as const;
 
@@ -21,7 +20,7 @@ export default function Hero() {
   return (
     <section className="px-2 sm:px-4 pt-2">
       {/* Rounded hero container */}
-      <div className="relative min-h-screen rounded-[20px] overflow-hidden bg-primary">
+      <div className="relative min-h-screen lg:min-h-[85vh] rounded-[20px] overflow-hidden bg-primary">
         {/* Background image */}
         <motion.div
           initial={{ scale: 1.08 }}
@@ -30,16 +29,16 @@ export default function Hero() {
           className="absolute inset-0"
         >
           <Image
-            src="/images/hero-chalet.jpg"
-            alt="Chalet moderne avec vue panoramique sur les montagnes"
+            src="/images/hero-terrace.jpg"
+            alt="Terrasse moderne avec baies vitrées et vue jardin"
             fill
-            className="object-cover -scale-x-100"
+            className="object-cover scale-x-100"
             priority
           />
         </motion.div>
 
         {/* Gradient overlay — left side */}
-        <div className="absolute inset-0 bg-gradient-to-r from-primary/90 via-primary/50 via-40% to-transparent" />
+        <div className="absolute inset-0 bg-gradient-to-r from-primary/90 via-primary/40 via-30% to-transparent" />
 
         {/* ====== TOP NAV AREA — flush to top of hero ====== */}
         <div className="absolute top-0 left-0 right-0 z-20 px-6 sm:px-10 lg:px-14">
@@ -52,7 +51,7 @@ export default function Hero() {
                 alt="ISO Tradition"
                 width={300}
                 height={90}
-                className="h-16 lg:h-20 w-auto"
+                className="h-16 lg:h-16 xl:h-20 2xl:h-24 w-auto"
                 priority
               />
             </a>
@@ -60,12 +59,12 @@ export default function Hero() {
             {/* White nav bar — centered, flush to top with concave notch ears */}
             <div className="hidden lg:block relative">
               {/* White bar — flat top, rounded bottom */}
-              <div className="bg-white rounded-b-[20px] px-10 py-4 flex items-center gap-8 relative">
+              <div className="bg-white rounded-b-[20px] px-5 lg:px-6 xl:px-10 2xl:px-14 py-3 lg:py-3 xl:py-4 2xl:py-5 flex items-center gap-4 lg:gap-5 xl:gap-8 2xl:gap-10 relative">
                 {navLinks.map((link) => (
                   <a
                     key={link.label}
                     href={link.href}
-                    className="font-medium text-[14px] text-primary/70 hover:text-primary transition-colors relative after:absolute after:bottom-[-3px] after:left-0 after:h-[2px] after:w-0 hover:after:w-full after:bg-accent after:transition-all whitespace-nowrap"
+                    className="font-medium text-[12px] lg:text-[12px] xl:text-[14px] 2xl:text-[16px] text-primary/70 hover:text-primary transition-colors relative after:absolute after:bottom-[-3px] after:left-0 after:h-[2px] after:w-0 hover:after:w-full after:bg-accent after:transition-all whitespace-nowrap"
                   >
                     {link.label}
                   </a>
@@ -89,7 +88,7 @@ export default function Hero() {
                 href="https://form.typeform.com/to/astTYipT"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="hidden lg:inline-flex items-center gap-2 bg-accent hover:bg-accent-hover text-primary-dark font-bold px-6 py-2.5 rounded-full text-sm transition-colors group"
+                className="hidden lg:inline-flex items-center gap-2 bg-accent hover:bg-accent-hover text-primary-dark font-bold px-4 lg:px-5 xl:px-6 2xl:px-8 py-2 lg:py-2 xl:py-2.5 2xl:py-3 rounded-full text-xs lg:text-xs xl:text-sm 2xl:text-base transition-colors group"
               >
                 Demander une offre
                 <span className="flex items-center justify-center w-6 h-6 rounded-full bg-primary-dark/15 transition-transform group-hover:translate-x-0.5">
@@ -164,17 +163,17 @@ export default function Hero() {
         </div>
 
         {/* ====== HERO CONTENT — bottom-left ====== */}
-        <div className="relative z-10 flex flex-col justify-end min-h-screen px-6 sm:px-12 lg:px-20 pb-12 lg:pb-16">
-          <div className="max-w-2xl">
+        <div className="relative z-10 flex flex-col justify-end min-h-screen lg:min-h-[85vh] px-6 sm:px-12 lg:px-20 2xl:px-28 pb-12 lg:pb-16 2xl:pb-24">
+          <div className="max-w-xl xl:max-w-3xl 2xl:max-w-4xl">
             {/* Overline */}
             <motion.div
               initial={{ opacity: 0, x: -30 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.6, delay: 0.3, ease }}
-              className="flex items-center gap-3 mb-6"
+              className="flex items-center gap-3 mb-4"
             >
-              <span className="h-px w-12 bg-accent" />
-              <span className="font-secondary text-accent font-light text-sm uppercase tracking-[0.2em]">
+              <span className="h-px w-12 bg-white/50" />
+              <span className="font-secondary text-white/80 font-medium text-sm uppercase tracking-[0.2em]">
                 Fenêtres &amp; Portes Suisses
               </span>
             </motion.div>
@@ -184,11 +183,9 @@ export default function Hero() {
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.7, delay: 0.5, ease }}
-              className="text-4xl sm:text-5xl lg:text-6xl xl:text-[68px] font-bold text-white leading-[1.3] mb-6"
+              className="text-3xl sm:text-4xl lg:text-5xl xl:text-[56px] 2xl:text-[72px] font-bold text-white leading-[1.2] mb-4 2xl:mb-6 whitespace-nowrap"
             >
-              Votre nouvel
-              <br />
-              <span className="text-accent">art de vivre</span>
+              Votre nouvel <span className="text-accent">art de vivre</span>
             </motion.h1>
 
             {/* Subtext */}
@@ -196,7 +193,7 @@ export default function Hero() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.7, ease }}
-              className="text-lg text-white/75 max-w-md mb-10 leading-relaxed"
+              className="text-base 2xl:text-lg text-white/75 max-w-lg 2xl:max-w-xl mb-8 2xl:mb-10 leading-relaxed"
             >
               Des fenêtres et portes d&apos;exception, alliant savoir-faire
               traditionnel suisse et technologies de pointe pour un confort
@@ -226,7 +223,7 @@ export default function Hero() {
 
               <a
                 href="tel:+41216245300"
-                className="inline-flex items-center gap-3 text-white/80 hover:text-white transition-colors"
+                className="inline-flex items-center gap-3 text-white/80 hover:text-accent transition-colors"
               >
                 <span className="flex items-center justify-center w-10 h-10 rounded-full border border-white/25">
                   <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
@@ -239,14 +236,6 @@ export default function Hero() {
           </div>
 
           {/* Brand icon — decorative bottom-right */}
-          <motion.div
-            initial={{ opacity: 0, rotate: -10 }}
-            animate={{ opacity: 0.08, rotate: 0 }}
-            transition={{ duration: 1.2, delay: 1.1, ease }}
-            className="absolute bottom-16 right-12 xl:right-20 hidden lg:block pointer-events-none"
-          >
-            <BrandIcon className="w-36 xl:w-44" color="#f8ad0c" />
-          </motion.div>
         </div>
       </div>
     </section>
