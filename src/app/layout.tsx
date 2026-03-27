@@ -18,6 +18,10 @@ export const metadata: Metadata = {
   title: "ISO Tradition – Fenêtres & Portes Suisses",
   description:
     "ISO Tradition, votre spécialiste en fenêtres et portes en Suisse. Qualité, tradition et innovation pour votre nouvel art de vivre.",
+  icons: {
+    icon: "/favicon.ico",
+    apple: "/apple-touch-icon.png",
+  },
 };
 
 export default function RootLayout({
