@@ -1,0 +1,25 @@
+@import "tailwindcss";
+
+html {
+  scroll-behavior: smooth;
+}
+
+.scrollbar-hide {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}
+
+@theme {
+  --color-primary: #215e84;
+  --color-primary-dark: #1a4b6a;
+  --color-secondary: #ebe9e5;
+  --color-accent: #f8ad0c;
+  --color-accent-hover: #e09a00;
+
+  --font-sans: "Bai Jamjuree", sans-serif;
+  --font-secondary: var(--font-outfit), "Outfit", sans-serif;
+  --font-baseline: "Bai Jamjuree", sans-serif;
+}

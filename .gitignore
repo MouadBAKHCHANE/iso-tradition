@@ -1,0 +1,22 @@
+# Dependencies
+iso-tradition/node_modules/
+iso-tradition/.next/
+iso-tradition/out/
+
+# Source assets folder (large files)
+ISO TRADITION/
+
+# Claude
+.claude/
+
+# PDFs and large assets
+*.pdf
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Env
+.env
+.env.local
+.env.production.local
