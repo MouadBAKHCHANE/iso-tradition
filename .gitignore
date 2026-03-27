@@ -1,7 +1,10 @@
 # Dependencies
-iso-tradition/node_modules/
-iso-tradition/.next/
-iso-tradition/out/
+node_modules/
+.next/
+out/
+
+# Old subfolder
+iso-tradition/
 
 # Source assets folder (large files)
 ISO TRADITION/
