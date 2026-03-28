@@ -91,8 +91,8 @@ export default function AboutPage() {
     { label: "Accueil", href: "/" },
     { label: "Nos solutions", href: "/#services" },
     { label: "Qui sommes-nous", href: "/qui-sommes-nous" },
-    { label: "Actualités", href: "/#actualites" },
-    { label: "Contact", href: "/#contact" },
+    { label: "Actualités", href: "/actualites" },
+    { label: "Contact", href: "/contact" },
   ];
 
   return (
@@ -323,8 +323,9 @@ export default function AboutPage() {
       </section>
 
       {/* ── À propos ── */}
-      <section className="py-14 lg:py-20 bg-primary">
-        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+      <section className="py-14 lg:py-20 bg-primary relative overflow-hidden">
+        <BrandIcon className="absolute -right-16 -top-16 w-[400px] h-[400px] text-white opacity-[0.04]" />
+        <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           {/* Centered text */}
           <div className="text-center max-w-3xl mx-auto mb-10 lg:mb-14">
             <FadeIn>
@@ -388,8 +389,9 @@ export default function AboutPage() {
       </section>
 
       {/* ── Nos Valeurs ── */}
-      <section className="py-14 lg:py-20 bg-white">
-        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+      <section className="py-14 lg:py-20 bg-white relative overflow-hidden">
+        <BrandIcon className="absolute -left-16 -bottom-16 w-[350px] h-[350px] text-primary opacity-[0.04]" />
+        <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <FadeIn>
             <h2 className="text-2xl sm:text-3xl lg:text-5xl 2xl:text-6xl font-bold text-primary leading-tight mb-12 lg:mb-16">
               Nos <span className="text-accent">valeurs</span>

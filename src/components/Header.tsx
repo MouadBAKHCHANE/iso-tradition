@@ -8,8 +8,8 @@ const navLinks = [
   { label: "Accueil", href: "/" },
   { label: "Nos solutions", href: "#services" },
   { label: "Qui sommes-nous", href: "/qui-sommes-nous" },
-  { label: "Actualités", href: "#actualites" },
-  { label: "Contact", href: "#contact" },
+  { label: "Actualités", href: "/actualites" },
+  { label: "Contact", href: "/contact" },
 ];
 
 export default function Header({ forceVisible = false }: { forceVisible?: boolean }) {
