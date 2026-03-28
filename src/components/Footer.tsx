@@ -1,6 +1,7 @@
 "use client";
 
 import Image from "next/image";
+import Link from "next/link";
 import BrandIcon from "./BrandIcon";
 
 const navCols = [
@@ -22,7 +23,7 @@ const navCols = [
     title: "Entreprise",
     links: [
       { label: "Accueil", href: "#" },
-      { label: "Qui sommes-nous", href: "#apropos" },
+      { label: "Qui sommes-nous", href: "/qui-sommes-nous" },
       { label: "Nos solutions", href: "#services" },
       { label: "Actualités", href: "#actualites" },
       { label: "Contact", href: "#contact" },
@@ -185,11 +186,11 @@ export default function Footer() {
       <div className="border-t border-white/10">
         <div className="mx-auto max-w-[1540px] px-6 sm:px-10 lg:px-16 py-5 flex flex-col items-center gap-3">
           <div className="flex flex-wrap justify-center gap-x-6 gap-y-2 text-white/40 text-[13px]">
-            <a href="#" className="hover:text-white transition-colors">Mentions légales</a>
-            <a href="#" className="hover:text-white transition-colors">CGU</a>
-            <a href="#" className="hover:text-white transition-colors">CGV</a>
-            <a href="#" className="hover:text-white transition-colors">CG d&apos;entretien</a>
-            <a href="#" className="hover:text-white transition-colors">Confidentialité &amp; Cookies</a>
+            <Link href="/mentions-legales" className="hover:text-white transition-colors">Mentions légales</Link>
+            <Link href="/cgu" className="hover:text-white transition-colors">CGU</Link>
+            <Link href="/cgv" className="hover:text-white transition-colors">CGV</Link>
+            <Link href="/cg-entretien" className="hover:text-white transition-colors">CG d&apos;entretien</Link>
+            <Link href="/confidentialite" className="hover:text-white transition-colors">Confidentialité &amp; Cookies</Link>
           </div>
           <p className="text-white/40 text-[13px]">
             © 2025 Iso Tradition. Tous droits réservés. By{" "}

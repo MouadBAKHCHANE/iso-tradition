@@ -2,14 +2,15 @@
 
 import { useState } from "react";
 import Image from "next/image";
+import Link from "next/link";
 import { motion, AnimatePresence } from "framer-motion";
 
 const ease = [0.25, 0.1, 0.25, 1] as const;
 
 const navLinks = [
-  { label: "Accueil", href: "#" },
+  { label: "Accueil", href: "/" },
   { label: "Nos solutions", href: "#services" },
-  { label: "Qui sommes-nous", href: "#apropos" },
+  { label: "Qui sommes-nous", href: "/qui-sommes-nous" },
   { label: "Actualités", href: "#actualites" },
   { label: "Contact", href: "#contact" },
 ];
@@ -45,7 +46,7 @@ export default function Hero() {
           {/* Logo + white nav + CTA in one row */}
           <div className="flex items-start justify-between">
             {/* Logo — left, with top padding */}
-            <a href="#" className="relative shrink-0 pt-6">
+            <Link href="/" className="relative shrink-0 pt-6">
               <Image
                 src="/images/logo-blanc.png"
                 alt="ISO Tradition"
@@ -54,21 +55,25 @@ export default function Hero() {
                 className="h-16 lg:h-16 xl:h-20 2xl:h-24 w-auto"
                 priority
               />
-            </a>
+            </Link>
 
             {/* White nav bar — centered, flush to top with concave notch ears */}
             <div className="hidden lg:block relative">
               {/* White bar — flat top, rounded bottom */}
               <div className="bg-white rounded-b-[20px] px-5 lg:px-6 xl:px-10 2xl:px-14 py-3 lg:py-3 xl:py-4 2xl:py-5 flex items-center gap-4 lg:gap-5 xl:gap-8 2xl:gap-10 relative">
-                {navLinks.map((link) => (
-                  <a
-                    key={link.label}
-                    href={link.href}
-                    className="font-medium text-[12px] lg:text-[12px] xl:text-[14px] 2xl:text-[16px] text-primary/70 hover:text-primary transition-colors relative after:absolute after:bottom-[-3px] after:left-0 after:h-[2px] after:w-0 hover:after:w-full after:bg-accent after:transition-all whitespace-nowrap"
-                  >
-                    {link.label}
-                  </a>
-                ))}
+                {navLinks.map((link) => {
+                  const isInternal = link.href.startsWith("/");
+                  const Tag = isInternal ? Link : "a";
+                  return (
+                    <Tag
+                      key={link.label}
+                      href={link.href}
+                      className="font-medium text-[12px] lg:text-[12px] xl:text-[14px] 2xl:text-[16px] text-primary/70 hover:text-primary transition-colors relative after:absolute after:bottom-[-3px] after:left-0 after:h-[2px] after:w-0 hover:after:w-full after:bg-accent after:transition-all whitespace-nowrap"
+                    >
+                      {link.label}
+                    </Tag>
+                  );
+                })}
               </div>
 
               {/* Left concave notch */}
@@ -126,16 +131,20 @@ export default function Hero() {
                 className="lg:hidden mt-3 mx-2"
               >
                 <div className="bg-white rounded-[20px] shadow-lg px-6 py-5 space-y-1">
-                  {navLinks.map((link) => (
-                    <a
-                      key={link.label}
-                      href={link.href}
-                      onClick={() => setMobileOpen(false)}
-                      className="block px-4 py-3 text-primary/80 hover:text-primary hover:bg-secondary rounded-xl font-medium text-[15px] transition-colors"
-                    >
-                      {link.label}
-                    </a>
-                  ))}
+                  {navLinks.map((link) => {
+                    const isInternal = link.href.startsWith("/");
+                    const Tag = isInternal ? Link : "a";
+                    return (
+                      <Tag
+                        key={link.label}
+                        href={link.href}
+                        onClick={() => setMobileOpen(false)}
+                        className="block px-4 py-3 text-primary/80 hover:text-primary hover:bg-secondary rounded-xl font-medium text-[15px] transition-colors"
+                      >
+                        {link.label}
+                      </Tag>
+                    );
+                  })}
                   <a
                     href="https://form.typeform.com/to/astTYipT"
                     target="_blank"

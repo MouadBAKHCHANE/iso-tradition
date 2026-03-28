@@ -15,6 +15,7 @@ html {
 @theme {
   --color-primary: #215e84;
   --color-primary-dark: #1a4b6a;
+  --color-primary-deep: #0c2337;
   --color-secondary: #ebe9e5;
   --color-accent: #f8ad0c;
   --color-accent-hover: #e09a00;

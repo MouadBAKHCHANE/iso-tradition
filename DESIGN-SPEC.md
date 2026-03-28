@@ -34,7 +34,7 @@
 
 | Element | Mobile | sm | lg | xl | 2xl |
 |---------|--------|-----|-----|-----|------|
-| Hero H1 | text-3xl | text-4xl | text-5xl | text-[56px] | text-[72px] |
+| Hero H1 | text-[26px] | text-4xl | text-5xl | text-[56px] | text-[72px] |
 | Section H2 | text-2xl | text-3xl | text-5xl | text-5xl | text-6xl |
 | About H2 | text-2xl | text-3xl | text-[32px] | text-[44px] | text-[56px] |
 | Solutions H2 | text-2xl | text-3xl | text-4xl | text-5xl | text-6xl |
@@ -99,7 +99,7 @@
 | About | 2-col at lg | gap-12 lg:gap-16 |
 | WhyReplace | 2-col at lg | gap-10 lg:gap-6 xl:gap-16 |
 | Strengths | 3-col bento at md | gap-4 |
-| ProjectCTA | 2-col at lg (sticky left) | gap-10 lg:gap-16 |
+| ProjectCTA | 2-col at lg (sticky left) | gap-12 lg:gap-20 |
 | Blog | 3-col at lg, 2-col at md | gap-6 |
 | FAQ | sidebar + content at lg | gap-10 lg:gap-20 |
 | Footer | 5-col at lg | gap-10 lg:gap-8 |
@@ -137,10 +137,10 @@
 
 | Section | Mobile | lg | xl | 2xl |
 |---------|--------|-----|-----|------|
-| Hero | min-h-screen | min-h-[85vh] | same | same |
+| Hero | min-h-[85vh] | min-h-[85vh] | same | same |
 | About | py-14 | py-20 | py-20 | py-20 |
 | Solutions | h-screen (sticky) | same | same | same |
-| WhyReplace | py-14 | py-10 | py-16 | py-16 |
+| WhyReplace | py-14 | py-8 | py-12 | py-12 |
 | Strengths | py-16 | py-20 | py-20 | py-20 |
 | ProjectCTA | py-14 | py-20 | py-20 | py-20 |
 | Blog | py-14 | py-20 | py-20 | py-20 |
@@ -154,7 +154,7 @@
 |---------|--------|-----|-----|------|
 | Standard sections | px-4 | px-6 | px-8 | px-8 |
 | Hero outer | px-2 | px-4 | px-4 | px-4 |
-| Hero content | px-6 | px-12 | px-20 | px-28 |
+| Hero content | px-5 | px-12 | px-20 | px-28 |
 | Footer inner | px-6 | px-10 | px-16 | px-16 |
 
 ### 3.3 Internal Spacing
@@ -248,11 +248,19 @@ Global easing: `[0.25, 0.1, 0.25, 1]` (custom cubic-bezier)
 
 ### 5.6 Card Entrance (Strengths, ProjectCTA)
 
+**Strengths cards:**
+- Initial: `opacity: 0, y: 40, scale: 0.95`
+- Animate: `opacity: 1, y: 0, scale: 1`
+- Duration: 0.6s
+- Stagger: `delay = index * 0.12`
+- Viewport: `once: true, amount: 0.3`
+
+**ProjectCTA cards:**
 - Initial: `opacity: 0, y: 50, scale: 0.92`
 - Animate: `opacity: 1, y: 0, scale: 1`
 - Duration: 0.55s
-- Stagger: `delay = index * 0.12` or `colIdx * 0.18`
-- Viewport: `once: true, amount: 0.3-0.4`
+- Stagger: `delay = colIdx * 0.18`
+- Viewport: `once: true, amount: 0.4`
 
 ### 5.7 Hover Effects
 
@@ -289,7 +297,7 @@ Global easing: `[0.25, 0.1, 0.25, 1]` (custom cubic-bezier)
 
 | Breakpoint | Height | Title | Content width |
 |------------|--------|-------|---------------|
-| Mobile | min-h-screen | text-3xl | max-w-xl |
+| Mobile | min-h-[85vh] | text-[26px] | max-w-xl |
 | sm | min-h-screen | text-4xl | max-w-xl |
 | lg | min-h-[85vh] | text-5xl | max-w-xl |
 | xl | min-h-[85vh] | text-[56px] | max-w-3xl |

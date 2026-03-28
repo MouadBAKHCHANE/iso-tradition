@@ -2,24 +2,26 @@
 
 import { useState, useEffect } from "react";
 import Image from "next/image";
+import Link from "next/link";
 
 const navLinks = [
-  { label: "Accueil", href: "#" },
+  { label: "Accueil", href: "/" },
   { label: "Nos solutions", href: "#services" },
-  { label: "Qui sommes-nous", href: "#apropos" },
+  { label: "Qui sommes-nous", href: "/qui-sommes-nous" },
   { label: "Actualités", href: "#actualites" },
   { label: "Contact", href: "#contact" },
 ];
 
-export default function Header() {
-  const [scrolled, setScrolled] = useState(false);
+export default function Header({ forceVisible = false }: { forceVisible?: boolean }) {
+  const [scrolled, setScrolled] = useState(forceVisible);
   const [mobileOpen, setMobileOpen] = useState(false);
 
   useEffect(() => {
+    if (forceVisible) return;
     const onScroll = () => setScrolled(window.scrollY > 80);
     window.addEventListener("scroll", onScroll, { passive: true });
     return () => window.removeEventListener("scroll", onScroll);
-  }, []);
+  }, [forceVisible]);
 
   return (
     <>
@@ -32,7 +34,7 @@ export default function Header() {
         }`}
       >
         <nav className="mx-auto max-w-[1540px] bg-white shadow-lg shadow-black/5 rounded-[20px] px-6 lg:px-12 flex items-center justify-between h-16 lg:h-[68px] relative">
-          <a href="#" className="relative shrink-0">
+          <Link href="/" className="relative shrink-0">
             <Image
               src="/images/logo-couleur.png"
               alt="ISO Tradition"
@@ -41,19 +43,23 @@ export default function Header() {
               className="h-9 lg:h-10 w-auto"
               priority
             />
-          </a>
+          </Link>
 
           <ul className="hidden lg:flex items-center gap-4 lg:gap-5 xl:gap-8 absolute left-1/2 -translate-x-1/2">
-            {navLinks.map((link) => (
-              <li key={link.label}>
-                <a
-                  href={link.href}
-                  className="font-medium text-[12px] xl:text-[14px] text-primary/70 hover:text-primary transition-colors relative after:absolute after:bottom-[-4px] after:left-0 after:h-[2px] after:w-0 hover:after:w-full after:bg-accent after:transition-all whitespace-nowrap"
-                >
-                  {link.label}
-                </a>
-              </li>
-            ))}
+            {navLinks.map((link) => {
+              const isInternal = link.href.startsWith("/");
+              const Tag = isInternal ? Link : "a";
+              return (
+                <li key={link.label}>
+                  <Tag
+                    href={link.href}
+                    className="font-medium text-[12px] xl:text-[14px] text-primary/70 hover:text-primary transition-colors relative after:absolute after:bottom-[-4px] after:left-0 after:h-[2px] after:w-0 hover:after:w-full after:bg-accent after:transition-all whitespace-nowrap"
+                  >
+                    {link.label}
+                  </Tag>
+                </li>
+              );
+            })}
           </ul>
 
           <a
@@ -94,16 +100,20 @@ export default function Header() {
           }`}
         >
           <div className="bg-white rounded-[20px] shadow-lg px-6 py-4 space-y-1">
-            {navLinks.map((link) => (
-              <a
-                key={link.label}
-                href={link.href}
-                onClick={() => setMobileOpen(false)}
-                className="block px-4 py-3 text-primary/80 hover:text-primary hover:bg-secondary rounded-xl font-medium text-sm transition-colors"
-              >
-                {link.label}
-              </a>
-            ))}
+            {navLinks.map((link) => {
+              const isInternal = link.href.startsWith("/");
+              const Tag = isInternal ? Link : "a";
+              return (
+                <Tag
+                  key={link.label}
+                  href={link.href}
+                  onClick={() => setMobileOpen(false)}
+                  className="block px-4 py-3 text-primary/80 hover:text-primary hover:bg-secondary rounded-xl font-medium text-sm transition-colors"
+                >
+                  {link.label}
+                </Tag>
+              );
+            })}
             <a
               href="https://form.typeform.com/to/astTYipT"
               target="_blank"
