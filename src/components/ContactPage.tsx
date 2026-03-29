@@ -64,7 +64,7 @@ export default function ContactPage() {
 
       {/* ── Hero ── */}
       <section className="bg-white">
-        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 pt-10 lg:pt-16 pb-10">
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 pt-24 lg:pt-28 pb-10">
           <FadeIn>
             <h1 className="text-3xl sm:text-4xl lg:text-5xl xl:text-[56px] font-bold text-primary text-center leading-tight mb-4">
               Nous sommes là pour <span className="text-accent">vous aider</span> !

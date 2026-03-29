@@ -32,7 +32,7 @@ export default function ProductPage({ product }: { product: ProductData }) {
       <Header forceVisible />
 
       {/* Hero */}
-      <section className="relative py-14 lg:py-20 overflow-hidden">
+      <section className="relative pt-24 lg:pt-28 pb-14 lg:pb-20 overflow-hidden">
         <Image src={product.heroImage} alt={product.name} fill className="object-cover" />
         <div className="absolute inset-0 bg-primary/80" />
         <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">

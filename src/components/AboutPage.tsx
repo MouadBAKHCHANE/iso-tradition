@@ -116,7 +116,7 @@ export default function AboutPage() {
       <Header forceVisible />
 
       {/* ── Hero — Roofinger-style dark centered ── */}
-      <section className="relative bg-white px-2 sm:px-4 pt-2 pb-16 lg:pb-20">
+      <section className="relative bg-white px-2 sm:px-4 pt-24 lg:pt-28 pb-16 lg:pb-20">
         <div className="absolute inset-x-2 sm:inset-x-4 top-2 bottom-[40%] sm:bottom-[35%] lg:bottom-[30%] bg-primary rounded-[20px]" />
         <div className="relative">
           {/* ====== CENTERED HEADING + SUBTITLE ====== */}
