@@ -24,71 +24,12 @@ interface ProductData {
   faq: { question: string; answer: string }[];
 }
 
-const navLinks = [
-  { label: "Accueil", href: "/" },
-  { label: "Nos solutions", href: "/nos-solutions" },
-  { label: "Qui sommes-nous", href: "/qui-sommes-nous" },
-  { label: "Actualités", href: "/actualites" },
-  { label: "Contact", href: "/contact" },
-];
-
 export default function ProductPage({ product }: { product: ProductData }) {
-  const [mobileOpen, setMobileOpen] = useState(false);
   const [openFaq, setOpenFaq] = useState<number | null>(0);
 
   return (
     <>
-      {/* Nav */}
-      <section className="bg-white">
-        <div className="px-6 sm:px-10 lg:px-14 pt-6 pb-4">
-          <div className="flex items-center justify-between mx-auto max-w-7xl">
-            <Link href="/" className="shrink-0">
-              <Image src="/images/logo-couleur.png" alt="ISO Tradition" width={160} height={50} className="h-10 lg:h-12 w-auto" priority />
-            </Link>
-            <ul className="hidden lg:flex items-center gap-6 xl:gap-8">
-              {navLinks.map((link) => {
-                const Tag = link.href.startsWith("/") ? Link : "a";
-                return (
-                  <li key={link.label}>
-                    <Tag href={link.href}
-                      className={`font-medium text-[13px] xl:text-[14px] transition-colors relative after:absolute after:bottom-[-3px] after:left-0 after:h-[2px] after:w-0 hover:after:w-full after:bg-accent after:transition-all ${
-                        link.label === "Nos solutions" ? "text-primary after:w-full" : "text-primary/60 hover:text-primary"
-                      }`}
-                    >{link.label}</Tag>
-                  </li>
-                );
-              })}
-            </ul>
-            <a href="https://form.typeform.com/to/astTYipT" target="_blank" rel="noopener noreferrer"
-              className="hidden lg:inline-flex items-center gap-2 bg-accent hover:bg-accent-hover text-primary-dark font-bold px-5 py-2.5 rounded-full text-sm transition-colors group"
-            >
-              Demander une offre
-              <span className="flex items-center justify-center w-6 h-6 rounded-full bg-primary-dark/15 transition-transform group-hover:translate-x-0.5">
-                <svg className="w-3 h-3" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}><path strokeLinecap="round" strokeLinejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" /></svg>
-              </span>
-            </a>
-            <button onClick={() => setMobileOpen(!mobileOpen)} className="lg:hidden p-2 text-primary" aria-label="Menu">
-              <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
-                {mobileOpen ? <path strokeLinecap="round" strokeLinejoin="round" d="M6 18L18 6M6 6l12 12" /> : <path strokeLinecap="round" strokeLinejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />}
-              </svg>
-            </button>
-          </div>
-          <AnimatePresence>
-            {mobileOpen && (
-              <motion.div initial={{ opacity: 0, y: -10 }} animate={{ opacity: 1, y: 0 }} exit={{ opacity: 0, y: -10 }} transition={{ duration: 0.25 }} className="lg:hidden mt-3">
-                <div className="bg-secondary rounded-[20px] px-6 py-5 space-y-1">
-                  {navLinks.map((link) => {
-                    const Tag = link.href.startsWith("/") ? Link : "a";
-                    return <Tag key={link.label} href={link.href} onClick={() => setMobileOpen(false)} className="block px-4 py-3 text-primary/80 hover:text-primary hover:bg-white rounded-xl font-medium text-[15px] transition-colors">{link.label}</Tag>;
-                  })}
-                </div>
-              </motion.div>
-            )}
-          </AnimatePresence>
-        </div>
-      </section>
-
-      <Header />
+      <Header forceVisible />
 
       {/* Hero */}
       <section className="relative py-14 lg:py-20 overflow-hidden">

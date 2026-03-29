@@ -69,7 +69,7 @@ export default function AboutPreview() {
 
               <FadeIn direction="right" delay={0.3}>
                 <a
-                  href="#apropos"
+                  href="/qui-sommes-nous"
                   className="inline-flex items-center gap-2 bg-accent hover:bg-accent-hover text-primary-dark font-semibold px-5 lg:px-5 xl:px-6 py-2.5 lg:py-2 xl:py-3 rounded-full transition-colors text-[13px] lg:text-[13px] xl:text-[15px] group"
                 >
                   En savoir plus

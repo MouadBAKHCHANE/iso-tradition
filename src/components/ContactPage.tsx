@@ -1,23 +1,13 @@
 "use client";
 
-import { useState } from "react";
 import Image from "next/image";
-import Link from "next/link";
 import Header from "./Header";
 import Footer from "./Footer";
 import BrandIcon from "./BrandIcon";
 import { FadeIn } from "./Motion";
-import { motion, AnimatePresence } from "framer-motion";
+import { motion } from "framer-motion";
 
 const ease = [0.25, 0.1, 0.25, 1] as const;
-
-const navLinks = [
-  { label: "Accueil", href: "/" },
-  { label: "Nos solutions", href: "/nos-solutions" },
-  { label: "Qui sommes-nous", href: "/qui-sommes-nous" },
-  { label: "Actualités", href: "/#actualites" },
-  { label: "Contact", href: "/contact" },
-];
 
 const contactCards = [
   {
@@ -68,103 +58,12 @@ const services = [
 ];
 
 export default function ContactPage() {
-  const [mobileOpen, setMobileOpen] = useState(false);
-
   return (
     <>
-      {/* ── Hero with nav ── */}
-      <section className="bg-white">
-        {/* Nav */}
-        <div className="px-6 sm:px-10 lg:px-14 pt-6 pb-4">
-          <div className="flex items-center justify-between mx-auto max-w-7xl">
-            <Link href="/" className="shrink-0">
-              <Image
-                src="/images/logo-couleur.png"
-                alt="ISO Tradition"
-                width={160}
-                height={50}
-                className="h-10 lg:h-12 w-auto"
-                priority
-              />
-            </Link>
-            <ul className="hidden lg:flex items-center gap-6 xl:gap-8">
-              {navLinks.map((link) => {
-                const isInternal = link.href.startsWith("/");
-                const Tag = isInternal ? Link : "a";
-                return (
-                  <li key={link.label}>
-                    <Tag
-                      href={link.href}
-                      className={`font-medium text-[13px] xl:text-[14px] transition-colors relative after:absolute after:bottom-[-3px] after:left-0 after:h-[2px] after:w-0 hover:after:w-full after:bg-accent after:transition-all ${
-                        link.label === "Contact"
-                          ? "text-primary after:w-full"
-                          : "text-primary/60 hover:text-primary"
-                      }`}
-                    >
-                      {link.label}
-                    </Tag>
-                  </li>
-                );
-              })}
-            </ul>
-            <a
-              href="https://form.typeform.com/to/astTYipT"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="hidden lg:inline-flex items-center gap-2 bg-accent hover:bg-accent-hover text-primary-dark font-bold px-5 py-2.5 rounded-full text-sm transition-colors group"
-            >
-              Demander une offre
-              <span className="flex items-center justify-center w-6 h-6 rounded-full bg-primary-dark/15 transition-transform group-hover:translate-x-0.5">
-                <svg className="w-3 h-3" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
-                  <path strokeLinecap="round" strokeLinejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" />
-                </svg>
-              </span>
-            </a>
-            <button
-              onClick={() => setMobileOpen(!mobileOpen)}
-              className="lg:hidden p-2 text-primary"
-              aria-label="Menu"
-            >
-              <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
-                {mobileOpen ? (
-                  <path strokeLinecap="round" strokeLinejoin="round" d="M6 18L18 6M6 6l12 12" />
-                ) : (
-                  <path strokeLinecap="round" strokeLinejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
-                )}
-              </svg>
-            </button>
-          </div>
-          {/* Mobile menu */}
-          <AnimatePresence>
-            {mobileOpen && (
-              <motion.div
-                initial={{ opacity: 0, y: -10 }}
-                animate={{ opacity: 1, y: 0 }}
-                exit={{ opacity: 0, y: -10 }}
-                transition={{ duration: 0.25 }}
-                className="lg:hidden mt-3"
-              >
-                <div className="bg-secondary rounded-[20px] px-6 py-5 space-y-1">
-                  {navLinks.map((link) => {
-                    const isInternal = link.href.startsWith("/");
-                    const Tag = isInternal ? Link : "a";
-                    return (
-                      <Tag key={link.label} href={link.href} onClick={() => setMobileOpen(false)}
-                        className="block px-4 py-3 text-primary/80 hover:text-primary hover:bg-white rounded-xl font-medium text-[15px] transition-colors"
-                      >{link.label}</Tag>
-                    );
-                  })}
-                  <a href="https://form.typeform.com/to/astTYipT" target="_blank" rel="noopener noreferrer"
-                    onClick={() => setMobileOpen(false)}
-                    className="block mt-3 bg-accent hover:bg-accent-hover text-primary-dark font-bold px-4 py-3 rounded-full text-center text-sm transition-colors"
-                  >Demander une offre</a>
-                </div>
-              </motion.div>
-            )}
-          </AnimatePresence>
-        </div>
+      <Header forceVisible />
 
-        {/* Hero content */}
+      {/* ── Hero ── */}
+      <section className="bg-white">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 pt-10 lg:pt-16 pb-10">
           <FadeIn>
             <h1 className="text-3xl sm:text-4xl lg:text-5xl xl:text-[56px] font-bold text-primary text-center leading-tight mb-4">
@@ -331,8 +230,6 @@ export default function ContactPage() {
           </div>
         </div>
       </section>
-
-      <Header />
 
       {/* ── Map Section ── */}
       <section className="py-14 lg:py-20 bg-primary relative overflow-hidden">

@@ -2,12 +2,11 @@
 
 import { useState, useEffect, useRef } from "react";
 import Image from "next/image";
-import Link from "next/link";
 import Header from "./Header";
 import Footer from "./Footer";
 import BrandIcon from "./BrandIcon";
 import { FadeIn } from "./Motion";
-import { motion, AnimatePresence } from "framer-motion";
+import { motion, useInView } from "framer-motion";
 
 function CountUp({ target, decimals = 0, duration = 2000, format = false, prefix = "", suffix = "" }: {
   target: number; decimals?: number; duration?: number; format?: boolean; prefix?: string; suffix?: string;
@@ -21,7 +20,7 @@ function CountUp({ target, decimals = 0, duration = 2000, format = false, prefix
     if (!el) return;
     const observer = new IntersectionObserver(
       ([entry]) => { if (entry.isIntersecting) { setStarted(true); observer.disconnect(); } },
-      { threshold: 0.3 }
+      { threshold: 0.6, rootMargin: "0px 0px -80px 0px" }
     );
     observer.observe(el);
     return () => observer.disconnect();
@@ -84,140 +83,42 @@ const zones = [
 
 const ease = [0.25, 0.1, 0.25, 1] as const;
 
-export default function AboutPage() {
-  const [mobileOpen, setMobileOpen] = useState(false);
-
-  const navLinks = [
-    { label: "Accueil", href: "/" },
-    { label: "Nos solutions", href: "/nos-solutions" },
-    { label: "Qui sommes-nous", href: "/qui-sommes-nous" },
-    { label: "Actualités", href: "/actualites" },
-    { label: "Contact", href: "/contact" },
-  ];
+function AtoutItem({ atout, i }: { atout: string; i: number }) {
+  const ref = useRef<HTMLDivElement>(null);
+  const isInView = useInView(ref, { once: false, amount: 0.6 });
 
   return (
+    <motion.div
+      ref={ref}
+      initial={{ opacity: 0, x: -20 }}
+      whileInView={{ opacity: 1, x: 0 }}
+      transition={{ duration: 0.4, delay: i * 0.08, ease: [...ease] }}
+      viewport={{ once: true, amount: 0.5 }}
+      className="flex items-start gap-5 py-5 border-b border-primary/10 last:border-b-0 group"
+    >
+      <motion.span
+        animate={{ color: isInView ? "var(--color-accent, #f59e0b)" : "rgba(33,94,132,0.15)" }}
+        transition={{ duration: 0.35, delay: 0.05 }}
+        className="text-3xl lg:text-4xl font-bold leading-none flex-shrink-0 w-10 lg:!text-primary/15 lg:group-hover:!text-accent"
+      >
+        {i + 1}
+      </motion.span>
+      <h3 className="text-[15px] lg:text-base font-bold text-primary uppercase tracking-wide leading-snug pt-1.5">
+        {atout}
+      </h3>
+    </motion.div>
+  );
+}
+
+export default function AboutPage() {
+  return (
     <>
+      <Header forceVisible />
+
       {/* ── Hero — Roofinger-style dark centered ── */}
       <section className="relative bg-white px-2 sm:px-4 pt-2 pb-16 lg:pb-20">
         <div className="absolute inset-x-2 sm:inset-x-4 top-2 bottom-[40%] sm:bottom-[35%] lg:bottom-[30%] bg-primary rounded-[20px]" />
         <div className="relative">
-          {/* ====== TOP NAV ====== */}
-          <div className="relative z-20 px-6 sm:px-10 lg:px-14">
-            <div className="flex items-start justify-between">
-              {/* Logo */}
-              <Link href="/" className="relative shrink-0 pt-6">
-                <Image
-                  src="/images/logo-blanc.png"
-                  alt="ISO Tradition"
-                  width={300}
-                  height={90}
-                  className="h-16 lg:h-16 xl:h-20 2xl:h-24 w-auto"
-                  priority
-                />
-              </Link>
-
-              {/* White nav bar */}
-              <div className="hidden lg:block relative">
-                <div className="bg-white rounded-b-[20px] px-5 lg:px-6 xl:px-10 2xl:px-14 py-3 lg:py-3 xl:py-4 2xl:py-5 flex items-center gap-4 lg:gap-5 xl:gap-8 2xl:gap-10 relative">
-                  {navLinks.map((link) => {
-                    const isInternal = link.href.startsWith("/");
-                    const Tag = isInternal ? Link : "a";
-                    return (
-                      <Tag
-                        key={link.label}
-                        href={link.href}
-                        className={`font-medium text-[12px] lg:text-[12px] xl:text-[14px] 2xl:text-[16px] transition-colors relative after:absolute after:bottom-[-3px] after:left-0 after:h-[2px] after:w-0 hover:after:w-full after:bg-accent after:transition-all whitespace-nowrap ${
-                          link.label === "Qui sommes-nous"
-                            ? "text-primary after:w-full"
-                            : "text-primary/70 hover:text-primary"
-                        }`}
-                      >
-                        {link.label}
-                      </Tag>
-                    );
-                  })}
-                </div>
-                {/* Left concave notch */}
-                <div className="absolute left-0 top-0 -translate-x-full w-[24px] h-[24px] overflow-hidden pointer-events-none">
-                  <div className="w-[48px] h-[48px] rounded-full shadow-[0_0_0_24px_white] -translate-x-[24px] translate-y-0" />
-                </div>
-                {/* Right concave notch */}
-                <div className="absolute right-0 top-0 translate-x-full w-[24px] h-[24px] overflow-hidden pointer-events-none">
-                  <div className="w-[48px] h-[48px] rounded-full shadow-[0_0_0_24px_white] translate-x-0 translate-y-0" />
-                </div>
-              </div>
-
-              {/* CTA + Hamburger */}
-              <div className="flex items-center gap-3 pt-6">
-                <a
-                  href="https://form.typeform.com/to/astTYipT"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="hidden lg:inline-flex items-center gap-2 bg-accent hover:bg-accent-hover text-primary-dark font-bold px-4 lg:px-5 xl:px-6 2xl:px-8 py-2 lg:py-2 xl:py-2.5 2xl:py-3 rounded-full text-xs lg:text-xs xl:text-sm 2xl:text-base transition-colors group"
-                >
-                  Demander une offre
-                  <span className="flex items-center justify-center w-6 h-6 rounded-full bg-primary-dark/15 transition-transform group-hover:translate-x-0.5">
-                    <svg className="w-3 h-3" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
-                      <path strokeLinecap="round" strokeLinejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" />
-                    </svg>
-                  </span>
-                </a>
-                <button
-                  onClick={() => setMobileOpen(!mobileOpen)}
-                  className="lg:hidden p-2 text-white"
-                  aria-label="Menu"
-                >
-                  <svg className="w-7 h-7" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
-                    {mobileOpen ? (
-                      <path strokeLinecap="round" strokeLinejoin="round" d="M6 18L18 6M6 6l12 12" />
-                    ) : (
-                      <path strokeLinecap="round" strokeLinejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
-                    )}
-                  </svg>
-                </button>
-              </div>
-            </div>
-
-            {/* Mobile menu */}
-            <AnimatePresence>
-              {mobileOpen && (
-                <motion.div
-                  initial={{ opacity: 0, y: -10 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  exit={{ opacity: 0, y: -10 }}
-                  transition={{ duration: 0.25 }}
-                  className="lg:hidden mt-3 mx-2"
-                >
-                  <div className="bg-white rounded-[20px] shadow-lg px-6 py-5 space-y-1">
-                    {navLinks.map((link) => {
-                      const isInternal = link.href.startsWith("/");
-                      const Tag = isInternal ? Link : "a";
-                      return (
-                        <Tag
-                          key={link.label}
-                          href={link.href}
-                          onClick={() => setMobileOpen(false)}
-                          className="block px-4 py-3 text-primary/80 hover:text-primary hover:bg-secondary rounded-xl font-medium text-[15px] transition-colors"
-                        >
-                          {link.label}
-                        </Tag>
-                      );
-                    })}
-                    <a
-                      href="https://form.typeform.com/to/astTYipT"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      onClick={() => setMobileOpen(false)}
-                      className="block mt-3 bg-accent hover:bg-accent-hover text-primary-dark font-bold px-4 py-3 rounded-full text-center text-sm transition-colors"
-                    >
-                      Demander une offre
-                    </a>
-                  </div>
-                </motion.div>
-              )}
-            </AnimatePresence>
-          </div>
-
           {/* ====== CENTERED HEADING + SUBTITLE ====== */}
           <div className="relative z-10 pt-10 sm:pt-12 lg:pt-14 pb-6 lg:pb-8 text-center px-4 sm:px-6 lg:px-8">
             <motion.h1
@@ -509,21 +410,7 @@ export default function AboutPage() {
                   "Un conseil personnalisé & sur-mesure",
                   "Un engagement éco-responsable",
                 ].map((atout, i) => (
-                  <motion.div
-                    key={i}
-                    initial={{ opacity: 0, x: -20 }}
-                    whileInView={{ opacity: 1, x: 0 }}
-                    transition={{ duration: 0.4, delay: i * 0.08, ease: [...ease] }}
-                    viewport={{ once: true, amount: 0.5 }}
-                    className="flex items-start gap-5 py-5 border-b border-primary/10 last:border-b-0 group"
-                  >
-                    <span className="text-3xl lg:text-4xl font-bold text-primary/15 group-hover:text-accent transition-colors leading-none flex-shrink-0 w-10">
-                      {i + 1}
-                    </span>
-                    <h3 className="text-[15px] lg:text-base font-bold text-primary uppercase tracking-wide leading-snug pt-1.5">
-                      {atout}
-                    </h3>
-                  </motion.div>
+                  <AtoutItem key={i} atout={atout} i={i} />
                 ))}
               </div>
             </div>

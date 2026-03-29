@@ -69,8 +69,8 @@ export default function Strengths() {
           <CardWrap i={0} className="h-full">
             <div className="relative bg-primary rounded-[20px] p-8 flex flex-col justify-end h-full overflow-hidden">
               <div className="absolute top-0 right-0">
-                <div className="bg-white rounded-bl-[16px] sm:rounded-bl-[24px] px-3 py-1.5 sm:px-7 sm:py-4">
-                  <span className="text-xl sm:text-4xl font-bold text-primary">+2&apos;500</span>
+                <div className="bg-secondary rounded-bl-[16px] sm:rounded-bl-[24px] px-3 py-1.5 sm:px-7 sm:py-4">
+                  <span className="text-xl sm:text-4xl font-bold text-accent">+2&apos;500</span>
                 </div>
               </div>
               <div>
@@ -99,12 +99,12 @@ export default function Strengths() {
 
           {/* ===== Row 1, Col 3: Light stat card ===== */}
           <CardWrap i={2} className="h-full">
-            <div className="relative bg-secondary rounded-[20px] p-8 flex flex-col justify-center h-full">
-              <span className="text-4xl font-bold text-primary mb-2">100%</span>
-              <h3 className="font-bold text-primary text-lg mb-2">
+            <div className="relative bg-primary rounded-[20px] p-8 flex flex-col justify-center h-full">
+              <span className="text-4xl font-bold text-accent mb-2">100%</span>
+              <h3 className="font-bold text-white text-lg mb-2">
                 Pose par nos équipes internes
               </h3>
-              <p className="text-gray-500 text-[14px] leading-relaxed">
+              <p className="text-white/60 text-[14px] leading-relaxed">
                 Aucune sous-traitance. Chaque installation est réalisée
                 par nos poseurs qualifiés pour un résultat irréprochable.
               </p>
@@ -162,7 +162,7 @@ export default function Strengths() {
 
           <CardWrap i={6} className="h-full">
             <div className="relative bg-primary rounded-[20px] p-8 flex flex-col justify-center h-full">
-              <span className="text-4xl font-bold text-white mb-2 block">+35</span>
+              <span className="text-4xl font-bold text-accent mb-2 block">+35</span>
               <h3 className="font-bold text-white text-lg mb-2">
                 Années d&apos;expérience
               </h3>

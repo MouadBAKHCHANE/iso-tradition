@@ -93,7 +93,7 @@ export default function Solutions() {
   }, []);
   const x = useTransform(scrollYProgress, [0.05, 0.85], ["0%", desktopEnd]);
   const xMobile = useTransform(scrollYProgress, [0.05, 0.85], ["0%", "-75%"]);
-  const scrollHintOpacity = useTransform(scrollYProgress, [0, 0.15], [1, 0]);
+  const scrollHintOpacity = useTransform(scrollYProgress, [0, 0.08, 0.8, 1], [0, 1, 1, 0]);
 
   return (
     <section id="services">
@@ -124,7 +124,7 @@ export default function Solutions() {
             <FadeIn delay={0.15}>
               <div className="flex items-center justify-center gap-4 mt-2 lg:mt-2 xl:mt-4">
                 <a
-                  href="#services"
+                  href="/nos-solutions"
                   className="inline-flex items-center gap-2 bg-accent hover:bg-accent-hover text-primary-dark font-semibold px-6 py-2.5 rounded-full transition-colors text-sm uppercase tracking-wider group"
                 >
                   Toutes nos solutions
@@ -159,7 +159,7 @@ export default function Solutions() {
           {/* Scroll hint */}
           <motion.div
             style={{ opacity: scrollHintOpacity }}
-            className="absolute bottom-4 lg:bottom-6 xl:bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2"
+            className="absolute bottom-4 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 lg:hidden"
           >
             <span className="text-[13px] uppercase tracking-[0.2em] font-bold text-primary">
               Scroll
