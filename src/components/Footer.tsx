@@ -24,7 +24,7 @@ const navCols = [
     links: [
       { label: "Accueil", href: "#" },
       { label: "Qui sommes-nous", href: "/qui-sommes-nous" },
-      { label: "Nos solutions", href: "#services" },
+      { label: "Nos solutions", href: "/nos-solutions" },
       { label: "Actualités", href: "/actualites" },
       { label: "Contact", href: "/contact" },
     ],
