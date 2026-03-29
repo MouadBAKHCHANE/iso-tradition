@@ -310,7 +310,7 @@ export default function SolutionsListPage() {
                   </p>
                 </div>
                 <div className="relative w-full lg:w-1/3 h-48 lg:h-auto flex-shrink-0">
-                  <Image src="/images/programme-batiments.png" alt="Le Programme Bâtiments" fill className="object-contain object-center scale-125" />
+                  <Image src="/images/programme-batiments.png" alt="Le Programme Bâtiments" fill className="object-contain object-center scale-150" />
                 </div>
               </div>
             </FadeIn>
