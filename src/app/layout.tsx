@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Bai_Jamjuree, Outfit } from "next/font/google";
 import "./globals.css";
+import ScrollToTop from "@/components/ScrollToTop";
 
 const baiJamjuree = Bai_Jamjuree({
   subsets: ["latin"],
@@ -34,6 +35,7 @@ export default function RootLayout({
       <body
         className={`${baiJamjuree.variable} ${outfit.variable} font-sans antialiased`}
       >
+        <ScrollToTop />
         {children}
       </body>
     </html>

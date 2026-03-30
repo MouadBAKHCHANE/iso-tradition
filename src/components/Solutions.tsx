@@ -1,6 +1,7 @@
 "use client";
 
 import Image from "next/image";
+import Link from "next/link";
 import { useRef, useState, useEffect } from "react";
 import { motion, useScroll, useTransform } from "framer-motion";
 import { FadeIn } from "./Motion";
@@ -9,41 +10,49 @@ import BrandIcon from "./BrandIcon";
 const solutions = [
   {
     title: "Fenêtres",
+    slug: "/nos-solutions/fenetres",
     image: "/images/sol-fenetres.jpg",
   },
   {
     title: "Baies coulissantes",
+    slug: "/nos-solutions/baies-coulissantes",
     image: "/images/sol-baies.jpg",
   },
   {
     title: "Portes d'entrée",
+    slug: "/nos-solutions/portes-entree",
     image: "/images/sol-portes.jpg",
   },
   {
     title: "Volets",
+    slug: "/nos-solutions/volets",
     image: "/images/sol-volets.jpg",
   },
   {
     title: "Portes de garage",
+    slug: "/nos-solutions/portes-garage",
     image: "/images/sol-garage.jpg",
   },
   {
     title: "Stores bannes",
+    slug: "/nos-solutions/stores-bannes",
     image: "/images/sol-stores.jpg",
   },
   {
     title: "Films solaires",
+    slug: "/nos-solutions/films-solaires",
     image: "/images/sol-film.png",
   },
   {
     title: "Carports & Pergolas",
+    slug: "/nos-solutions/carports-pergolas",
     image: "/images/sol-carport.jpg",
   },
 ];
 
 function Card({ sol }: { sol: (typeof solutions)[number] }) {
   return (
-    <a href="#services" className="group relative flex-shrink-0 w-[180px] sm:w-[220px] touch-manipulation">
+    <Link href={sol.slug} className="group relative flex-shrink-0 w-[180px] sm:w-[220px] touch-manipulation">
       <div className="relative rounded-xl overflow-hidden shadow-md group-hover:shadow-2xl group-active:shadow-2xl transition-all duration-500 group-hover:-translate-y-3 group-active:-translate-y-3">
         <div className="relative aspect-[3/4] overflow-hidden">
           <Image
@@ -66,7 +75,7 @@ function Card({ sol }: { sol: (typeof solutions)[number] }) {
           <div className="absolute bottom-0 left-0 right-0 h-[3px] bg-accent scale-x-0 group-hover:scale-x-100 group-active:scale-x-100 transition-transform duration-500 origin-left" />
         </div>
       </div>
-    </a>
+    </Link>
   );
 }
 

@@ -31,7 +31,7 @@ const product = {
       label: "Matériaux", 
       items: [
         { name: "Aluminium", image: "/images/icons/alu.png" },
-        { name: "Acier", image: "/images/icons/config.png" },
+        { name: "Acier", image: "/images/icons/acier.png" },
         { name: "Bois", image: "/images/icons/bois.png" }
       ] 
     },
