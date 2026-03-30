@@ -37,17 +37,7 @@ const product = {
         { name: "Bois", image: "/images/icons/bois.png" }
       ] 
     },
-    { 
-      icon: "configuration", 
-      label: "Configuration", 
-      items: [
-        { name: "Électrique", image: "/images/icons/moteur.png" },
-        { name: "Solaire", image: "/images/icons/lumiere.png" },
-        { name: "Manuel", image: "/images/icons/config.png" },
-        { name: "Brise solaire", image: "/images/icons/vitrage.png" }
-      ] 
-    },
-    { 
+    {
       icon: "couleurs", 
       label: "Couleurs", 
       items: [
@@ -57,7 +47,9 @@ const product = {
   ],
   types: [
     { name: "Volets roulants", description: "Motorisés (électrique ou solaire) ou manuels. Gain de place maximal, occultation totale, isolation thermique renforcée. Brise solaire orientable disponible.", image: "/images/products/volets/roulants.jpg" },
-    { name: "Volets battants", description: "S'ouvrent vers l'extérieur, style classique ou traditionnel. Protection efficace des fenêtres, ventilation maîtrisée, personnalisation des couleurs.", image: "/images/products/volets/battants.jpg" },
+    { name: "Volets battants aluminium", description: "Légèreté et robustesse. Design épuré qui s'intègre parfaitement aux façades modernes et contemporaines.", image: "/images/products/volets/battants-alu.jpg" },
+    { name: "Volets à persiennes", description: "Lames orientables pour un contrôle précis de la lumière et de la ventilation, tout en préservant l'intimité.", image: "/images/products/volets/battants-persiennes.jpg" },
+    { name: "Volets battants classiques", description: "Style traditionnel intemporel. Idéaux pour les rénovations et les maisons à l'architecture classique.", image: "/images/products/volets/battants-classique.jpg" },
   ],
   didYouKnow: "Les volets roulants peuvent réduire les déperditions thermiques par les fenêtres de 20 à 30% en hiver, en créant une lame d'air isolante entre le vitrage et le volet fermé.\nLa motorisation solaire fonctionne même par temps couvert grâce à des batteries de stockage intégrées — aucun câblage électrique n'est nécessaire.",
   faq: [

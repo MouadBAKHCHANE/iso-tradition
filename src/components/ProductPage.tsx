@@ -298,7 +298,7 @@ export default function ProductPage({ product }: { product: ProductData }) {
                           <span className="bg-accent text-primary-dark text-[11px] font-bold tracking-[0.12em] uppercase px-3 py-1 rounded-full">{product.typesLabel}</span>
                         </div>
                       )}
-                    <div className="grid grid-cols-2 gap-3">
+                    <div className="grid grid-cols-1 lg:grid-cols-2 gap-3">
                       {product.types.map((type, i) => (
                         <motion.div
                           key={i}
@@ -337,7 +337,7 @@ export default function ProductPage({ product }: { product: ProductData }) {
                           <span className="bg-accent text-primary-dark text-[11px] font-bold tracking-[0.12em] uppercase px-3 py-1 rounded-full">{product.personalisationLabel}</span>
                         </div>
                       )}
-                    <div className="grid grid-cols-2 gap-3">
+                    <div className="grid grid-cols-1 lg:grid-cols-2 gap-3">
                       {product.personalisation.map((item, i) => (
                         <motion.div
                           key={i}
