@@ -38,11 +38,21 @@ const product = {
       ] 
     },
     {
-      icon: "couleurs", 
-      label: "Couleurs", 
+      icon: "couleurs",
+      label: "Couleurs",
       items: [
         { name: "Personnalisables", image: "/images/icons/couleurs.png" }
-      ] 
+      ]
+    },
+    {
+      icon: "configuration",
+      label: "Configuration",
+      items: [
+        { name: "Électrique", image: "/images/icons/moteur.png" },
+        { name: "Solaire", image: "/images/icons/solaire.png" },
+        { name: "Manuel", image: "/images/icons/manuel.png" },
+        { name: "Brise solaire orientable", image: "/images/icons/bso.png" }
+      ]
     },
   ],
   types: [

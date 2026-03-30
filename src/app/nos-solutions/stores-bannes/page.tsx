@@ -29,7 +29,7 @@ const product = {
       icon: "configuration", 
       label: "Configuration", 
       items: [
-        { name: "Manuel", image: "/images/icons/config.png" },
+        { name: "Manuel", image: "/images/icons/manuel.png" },
         { name: "Électrique", image: "/images/icons/moteur.png" },
         { name: "Éclairage intégré", image: "/images/icons/lumiere.png" }
       ] 

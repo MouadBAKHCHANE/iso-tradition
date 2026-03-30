@@ -1,15 +1,27 @@
+import sys
 import os
 from rembg import remove
 
-def do_it():
-    in_dir = "tmp_icons2"
-    out_dir = "public/images/icons"
-    for fname in os.listdir(in_dir):
-        if fname.endswith(".png"):
-            with open(os.path.join(in_dir, fname), "rb") as i:
-                out = remove(i.read())
-            with open(os.path.join(out_dir, fname), "wb") as o:
-                o.write(out)
-            print("done", fname)
+def main():
+    if len(sys.argv) < 3:
+        print("Usage: python tmp_rembg.py <source_path> <dest_path>")
+        return
 
-do_it()
+    source = sys.argv[1]
+    dest = sys.argv[2]
+    
+    # Ensure dest directory exists
+    os.makedirs(os.path.dirname(dest), exist_ok=True)
+    
+    try:
+        with open(source, "rb") as i:
+            data = i.read()
+            out = remove(data)
+        with open(dest, "wb") as o:
+            o.write(out)
+        print(f"Successfully processed {source} to {dest}")
+    except Exception as e:
+        print(f"Error processing {source}: {e}")
+
+if __name__ == "__main__":
+    main()

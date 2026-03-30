@@ -39,9 +39,9 @@ const product = {
       icon: "configuration", 
       label: "Configuration", 
       items: [
-        { name: "Sectionnelle haut", image: "/images/icons/config.png" },
-        { name: "Sectionnelle latérale", image: "/images/icons/config.png" },
-        { name: "Enroulable", image: "/images/icons/config.png" },
+        { name: "Sectionnelle haut", image: "/images/icons/garage-haut.png" },
+        { name: "Sectionnelle latérale", image: "/images/icons/garage-lateral.png" },
+        { name: "Enroulable", image: "/images/icons/garage-enroulable.png" },
         { name: "Hublots possibles", image: "/images/icons/ronde.png" }
       ] 
     },
@@ -49,15 +49,15 @@ const product = {
       icon: "couleurs", 
       label: "Personnalisation", 
       items: [
-        { name: "Finitions décoratives", image: "/images/icons/config.png" },
+        { name: "Finitions décoratives", image: "/images/icons/finitions-deco.png" },
         { name: "Couleurs personnalisables", image: "/images/icons/couleurs.png" }
       ] 
     },
   ],
   types: [
-    { name: "Sectionnelle haut de plafond", description: "S'ouvre verticalement et se loge au plafond. Gain de place optimal devant et dans le garage.", image: "/images/products/portes-garage/sectionnel-haut.jpg" },
-    { name: "Sectionnelle latérale", description: "S'ouvre latéralement le long du mur. Idéale quand la hauteur sous plafond est limitée.", image: "/images/products/portes-garage/sectionnel-lateral.jpg" },
-    { name: "Enroulable coffre", description: "S'enroule dans un coffre compact. Solution discrète pour les garages avec peu d'espace." },
+    { name: "Sectionnelle haut de plafond", description: "S'ouvre verticalement et se loge au plafond. Gain de place optimal devant et dans le garage.", image: "/images/products/portes-garage/sectionnel-haut-v2.jpg" },
+    { name: "Sectionnelle latérale", description: "S'ouvre latéralement le long du mur. Idéale quand la hauteur sous plafond est limitée.", image: "/images/products/portes-garage/sectionnel-lateral-v2.jpg" },
+    { name: "Enroulable coffre", description: "S'enroule dans un coffre compact. Solution discrète pour les garages avec peu d'espace.", image: "/images/products/portes-garage/enroulable.jpg" },
   ],
   didYouKnow: "Une porte de garage sectionnelle bien isolée peut contribuer à réduire les déperditions de chaleur du garage vers la maison, surtout lorsque le garage est attenant et chauffé.\nLa porte sectionnelle haut de plafond ne déborde pas sur l'allée — idéale pour les garages avec peu d'espace devant la maison.",
   faq: [

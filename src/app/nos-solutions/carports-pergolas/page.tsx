@@ -40,19 +40,21 @@ const product = {
       icon: "configuration", 
       label: "Configuration", 
       items: [
-        { name: "Adossé", image: "/images/icons/config.png" },
-        { name: "Autoportant", image: "/images/icons/config.png" },
-        { name: "Toiture tendue", image: "/images/icons/config.png" },
-        { name: "Toiture fixe", image: "/images/icons/config.png" },
-        { name: "Toiture orientable", image: "/images/icons/config.png" }
+        { name: "Adossé", image: "/images/icons/adosse.png" },
+        { name: "Autoportant", image: "/images/icons/autoportant.png" },
+        { name: "Toiture tendue", image: "/images/icons/toiture-tendue.png" },
+        { name: "Toiture fixe", image: "/images/icons/toiture-fixe.png" },
+        { name: "Toiture pleine", image: "/images/icons/toiture-pleine.png" },
+        { name: "Toiture translucide", image: "/images/icons/toiture-translucide.png" },
+        { name: "Toiture orientable", image: "/images/icons/toiture-orientable.png" }
       ] 
     },
     { 
       icon: "personnalisation", 
       label: "Personnalisation", 
       items: [
-        { name: "Éclairage LED", image: "/images/icons/lumiere.png" },
-        { name: "Chauffage", image: "/images/icons/config.png" },
+        { name: "Éclairage intégré", image: "/images/icons/lumiere.png" },
+        { name: "Chauffage", image: "/images/icons/chauffage.png" },
         { name: "Couleurs", image: "/images/icons/couleurs.png" },
         { name: "Domotique", image: "/images/icons/moteur.png" },
         { name: "Fermetures latérales", image: "/images/icons/vitrage.png" }
