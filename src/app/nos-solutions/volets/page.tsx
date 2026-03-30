@@ -13,6 +13,8 @@ const product = {
   materials: ["PVC", "Aluminium", "Bois", "Électrique", "Solaire", "Manuel"],
   whyTitle: "Pourquoi installer des volets ?",
   whyText: "En Suisse, où les écarts de température sont marqués selon les saisons, les volets constituent une solution efficace pour réduire les pertes de chaleur en hiver et limiter la surchauffe estivale.",
+  whyImage: "/images/products/volets/why.jpg",
+  advantagesImage: "/images/products/volets/advantages.jpg",
   advantages: [
     "Amélioration du confort thermique toute l'année",
     "Réduction des déperditions énergétiques",
@@ -24,10 +26,40 @@ const product = {
     "Contribution à la valorisation du bien immobilier",
     "Esthétique traditionnelle et personnalisable (battants)",
   ],
-  types: [
-    { name: "Volets roulants", description: "Motorisés (électrique ou solaire) ou manuels. Gain de place maximal, occultation totale, isolation thermique renforcée. Brise solaire orientable disponible." },
-    { name: "Volets battants", description: "S'ouvrent vers l'extérieur, style classique ou traditionnel. Protection efficace des fenêtres, ventilation maîtrisée, personnalisation des couleurs." },
+  typesLabel: "Types",
+  personalisationOptions: [
+    { 
+      icon: "materiaux", 
+      label: "Matériaux", 
+      items: [
+        { name: "PVC", image: "/images/icons/config.png" },
+        { name: "Aluminium", image: "/images/icons/alu.png" },
+        { name: "Bois", image: "/images/icons/bois.png" }
+      ] 
+    },
+    { 
+      icon: "configuration", 
+      label: "Configuration", 
+      items: [
+        { name: "Électrique", image: "/images/icons/moteur.png" },
+        { name: "Solaire", image: "/images/icons/lumiere.png" },
+        { name: "Manuel", image: "/images/icons/config.png" },
+        { name: "Brise solaire", image: "/images/icons/vitrage.png" }
+      ] 
+    },
+    { 
+      icon: "couleurs", 
+      label: "Couleurs", 
+      items: [
+        { name: "Personnalisables", image: "/images/icons/couleurs.png" }
+      ] 
+    },
   ],
+  types: [
+    { name: "Volets roulants", description: "Motorisés (électrique ou solaire) ou manuels. Gain de place maximal, occultation totale, isolation thermique renforcée. Brise solaire orientable disponible.", image: "/images/products/volets/roulants.jpg" },
+    { name: "Volets battants", description: "S'ouvrent vers l'extérieur, style classique ou traditionnel. Protection efficace des fenêtres, ventilation maîtrisée, personnalisation des couleurs.", image: "/images/products/volets/battants.jpg" },
+  ],
+  didYouKnow: "Les volets roulants peuvent réduire les déperditions thermiques par les fenêtres de 20 à 30% en hiver, en créant une lame d'air isolante entre le vitrage et le volet fermé.\nLa motorisation solaire fonctionne même par temps couvert grâce à des batteries de stockage intégrées — aucun câblage électrique n'est nécessaire.",
   faq: [
     { question: "Volets roulants ou battants : comment choisir ?", answer: "Les volets roulants sont idéaux pour le confort moderne (motorisation, gain de place). Les volets battants conviennent aux façades traditionnelles et offrent un charme authentique." },
     { question: "La motorisation solaire est-elle fiable en Suisse ?", answer: "Oui, les panneaux solaires intégrés fonctionnent même par temps couvert. C'est une solution autonome qui ne nécessite aucun câblage électrique." },

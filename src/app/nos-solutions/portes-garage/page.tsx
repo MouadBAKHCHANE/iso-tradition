@@ -13,6 +13,8 @@ const product = {
   materials: ["Aluminium", "Acier", "Bois", "Électrique", "Manuel"],
   whyTitle: "Sécurité, confort et esthétique pour votre garage",
   whyText: "Avec des solutions modernes et personnalisables, il est possible de combiner design, confort et performance, tout en répondant aux normes suisses de sécurité et d'isolation thermique.",
+  whyImage: "/images/products/portes-garage/why.jpg",
+  advantagesImage: "/images/products/portes-garage/advantages.jpg",
   advantages: [
     "Sécurité renforcée pour votre véhicule et votre maison",
     "Isolation thermique et acoustique pour plus de confort intérieur",
@@ -22,11 +24,42 @@ const product = {
     "Finitions décoratives et couleurs personnalisables",
     "Hublots possibles pour la lumière naturelle",
   ],
+  typesLabel: "Types",
+  personalisationOptions: [
+    { 
+      icon: "materiaux", 
+      label: "Matériaux", 
+      items: [
+        { name: "Aluminium", image: "/images/icons/alu.png" },
+        { name: "Acier", image: "/images/icons/config.png" },
+        { name: "Bois", image: "/images/icons/bois.png" }
+      ] 
+    },
+    { 
+      icon: "configuration", 
+      label: "Configuration", 
+      items: [
+        { name: "Sectionnelle haut", image: "/images/icons/config.png" },
+        { name: "Sectionnelle latérale", image: "/images/icons/config.png" },
+        { name: "Enroulable", image: "/images/icons/config.png" },
+        { name: "Hublots possibles", image: "/images/icons/ronde.png" }
+      ] 
+    },
+    { 
+      icon: "couleurs", 
+      label: "Personnalisation", 
+      items: [
+        { name: "Finitions décoratives", image: "/images/icons/config.png" },
+        { name: "Couleurs personnalisables", image: "/images/icons/couleurs.png" }
+      ] 
+    },
+  ],
   types: [
-    { name: "Sectionnelle haut", description: "S'ouvre verticalement et se loge au plafond. Gain de place optimal devant et dans le garage." },
-    { name: "Sectionnelle latérale", description: "S'ouvre latéralement le long du mur. Idéale quand la hauteur sous plafond est limitée." },
+    { name: "Sectionnelle haut de plafond", description: "S'ouvre verticalement et se loge au plafond. Gain de place optimal devant et dans le garage.", image: "/images/products/portes-garage/sectionnel-haut.jpg" },
+    { name: "Sectionnelle latérale", description: "S'ouvre latéralement le long du mur. Idéale quand la hauteur sous plafond est limitée.", image: "/images/products/portes-garage/sectionnel-lateral.jpg" },
     { name: "Enroulable coffre", description: "S'enroule dans un coffre compact. Solution discrète pour les garages avec peu d'espace." },
   ],
+  didYouKnow: "Une porte de garage sectionnelle bien isolée peut contribuer à réduire les déperditions de chaleur du garage vers la maison, surtout lorsque le garage est attenant et chauffé.\nLa porte sectionnelle haut de plafond ne déborde pas sur l'allée — idéale pour les garages avec peu d'espace devant la maison.",
   faq: [
     { question: "Quelle motorisation choisir ?", answer: "Nous proposons des motorisations électriques silencieuses avec télécommande, compatibles avec la domotique. Le choix dépend de la taille et du poids de la porte." },
     { question: "La porte de garage contribue-t-elle à l'isolation ?", answer: "Oui, nos portes sectionnelles à double paroi offrent une excellente isolation thermique, réduisant les pertes de chaleur du garage vers la maison." },

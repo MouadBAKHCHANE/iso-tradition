@@ -19,7 +19,7 @@ const contactCards = [
     ),
     title: "Visitez-nous",
     value: "Route de Suisse 7A, 1295 Mies",
-    href: "https://www.google.com/maps/place/Iso+Tradition/@46.2967731,6.1638474,17z",
+    href: "https://www.google.com/maps/place/Iso+Tradition/@46.2967731,6.1664223,17z/data=!3m1!4b1!4m6!3m5!1s0x478c67ef5d8d251f:0xce93767682c6cdd6!8m2!3d46.2967731!4d6.1664223!16s%2Fg%2F11wtl85_hk?entry=ttu&g_ep=EgoyMDI2MDMyNC4wIKXMDSoASAFQAw%3D%3D",
     variant: "accent" as const,
   },
   {
@@ -329,7 +329,7 @@ export default function ContactPage() {
                 rel="noopener noreferrer"
                 className="inline-flex items-center gap-2 bg-accent hover:bg-accent-hover text-primary-dark font-bold px-8 py-3.5 rounded-full text-[15px] transition-colors group"
               >
-                Demander une offre gratuite
+                Demander un offre
                 <span className="flex items-center justify-center w-7 h-7 rounded-full bg-primary-dark/15 transition-transform group-hover:translate-x-0.5">
                   <svg className="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
                     <path strokeLinecap="round" strokeLinejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" />

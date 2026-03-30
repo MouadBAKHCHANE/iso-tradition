@@ -13,6 +13,8 @@ const product = {
   materials: ["Aluminium", "Manuel", "Électrique"],
   whyTitle: "Confort, protection solaire et style pour vos terrasses",
   whyText: "Adaptés aux maisons individuelles, les stores bannes permettent de créer des zones ombragées et agréables, tout en ajoutant une touche décorative à votre façade ou votre terrasse.",
+  whyImage: "/images/products/stores-bannes/why.jpg",
+  advantagesImage: "/images/products/stores-bannes/advantages.jpg",
   advantages: [
     "Protection efficace contre le soleil et la chaleur",
     "Style et personnalisation multiples",
@@ -22,11 +24,31 @@ const product = {
     "Augmentation du confort sur terrasse ou balcon",
     "Toiles et couleurs de coffre personnalisables",
   ],
-  types: [
-    { name: "Store coffre intégral", description: "La toile et le mécanisme sont entièrement protégés dans un coffre fermé. Durabilité maximale et esthétique épurée." },
-    { name: "Store semi-coffre", description: "Protection partielle du mécanisme. Bon compromis entre protection et budget." },
-    { name: "Store monobloc", description: "Solution économique sans coffre. Idéale pour les installations sous avancée de toit." },
+  personalisationOptions: [
+    { 
+      icon: "configuration", 
+      label: "Configuration", 
+      items: [
+        { name: "Manuel", image: "/images/icons/config.png" },
+        { name: "Électrique", image: "/images/icons/moteur.png" },
+        { name: "Éclairage intégré", image: "/images/icons/lumiere.png" }
+      ] 
+    },
+    { 
+      icon: "personnalisation", 
+      label: "Personnalisation", 
+      items: [
+        { name: "Toiles", image: "/images/icons/couleurs.png" },
+        { name: "Couleurs coffre", image: "/images/icons/couleurs.png" }
+      ] 
+    },
   ],
+  types: [
+    { name: "Store coffre intégral", description: "La toile et le mécanisme sont entièrement protégés dans un coffre fermé. Durabilité maximale et esthétique épurée.", image: "/images/products/stores-bannes/coffre-integral.jpg" },
+    { name: "Store semi-coffre", description: "Protection partielle du mécanisme. Bon compromis entre protection et budget.", image: "/images/products/stores-bannes/semi-coffre.jpg" },
+    { name: "Store monobloc", description: "Solution économique sans coffre. Idéale pour les installations sous avancée de toit.", image: "/images/products/stores-bannes/monobloc.jpg" },
+  ],
+  didYouKnow: "Un store banne bien positionné peut réduire la température intérieure d'une pièce exposée au soleil de 3 à 8°C, diminuant ainsi le recours à la climatisation.\nLe store coffre intégral protège la toile et le mécanisme lorsqu'il est replié, prolongeant significativement sa durée de vie face aux intempéries.",
   faq: [
     { question: "Quelle largeur maximale pour un store banne ?", answer: "Les stores bannes peuvent atteindre jusqu'à 7 mètres de largeur et 4 mètres d'avancée, selon le modèle et la structure de fixation." },
     { question: "Le store résiste-t-il au vent ?", answer: "Nos stores sont équipés de capteurs vent optionnels qui replient automatiquement le store en cas de rafales. Ils résistent à des vents jusqu'à 38 km/h en position déployée." },
