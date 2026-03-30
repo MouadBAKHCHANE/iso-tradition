@@ -1,5 +1,6 @@
 "use client";
 
+import { useState, FormEvent } from "react";
 import Image from "next/image";
 import Header from "./Header";
 import Footer from "./Footer";
@@ -57,7 +58,46 @@ const services = [
   "Carports & pergolas",
 ];
 
+type FormStatus = "idle" | "sending" | "success" | "error";
+
 export default function ContactPage() {
+  const [status, setStatus] = useState<FormStatus>("idle");
+  const [errorMsg, setErrorMsg] = useState("");
+
+  async function handleSubmit(e: FormEvent<HTMLFormElement>) {
+    e.preventDefault();
+    setStatus("sending");
+    setErrorMsg("");
+
+    const form = e.currentTarget;
+    const data = {
+      name: (form.elements.namedItem("name") as HTMLInputElement).value,
+      email: (form.elements.namedItem("email") as HTMLInputElement).value,
+      phone: (form.elements.namedItem("phone") as HTMLInputElement).value,
+      service: (form.elements.namedItem("service") as HTMLSelectElement).value,
+      location: (form.elements.namedItem("location") as HTMLInputElement).value,
+      date: (form.elements.namedItem("date") as HTMLInputElement).value,
+    };
+
+    try {
+      const res = await fetch("/api/contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(data),
+      });
+      if (res.ok) {
+        setStatus("success");
+        form.reset();
+      } else {
+        const json = await res.json();
+        setErrorMsg(json.error || "Une erreur est survenue.");
+        setStatus("error");
+      }
+    } catch {
+      setErrorMsg("Impossible d'envoyer le message. Vérifiez votre connexion.");
+      setStatus("error");
+    }
+  }
   return (
     <>
       <Header forceVisible />
@@ -144,8 +184,7 @@ export default function ContactPage() {
                   Nous sommes là pour tous vos projets de menuiserie
                 </h2>
                 <form
-                  action="https://form.typeform.com/to/astTYipT"
-                  target="_blank"
+                  onSubmit={handleSubmit}
                   className="space-y-5"
                 >
                   {/* Name */}
@@ -154,6 +193,7 @@ export default function ContactPage() {
                     <input
                       type="text"
                       name="name"
+                      required
                       placeholder="Jean Dupont"
                       className="w-full bg-white rounded-full px-5 py-3 text-sm text-primary placeholder:text-primary/40 border-0 outline-none focus:ring-2 focus:ring-accent/40 transition"
                     />
@@ -165,6 +205,7 @@ export default function ContactPage() {
                     <input
                       type="email"
                       name="email"
+                      required
                       placeholder="exemple@email.com"
                       className="w-full bg-white rounded-full px-5 py-3 text-sm text-primary placeholder:text-primary/40 border-0 outline-none focus:ring-2 focus:ring-accent/40 transition"
                     />
@@ -217,12 +258,25 @@ export default function ContactPage() {
                     </div>
                   </div>
 
+                  {/* Status messages */}
+                  {status === "success" && (
+                    <div className="bg-green-50 border border-green-200 rounded-2xl p-4 text-green-700 text-sm font-medium text-center">
+                      Message envoyé avec succès ! Nous vous recontacterons rapidement.
+                    </div>
+                  )}
+                  {status === "error" && (
+                    <div className="bg-red-50 border border-red-200 rounded-2xl p-4 text-red-600 text-sm font-medium text-center">
+                      {errorMsg}
+                    </div>
+                  )}
+
                   {/* Submit */}
                   <button
                     type="submit"
-                    className="w-full bg-accent hover:bg-accent-hover text-primary-dark font-bold py-3.5 rounded-full text-[15px] transition-colors mt-2"
+                    disabled={status === "sending"}
+                    className="w-full bg-accent hover:bg-accent-hover disabled:opacity-60 disabled:cursor-not-allowed text-primary-dark font-bold py-3.5 rounded-full text-[15px] transition-colors mt-2"
                   >
-                    Envoyer
+                    {status === "sending" ? "Envoi en cours..." : "Envoyer"}
                   </button>
                 </form>
               </div>
