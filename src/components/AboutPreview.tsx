@@ -6,12 +6,12 @@ import BrandIcon from "./BrandIcon";
 
 export default function AboutPreview() {
   return (
-    <section id="apropos" className="py-14 lg:py-20 2xl:py-32 bg-white overflow-hidden relative">
+    <section id="apropos" className="py-14 lg:py-20 2xl:py-24 3xl:py-32 bg-white overflow-hidden relative scroll-mt-24 lg:scroll-mt-32">
       {/* Background brand icon — right side */}
-      <div className="absolute bottom-8 right-4 lg:right-8 xl:right-16 2xl:right-24 pointer-events-none opacity-[0.06]">
-        <BrandIcon className="w-40 lg:w-52 xl:w-64 2xl:w-[500px]" color="#f8ad0c" />
+      <div className="absolute bottom-8 right-4 lg:right-8 xl:right-16 2xl:right-20 3xl:right-24 pointer-events-none opacity-[0.06]">
+        <BrandIcon className="w-40 lg:w-52 xl:w-64 2xl:w-[300px] 3xl:w-[500px]" color="#f8ad0c" />
       </div>
-      <div className="grid lg:grid-cols-2 2xl:grid-cols-2 gap-12 lg:gap-16 2xl:gap-32 items-center relative">
+      <div className="grid lg:grid-cols-2 2xl:grid-cols-2 gap-12 lg:gap-16 2xl:gap-18 3xl:gap-24 items-center relative">
         {/* ===== Left — Image flush to left edge ===== */}
         <FadeIn direction="left" className="relative">
           <div className="relative rounded-r-[20px] overflow-hidden lg:ml-0">
@@ -25,13 +25,13 @@ export default function AboutPreview() {
           </div>
 
             {/* Counter badge — top right, overlapping image */}
-            <div className="absolute -top-2 right-0 lg:right-[15%] 2xl:right-[5%]">
-              <div className="relative bg-white pt-4 pb-5 px-8 2xl:px-14 2xl:pt-8 2xl:pb-10 rounded-b-[20px] 2xl:rounded-b-[40px] shadow-sm">
-                <span className="block text-5xl lg:text-6xl 2xl:text-8xl font-bold leading-none">
+            <div className="absolute -top-2 right-0 lg:right-[15%] 2xl:right-[10%] 3xl:right-[5%]">
+              <div className="relative bg-white pt-4 pb-5 px-8 2xl:px-10 3xl:px-14 2xl:pt-6 3xl:pt-8 2xl:pb-7 3xl:pb-10 rounded-b-[20px] 2xl:rounded-b-[30px] 3xl:rounded-b-[40px] shadow-sm">
+                <span className="block text-5xl lg:text-6xl 2xl:text-7xl 3xl:text-8xl font-bold leading-none">
                   <span className="text-[#f7ad0c]">+</span>
                   <span className="text-primary">35</span>
                 </span>
-                <span className="block text-sm 2xl:text-xl text-primary font-medium mt-1 2xl:mt-3">
+                <span className="block text-sm 2xl:text-base 3xl:text-xl text-primary font-medium mt-1 2xl:mt-2 3xl:mt-3">
                   années d&apos;expérience
                 </span>
               </div>
@@ -51,7 +51,7 @@ export default function AboutPreview() {
                 </div>
               </FadeIn>
               <FadeIn direction="right" delay={0.1}>
-                <h2 className="text-2xl sm:text-3xl lg:text-[32px] xl:text-[44px] 2xl:text-[72px] font-bold text-primary leading-[1.2] mb-3 lg:mb-3 xl:mb-6 2xl:mb-10">
+                <h2 className="text-2xl sm:text-3xl lg:text-[32px] xl:text-[40px] 2xl:text-[48px] 3xl:text-[60px] font-bold text-primary leading-[1.2] mb-3 lg:mb-3 xl:mb-6 2xl:mb-7 3xl:mb-8">
                   L&apos;excellence <span className="text-accent">suisse</span>
                   <br />
                   au service de votre habitat
@@ -59,7 +59,7 @@ export default function AboutPreview() {
               </FadeIn>
 
               <FadeIn direction="right" delay={0.2}>
-                <p className="text-gray-500 leading-[1.6] text-[14px] lg:text-[13px] xl:text-[15px] 2xl:text-[22px] mb-4 lg:mb-3 xl:mb-6 2xl:mb-12 max-w-lg 2xl:max-w-2xl">
+                <p className="text-gray-500 leading-[1.6] text-[14px] lg:text-[13px] xl:text-[15px] 2xl:text-[16px] 3xl:text-[18px] mb-4 lg:mb-3 xl:mb-6 2xl:mb-8 3xl:mb-10 max-w-lg 2xl:max-w-lg 3xl:max-w-xl">
                   Basés à Mies, Route de Suisse 7A, nous intervenons dans toute la
                   Suisse romande avec une équipe de professionnels certifiés.
                   Notre mission : allier tradition artisanale et technologies
@@ -70,11 +70,11 @@ export default function AboutPreview() {
               <FadeIn direction="right" delay={0.3}>
                 <a
                   href="/qui-sommes-nous"
-                  className="inline-flex items-center gap-3 bg-accent hover:bg-accent-hover text-primary-dark font-semibold px-5 lg:px-5 xl:px-6 2xl:px-12 py-2.5 lg:py-2 xl:py-3 2xl:py-5 rounded-full transition-colors text-[13px] lg:text-[13px] xl:text-[15px] 2xl:text-2xl group"
+                  className="inline-flex items-center gap-3 bg-accent hover:bg-accent-hover text-primary-dark font-semibold px-5 lg:px-5 xl:px-6 2xl:px-8 3xl:px-12 py-2.5 lg:py-2 xl:py-3 2xl:py-4 3xl:py-5 rounded-full transition-colors text-[13px] lg:text-[13px] xl:text-[15px] 2xl:text-lg 3xl:text-2xl group"
                 >
                   En savoir plus
                   <svg
-                    className="w-4 h-4 2xl:w-6 2xl:h-6 transition-transform group-hover:translate-x-1"
+                    className="w-4 h-4 2xl:w-5 2xl:h-5 3xl:w-6 3xl:h-6 transition-transform group-hover:translate-x-1"
                     fill="none"
                     viewBox="0 0 24 24"
                     stroke="currentColor"
@@ -124,14 +124,14 @@ export default function AboutPreview() {
 
                   {/* Rating */}
                   <div>
-                    <span className="block text-[15px] 2xl:text-2xl font-semibold text-primary">
+                    <span className="block text-[15px] 2xl:text-lg 3xl:text-2xl font-semibold text-primary">
                       4.9/5 avis clients
                     </span>
-                    <div className="flex gap-0.5 mt-1 2xl:mt-3">
+                    <div className="flex gap-0.5 mt-1 2xl:mt-2 3xl:mt-3">
                       {[1, 2, 3, 4].map((star) => (
                         <svg
                           key={star}
-                          className="w-5 h-5 2xl:w-8 2xl:h-8 text-accent"
+                          className="w-5 h-5 2xl:w-6 2xl:h-6 3xl:w-8 3xl:h-8 text-accent"
                           fill="currentColor"
                           viewBox="0 0 20 20"
                         >
@@ -139,7 +139,7 @@ export default function AboutPreview() {
                         </svg>
                       ))}
                       <svg
-                        className="w-5 h-5 2xl:w-8 2xl:h-8 text-accent/30"
+                        className="w-5 h-5 2xl:w-6 2xl:h-6 3xl:w-8 3xl:h-8 text-accent/30"
                         fill="currentColor"
                         viewBox="0 0 20 20"
                       >
@@ -151,7 +151,7 @@ export default function AboutPreview() {
               </FadeIn>
 
               <FadeIn direction="up" delay={0.5}>
-                <p className="text-gray-500 leading-[1.6] text-[14px] lg:text-[13px] xl:text-[15px] 2xl:text-[22px] max-w-lg 2xl:max-w-2xl">
+                <p className="text-gray-500 leading-[1.6] text-[14px] lg:text-[13px] xl:text-[15px] 2xl:text-[16px] 3xl:text-[18px] max-w-lg 2xl:max-w-lg 3xl:max-w-xl">
                   Nous offrons des solutions fiables, adossées à des décennies
                   de savoir-faire, garantissant des résultats de qualité
                   supérieure pour chaque projet.

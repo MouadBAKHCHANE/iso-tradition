@@ -23,4 +23,6 @@ html {
   --font-sans: "Bai Jamjuree", sans-serif;
   --font-secondary: var(--font-outfit), "Outfit", sans-serif;
   --font-baseline: "Bai Jamjuree", sans-serif;
+
+  --breakpoint-3xl: 137.5rem;
 }
