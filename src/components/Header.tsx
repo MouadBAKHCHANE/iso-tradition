@@ -49,7 +49,7 @@ export default function Header({ forceVisible = false }: { forceVisible?: boolea
         <nav className="mx-auto max-w-[1540px] bg-white shadow-lg shadow-black/5 rounded-[20px] px-6 lg:px-12 flex items-center justify-between h-16 lg:h-[68px] relative">
           <Link href="/" className="relative shrink-0">
             <Image
-              src="/images/logo-couleur.png"
+              src="/images/logo-couleur.webp"
               alt="ISO Tradition"
               width={160}
               height={50}

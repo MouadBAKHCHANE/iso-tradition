@@ -11,42 +11,42 @@ const solutions = [
   {
     title: "Fenêtres",
     slug: "/nos-solutions/fenetres",
-    image: "/images/sol-fenetres.jpg",
+    image: "/images/sol-fenetres.webp",
   },
   {
     title: "Baies coulissantes",
     slug: "/nos-solutions/baies-coulissantes",
-    image: "/images/sol-baies.jpg",
+    image: "/images/sol-baies.webp",
   },
   {
     title: "Portes d'entrée",
     slug: "/nos-solutions/portes-entree",
-    image: "/images/sol-portes.jpg",
+    image: "/images/sol-portes.webp",
   },
   {
     title: "Volets",
     slug: "/nos-solutions/volets",
-    image: "/images/sol-volets.jpg",
+    image: "/images/sol-volets.webp",
   },
   {
     title: "Portes de garage",
     slug: "/nos-solutions/portes-garage",
-    image: "/images/sol-garage.jpg",
+    image: "/images/sol-garage.webp",
   },
   {
     title: "Stores bannes",
     slug: "/nos-solutions/stores-bannes",
-    image: "/images/sol-stores.jpg",
+    image: "/images/sol-stores.webp",
   },
   {
     title: "Films solaires",
     slug: "/nos-solutions/films-solaires",
-    image: "/images/sol-film.png",
+    image: "/images/sol-film.webp",
   },
   {
     title: "Carports & Pergolas",
     slug: "/nos-solutions/carports-pergolas",
-    image: "/images/sol-carport.jpg",
+    image: "/images/sol-carport.webp",
   },
 ];
 

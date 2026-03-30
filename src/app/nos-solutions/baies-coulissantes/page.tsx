@@ -8,13 +8,13 @@ export const metadata: Metadata = {
 
 const product = {
   name: "Baies coulissantes",
-  heroImage: "/images/sol-baies.jpg",
+  heroImage: "/images/sol-baies.webp",
   intro: "Des baies vitrées généreuses apportent une luminosité exceptionnelle et créent une atmosphère de confort et de bien-être. Elles offrent une connexion unique avec l'extérieur.",
   materials: ["PVC", "Aluminium", "Double vitrage", "Triple vitrage"],
   whyTitle: "Des pièces lumineuses pour un cadre de vie unique",
   whyText: "Les différentes configurations possibles mettent en valeur une architecture contemporaine et élégante. Les baies coulissantes transforment votre espace de vie en ouvrant votre intérieur sur l'extérieur.",
-  whyImage: "/images/products/baies-coulissantes/why.jpg",
-  advantagesImage: "/images/products/baies-coulissantes/advantages.jpg",
+  whyImage: "/images/products/baies-coulissantes/why.webp",
+  advantagesImage: "/images/products/baies-coulissantes/advantages.webp",
   advantages: [
     "Apport maximal de lumière naturelle, même en hiver",
     "Vue dégagée et effet panoramique grâce aux grandes surfaces vitrées",
@@ -30,14 +30,14 @@ const product = {
       icon: "couleurs", 
       label: "Couleurs", 
       items: [
-        { name: "Couleurs personnalisables", image: "/images/icons/couleurs.png" }
+        { name: "Couleurs personnalisables", image: "/images/icons/couleurs.webp" }
       ] 
     },
   ],
   types: [
-    { name: "Coulissant classique", description: "Solution éprouvée pour les grandes ouvertures. Fonctionnement fluide et entretien minimal.", image: "/images/products/baies-coulissantes/classique.jpg" },
-    { name: "Coulissant à levage", description: "Pour les très grandes dimensions. Mécanisme de levage pour une ouverture sans effort.", image: "/images/products/baies-coulissantes/levage.jpg" },
-    { name: "Coulissant d'angle", description: "Ouverture d'angle pour une transparence totale. Effet architectural saisissant.", image: "/images/products/baies-coulissantes/angle.jpg" },
+    { name: "Coulissant classique", description: "Solution éprouvée pour les grandes ouvertures. Fonctionnement fluide et entretien minimal.", image: "/images/products/baies-coulissantes/classique.webp" },
+    { name: "Coulissant à levage", description: "Pour les très grandes dimensions. Mécanisme de levage pour une ouverture sans effort.", image: "/images/products/baies-coulissantes/levage.webp" },
+    { name: "Coulissant d'angle", description: "Ouverture d'angle pour une transparence totale. Effet architectural saisissant.", image: "/images/products/baies-coulissantes/angle.webp" },
   ],
   didYouKnow: "Une baie coulissante à levage peut atteindre plusieurs mètres de largeur tout en restant légère à manœuvrer grâce à son mécanisme de levage intégré.\nLe coulissant d'angle permet de supprimer le poteau de coin, créant une ouverture à 90° pour une transparence totale — un effet architectural rare et spectaculaire.",
   faq: [

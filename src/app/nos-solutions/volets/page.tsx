@@ -8,13 +8,13 @@ export const metadata: Metadata = {
 
 const product = {
   name: "Volets roulants & battants",
-  heroImage: "/images/sol-volets.jpg",
+  heroImage: "/images/sol-volets.webp",
   intro: "Les volets jouent un rôle essentiel dans le confort de l'habitat. Ils améliorent l'isolation thermique, renforcent la sécurité, protègent de la lumière et participent à la gestion de la chaleur été comme hiver.",
   materials: ["PVC", "Aluminium", "Bois", "Électrique", "Solaire", "Manuel"],
   whyTitle: "Pourquoi installer des volets ?",
   whyText: "En Suisse, où les écarts de température sont marqués selon les saisons, les volets constituent une solution efficace pour réduire les pertes de chaleur en hiver et limiter la surchauffe estivale.",
-  whyImage: "/images/products/volets/why.jpg",
-  advantagesImage: "/images/products/volets/advantages.jpg",
+  whyImage: "/images/products/volets/why.webp",
+  advantagesImage: "/images/products/volets/advantages.webp",
   advantages: [
     "Amélioration du confort thermique toute l'année",
     "Réduction des déperditions énergétiques",
@@ -32,34 +32,34 @@ const product = {
       icon: "materiaux", 
       label: "Matériaux", 
       items: [
-        { name: "PVC", image: "/images/icons/pvc.png" },
-        { name: "Aluminium", image: "/images/icons/alu.png" },
-        { name: "Bois", image: "/images/icons/bois.png" }
+        { name: "PVC", image: "/images/icons/pvc.webp" },
+        { name: "Aluminium", image: "/images/icons/alu.webp" },
+        { name: "Bois", image: "/images/icons/bois.webp" }
       ] 
     },
     {
       icon: "couleurs",
       label: "Couleurs",
       items: [
-        { name: "Personnalisables", image: "/images/icons/couleurs.png" }
+        { name: "Personnalisables", image: "/images/icons/couleurs.webp" }
       ]
     },
     {
       icon: "configuration",
       label: "Configuration",
       items: [
-        { name: "Électrique", image: "/images/icons/moteur.png" },
-        { name: "Solaire", image: "/images/icons/solaire.png" },
-        { name: "Manuel", image: "/images/icons/manuel.png" },
-        { name: "Brise solaire orientable", image: "/images/icons/bso.png" }
+        { name: "Électrique", image: "/images/icons/moteur.webp" },
+        { name: "Solaire", image: "/images/icons/solaire.webp" },
+        { name: "Manuel", image: "/images/icons/manuel.webp" },
+        { name: "Brise solaire orientable", image: "/images/icons/bso.webp" }
       ]
     },
   ],
   types: [
-    { name: "Volets roulants", description: "Motorisés (électrique ou solaire) ou manuels. Gain de place maximal, occultation totale, isolation thermique renforcée. Brise solaire orientable disponible.", image: "/images/products/volets/roulants.jpg" },
-    { name: "Volets battants aluminium", description: "Légèreté et robustesse. Design épuré qui s'intègre parfaitement aux façades modernes et contemporaines.", image: "/images/products/volets/battants-alu.jpg" },
-    { name: "Volets à persiennes", description: "Lames orientables pour un contrôle précis de la lumière et de la ventilation, tout en préservant l'intimité.", image: "/images/products/volets/battants-persiennes.jpg" },
-    { name: "Volets battants classiques", description: "Style traditionnel intemporel. Idéaux pour les rénovations et les maisons à l'architecture classique.", image: "/images/products/volets/battants-classique.jpg" },
+    { name: "Volets roulants", description: "Motorisés (électrique ou solaire) ou manuels. Gain de place maximal, occultation totale, isolation thermique renforcée. Brise solaire orientable disponible.", image: "/images/products/volets/roulants.webp" },
+    { name: "Volets battants aluminium", description: "Légèreté et robustesse. Design épuré qui s'intègre parfaitement aux façades modernes et contemporaines.", image: "/images/products/volets/battants-alu.webp" },
+    { name: "Volets à persiennes", description: "Lames orientables pour un contrôle précis de la lumière et de la ventilation, tout en préservant l'intimité.", image: "/images/products/volets/battants-persiennes.webp" },
+    { name: "Volets battants classiques", description: "Style traditionnel intemporel. Idéaux pour les rénovations et les maisons à l'architecture classique.", image: "/images/products/volets/battants-classique.webp" },
   ],
   didYouKnow: "Les volets roulants peuvent réduire les déperditions thermiques par les fenêtres de 20 à 30% en hiver, en créant une lame d'air isolante entre le vitrage et le volet fermé.\nLa motorisation solaire fonctionne même par temps couvert grâce à des batteries de stockage intégrées — aucun câblage électrique n'est nécessaire.",
   faq: [

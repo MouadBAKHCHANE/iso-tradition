@@ -16,7 +16,7 @@ export default function AboutPreview() {
         <FadeIn direction="left" className="relative">
           <div className="relative rounded-r-[20px] overflow-hidden lg:ml-0">
             <Image
-              src="/images/about-lake.jpg"
+              src="/images/about-lake.webp"
               alt="Vue panoramique sur un lac depuis l'intérieur d'une villa"
               width={900}
               height={700}

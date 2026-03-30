@@ -8,13 +8,13 @@ export const metadata: Metadata = {
 
 const product = {
   name: "Carports & Pergolas",
-  heroImage: "/images/sol-carport.jpg",
+  heroImage: "/images/sol-carport.webp",
   intro: "Le carport protège votre véhicule avec une architecture ouverte et moderne. La pergola crée un véritable espace de vie extérieur, utilisable une grande partie de l'année. Deux solutions complémentaires pour valoriser votre habitat.",
   materials: ["Aluminium", "Bois", "Adossé", "Autoportant"],
   whyTitle: "Protection, design et praticité pour votre extérieur",
   whyText: "Carports et pergolas s'intègrent harmonieusement à l'architecture de la maison et valorisent durablement votre habitat. Grâce à leurs différentes options, ils s'adaptent à tous les styles.",
-  whyImage: "/images/products/carports-pergolas/why.jpg",
-  advantagesImage: "/images/products/carports-pergolas/advantages.jpg",
+  whyImage: "/images/products/carports-pergolas/why.webp",
+  advantagesImage: "/images/products/carports-pergolas/advantages.webp",
   advantages: [
     "Protection contre la pluie, la neige, le soleil et le gel",
     "Structure ouverte qui évite l'humidité et la condensation (carport)",
@@ -32,40 +32,40 @@ const product = {
       icon: "materiaux", 
       label: "Matériaux", 
       items: [
-        { name: "Aluminium", image: "/images/icons/alu.png" },
-        { name: "Bois", image: "/images/icons/bois.png" }
+        { name: "Aluminium", image: "/images/icons/alu.webp" },
+        { name: "Bois", image: "/images/icons/bois.webp" }
       ] 
     },
     { 
       icon: "configuration", 
       label: "Configuration", 
       items: [
-        { name: "Adossé", image: "/images/icons/adosse.png" },
-        { name: "Autoportant", image: "/images/icons/autoportant.png" },
-        { name: "Toiture tendue", image: "/images/icons/toiture-tendue.png" },
-        { name: "Toiture fixe", image: "/images/icons/toiture-fixe.png" },
-        { name: "Toiture pleine", image: "/images/icons/toiture-pleine.png" },
-        { name: "Toiture translucide", image: "/images/icons/toiture-translucide.png" },
-        { name: "Toiture orientable", image: "/images/icons/toiture-orientable.png" }
+        { name: "Adossé", image: "/images/icons/adosse.webp" },
+        { name: "Autoportant", image: "/images/icons/autoportant.webp" },
+        { name: "Toiture tendue", image: "/images/icons/toiture-tendue.webp" },
+        { name: "Toiture fixe", image: "/images/icons/toiture-fixe.webp" },
+        { name: "Toiture pleine", image: "/images/icons/toiture-pleine.webp" },
+        { name: "Toiture translucide", image: "/images/icons/toiture-translucide.webp" },
+        { name: "Toiture orientable", image: "/images/icons/toiture-orientable.webp" }
       ] 
     },
     { 
       icon: "personnalisation", 
       label: "Personnalisation", 
       items: [
-        { name: "Éclairage intégré", image: "/images/icons/lumiere.png" },
-        { name: "Chauffage", image: "/images/icons/chauffage.png" },
-        { name: "Couleurs", image: "/images/icons/couleurs.png" },
-        { name: "Domotique", image: "/images/icons/moteur.png" },
-        { name: "Fermetures latérales", image: "/images/icons/vitrage.png" }
+        { name: "Éclairage intégré", image: "/images/icons/lumiere.webp" },
+        { name: "Chauffage", image: "/images/icons/chauffage.webp" },
+        { name: "Couleurs", image: "/images/icons/couleurs.webp" },
+        { name: "Domotique", image: "/images/icons/moteur.webp" },
+        { name: "Fermetures latérales", image: "/images/icons/vitrage.webp" }
       ] 
     },
   ],
   types: [
-    { name: "Carport adossé", description: "Fixé contre la façade de la maison. Solution compacte et élégante qui s'intègre naturellement à l'architecture existante.", image: "/images/products/carports-pergolas/carport-adosse.jpg" },
-    { name: "Carport autoportant", description: "Structure indépendante pouvant être placée librement. Plus de flexibilité dans l'implantation.", image: "/images/products/carports-pergolas/carport-autoportant.jpg" },
-    { name: "Pergola adossée", description: "Extension naturelle de votre terrasse. Toiture à lames orientables, fixe ou tendue selon vos besoins.", image: "/images/products/carports-pergolas/pergola-adossee.jpg" },
-    { name: "Pergola autoportante", description: "Espace indépendant au jardin. Idéale pour créer un salon d'été ou un coin détente éloigné de la maison.", image: "/images/products/carports-pergolas/pergola-autoportante.jpg" },
+    { name: "Carport adossé", description: "Fixé contre la façade de la maison. Solution compacte et élégante qui s'intègre naturellement à l'architecture existante.", image: "/images/products/carports-pergolas/carport-adosse.webp" },
+    { name: "Carport autoportant", description: "Structure indépendante pouvant être placée librement. Plus de flexibilité dans l'implantation.", image: "/images/products/carports-pergolas/carport-autoportant.webp" },
+    { name: "Pergola adossée", description: "Extension naturelle de votre terrasse. Toiture à lames orientables, fixe ou tendue selon vos besoins.", image: "/images/products/carports-pergolas/pergola-adossee.webp" },
+    { name: "Pergola autoportante", description: "Espace indépendant au jardin. Idéale pour créer un salon d'été ou un coin détente éloigné de la maison.", image: "/images/products/carports-pergolas/pergola-autoportante.webp" },
   ],
   didYouKnow: "Un carport protège aussi efficacement contre la grêle qu'un garage fermé, tout en évitant la condensation et l'humidité grâce à sa structure ouverte — un avantage souvent méconnu.\nUne pergola bioclimatique à lames orientables peut être utilisée 9 à 10 mois par an en Suisse romande, en régulant naturellement la lumière, l'ombre et la ventilation.",
   faq: [

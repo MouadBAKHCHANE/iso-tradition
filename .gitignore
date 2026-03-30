@@ -19,9 +19,17 @@ ISO TRADITION/
 .DS_Store
 Thumbs.db
 
+# Python
+__pycache__/
+*.py
+
 # Env
 .env
 .env.local
 .env.production.local
+
+# Temp
+tmp_*
+screenshot-*
 
 .vercel

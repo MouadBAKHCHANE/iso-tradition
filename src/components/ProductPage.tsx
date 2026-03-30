@@ -46,6 +46,15 @@ interface ProductData {
 function PersonalisationIcon({ type }: { type: string }) {
   const cls = "w-5 h-5 text-accent";
   const icons: Record<string, React.ReactNode> = {
+    // Other icons...
+    variantes: <img src="/images/icons/variantes.webp" alt="Variantes" className="w-5 h-5 object-contain" />,
+    applications: <img src="/images/icons/applications.webp" alt="Applications" className="w-5 h-5 object-contain" />,
+  };
+  
+  if (type === "variantes") return icons.variantes;
+  if (type === "applications") return icons.applications;
+
+  const defaultIcons: Record<string, React.ReactNode> = {
     formes: (
       <svg className={cls} fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.8}>
         <rect x="3" y="3" width="7" height="7" rx="1" /><circle cx="17.5" cy="6.5" r="3.5" /><path strokeLinecap="round" strokeLinejoin="round" d="M3 21l4.5-7.5L12 18l3-4.5 4.5 7.5H3z" />
@@ -76,23 +85,13 @@ function PersonalisationIcon({ type }: { type: string }) {
         <path strokeLinecap="round" strokeLinejoin="round" d="M3.75 3.75v4.5m0-4.5h4.5m-4.5 0L9 9M3.75 20.25v-4.5m0 4.5h4.5m-4.5 0L9 15M20.25 3.75h-4.5m4.5 0v4.5m0-4.5L15 9m5.25 11.25h-4.5m4.5 0v-4.5m0 4.5L15 15" />
       </svg>
     ),
-    variantes: (
-      <svg className={cls} fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.8}>
-        <path strokeLinecap="round" strokeLinejoin="round" d="M6.429 9.75L2.25 12l4.179 2.25m0-4.5l5.571 3 5.571-3m-11.142 0L2.25 7.5 12 2.25l9.75 5.25-4.179 2.25m0 0L21.75 12l-4.179 2.25m0 0l4.179 2.25L12 21.75 2.25 16.5l4.179-2.25m11.142 0l-5.571 3-5.571-3" />
-      </svg>
-    ),
-    applications: (
-      <svg className={cls} fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.8}>
-        <path strokeLinecap="round" strokeLinejoin="round" d="M2.25 21h19.5m-18-18v18m10.5-18v18m6-13.5V21M6.75 6.75h.75m-.75 3h.75m-.75 3h.75m3-6h.75m-.75 3h.75m-.75 3h.75M6.75 21v-3.375c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125V21M3 3h12m-.75 4.5H21m-3.75 3.75h.008v.008h-.008v-.008zm0 3h.008v.008h-.008v-.008zm0 3h.008v.008h-.008v-.008z" />
-      </svg>
-    ),
     personnalisation: (
       <svg className={cls} fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.8}>
         <path strokeLinecap="round" strokeLinejoin="round" d="M9.813 15.904L9 18.75l-.813-2.846a4.5 4.5 0 00-3.09-3.09L2.25 12l2.846-.813a4.5 4.5 0 003.09-3.09L9 5.25l.813 2.846a4.5 4.5 0 003.09 3.09L15.75 12l-2.846.813a4.5 4.5 0 00-3.09 3.09z" />
       </svg>
     ),
   };
-  return <>{icons[type] ?? icons.configuration}</>;
+  return <>{defaultIcons[type] ?? defaultIcons.configuration}</>;
 }
 
 export default function ProductPage({ product }: { product: ProductData }) {

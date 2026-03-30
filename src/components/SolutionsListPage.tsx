@@ -12,14 +12,14 @@ import { motion } from "framer-motion";
 const ease = [0.25, 0.1, 0.25, 1] as const;
 
 const solutions = [
-  { name: "Fenêtres", slug: "/nos-solutions/fenetres", image: "/images/sol-fenetres.jpg", tags: ["PVC", "Bois", "Aluminium"] },
-  { name: "Baies coulissantes", slug: "/nos-solutions/baies-coulissantes", image: "/images/sol-baies.jpg", tags: ["PVC", "Aluminium"] },
-  { name: "Portes d'entrée", slug: "/nos-solutions/portes-entree", image: "/images/sol-portes.jpg", tags: ["PVC", "Bois", "Aluminium"] },
-  { name: "Volets", slug: "/nos-solutions/volets", image: "/images/sol-volets.jpg", tags: ["PVC", "Aluminium", "Bois"] },
-  { name: "Portes de garage", slug: "/nos-solutions/portes-garage", image: "/images/sol-garage.jpg", tags: ["Aluminium", "Acier"] },
-  { name: "Stores bannes", slug: "/nos-solutions/stores-bannes", image: "/images/sol-stores.jpg", tags: ["Aluminium"] },
-  { name: "Films solaires", slug: "/nos-solutions/films-solaires", image: "/images/sol-film.png", tags: ["Anti-UV", "Anti-chaleur"] },
-  { name: "Carports & Pergolas", slug: "/nos-solutions/carports-pergolas", image: "/images/sol-carport.jpg", tags: ["Aluminium", "Bois"] },
+  { name: "Fenêtres", slug: "/nos-solutions/fenetres", image: "/images/sol-fenetres.webp", tags: ["PVC", "Bois", "Aluminium"] },
+  { name: "Baies coulissantes", slug: "/nos-solutions/baies-coulissantes", image: "/images/sol-baies.webp", tags: ["PVC", "Aluminium"] },
+  { name: "Portes d'entrée", slug: "/nos-solutions/portes-entree", image: "/images/sol-portes.webp", tags: ["PVC", "Bois", "Aluminium"] },
+  { name: "Volets", slug: "/nos-solutions/volets", image: "/images/sol-volets.webp", tags: ["PVC", "Aluminium", "Bois"] },
+  { name: "Portes de garage", slug: "/nos-solutions/portes-garage", image: "/images/sol-garage.webp", tags: ["Aluminium", "Acier"] },
+  { name: "Stores bannes", slug: "/nos-solutions/stores-bannes", image: "/images/sol-stores.webp", tags: ["Aluminium"] },
+  { name: "Films solaires", slug: "/nos-solutions/films-solaires", image: "/images/sol-film.webp", tags: ["Anti-UV", "Anti-chaleur"] },
+  { name: "Carports & Pergolas", slug: "/nos-solutions/carports-pergolas", image: "/images/sol-carport.webp", tags: ["Aluminium", "Bois"] },
 ];
 
 const materials = ["Tous", "PVC", "Bois", "Aluminium", "Acier", "Anti-UV"];
@@ -139,37 +139,37 @@ export default function SolutionsListPage() {
                 titleLine1: "Confort",
                 titleLine2: "de vie optimal",
                 items: ["une température intérieure plus stable", "un confort optimal été comme hiver", "une meilleure luminosité"],
-                image: "/images/icons/confort.png"
+                image: "/images/icons/confort.webp"
               },
               {
                 titleLine1: "Réduction",
                 titleLine2: "des factures",
                 items: ["limite les déperditions de chaleur", "réduit les besoins en chauffage", "conserve l'énergie produite"],
-                image: "/images/icons/reductions.png"
+                image: "/images/icons/reductions.webp"
               },
               {
                 titleLine1: "Impact",
                 titleLine2: "écologique",
                 items: ["réduction des émissions de CO₂", "utilisation responsable des ressources", "démarche durable d'avenir"],
-                image: "/images/icons/impact.png"
+                image: "/images/icons/impact.webp"
               },
               {
                 titleLine1: "Isolation",
                 titleLine2: "acoustique",
                 items: ["circulation routière", "voisinage", "environnement urbain ou périurbain"],
-                image: "/images/icons/isolation.png"
+                image: "/images/icons/isolation.webp"
               },
               {
                 titleLine1: "Sécurité",
                 titleLine2: "renforcée",
                 items: ["ferrures renforcées", "vitrages de sécurité", "systèmes de fermeture multipoints"],
-                image: "/images/icons/securite.png"
+                image: "/images/icons/securite.webp"
               },
               {
                 titleLine1: "Plus-value",
                 titleLine2: "du bien",
                 items: ["étiquette verte", "matériaux robustes et durables", "finitions personnalisables et élégantes"],
-                image: "/images/icons/plusvalue.png"
+                image: "/images/icons/plusvalue.webp"
               },
             ].map((card, i) => (
               <motion.div
@@ -253,7 +253,7 @@ export default function SolutionsListPage() {
                   </p>
                 </div>
                 <div className="relative w-full lg:w-1/3 h-48 lg:h-auto flex-shrink-0">
-                  <Image src="/images/programme-batiments.png" alt="Le Programme Bâtiments" fill className="object-contain object-center scale-150" />
+                  <Image src="/images/programme-batiments.webp" alt="Le Programme Bâtiments" fill className="object-contain object-center scale-150" />
                 </div>
               </div>
             </FadeIn>
@@ -283,7 +283,7 @@ export default function SolutionsListPage() {
                   </div>
                 </div>
                 <div className="relative w-full lg:w-1/2 h-56 lg:h-auto flex-shrink-0">
-                  <Image src="/images/scandinavian-window.jpg" alt="Wooden Window" fill className="object-cover object-center" />
+                  <Image src="/images/scandinavian-window.webp" alt="Wooden Window" fill className="object-cover object-center" />
                 </div>
               </div>
             </FadeIn>

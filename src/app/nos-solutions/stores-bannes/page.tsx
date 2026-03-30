@@ -8,13 +8,13 @@ export const metadata: Metadata = {
 
 const product = {
   name: "Stores bannes",
-  heroImage: "/images/sol-stores.jpg",
+  heroImage: "/images/sol-stores.webp",
   intro: "Les stores bannes sont la solution idéale pour profiter pleinement de vos espaces extérieurs, en toute saison. Ils protègent du soleil, des UV et de la chaleur, tout en offrant une esthétique moderne.",
   materials: ["Aluminium", "Manuel", "Électrique"],
   whyTitle: "Confort, protection solaire et style pour vos terrasses",
   whyText: "Adaptés aux maisons individuelles, les stores bannes permettent de créer des zones ombragées et agréables, tout en ajoutant une touche décorative à votre façade ou votre terrasse.",
-  whyImage: "/images/products/stores-bannes/why.jpg",
-  advantagesImage: "/images/products/stores-bannes/advantages.jpg",
+  whyImage: "/images/products/stores-bannes/why.webp",
+  advantagesImage: "/images/products/stores-bannes/advantages.webp",
   advantages: [
     "Protection efficace contre le soleil et la chaleur",
     "Style et personnalisation multiples",
@@ -29,24 +29,24 @@ const product = {
       icon: "configuration", 
       label: "Configuration", 
       items: [
-        { name: "Manuel", image: "/images/icons/manuel.png" },
-        { name: "Électrique", image: "/images/icons/moteur.png" },
-        { name: "Éclairage intégré", image: "/images/icons/lumiere.png" }
+        { name: "Manuel", image: "/images/icons/manuel.webp" },
+        { name: "Électrique", image: "/images/icons/moteur.webp" },
+        { name: "Éclairage intégré", image: "/images/icons/lumiere.webp" }
       ] 
     },
     { 
       icon: "personnalisation", 
       label: "Personnalisation", 
       items: [
-        { name: "Toiles", image: "/images/icons/couleurs.png" },
-        { name: "Couleurs coffre", image: "/images/icons/couleurs.png" }
+        { name: "Toiles", image: "/images/icons/couleurs.webp" },
+        { name: "Couleurs coffre", image: "/images/icons/couleurs.webp" }
       ] 
     },
   ],
   types: [
-    { name: "Store coffre intégral", description: "La toile et le mécanisme sont entièrement protégés dans un coffre fermé. Durabilité maximale et esthétique épurée.", image: "/images/products/stores-bannes/coffre-integral.jpg" },
-    { name: "Store semi-coffre", description: "Protection partielle du mécanisme. Bon compromis entre protection et budget.", image: "/images/products/stores-bannes/semi-coffre.jpg" },
-    { name: "Store monobloc", description: "Solution économique sans coffre. Idéale pour les installations sous avancée de toit.", image: "/images/products/stores-bannes/monobloc.jpg" },
+    { name: "Store coffre intégral", description: "La toile et le mécanisme sont entièrement protégés dans un coffre fermé. Durabilité maximale et esthétique épurée.", image: "/images/products/stores-bannes/coffre-integral.webp" },
+    { name: "Store semi-coffre", description: "Protection partielle du mécanisme. Bon compromis entre protection et budget.", image: "/images/products/stores-bannes/semi-coffre.webp" },
+    { name: "Store monobloc", description: "Solution économique sans coffre. Idéale pour les installations sous avancée de toit.", image: "/images/products/stores-bannes/monobloc.webp" },
   ],
   didYouKnow: "Un store banne bien positionné peut réduire la température intérieure d'une pièce exposée au soleil de 3 à 8°C, diminuant ainsi le recours à la climatisation.\nLe store coffre intégral protège la toile et le mécanisme lorsqu'il est replié, prolongeant significativement sa durée de vie face aux intempéries.",
   faq: [

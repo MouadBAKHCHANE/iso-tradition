@@ -89,7 +89,7 @@ export default function Strengths() {
           <CardWrap i={1} className="md:row-span-2 h-full min-h-[200px]">
             <div className="relative rounded-[20px] overflow-hidden h-full">
               <Image
-                src="/images/strength-3.jpg"
+                src="/images/strength-3.webp"
                 alt="Pergola moderne"
                 fill
                 className="object-cover"
@@ -115,7 +115,7 @@ export default function Strengths() {
           <CardWrap i={3} className="h-full">
             <div className="relative rounded-[20px] overflow-hidden h-full min-h-[200px]">
               <Image
-                src="/images/strength-living.jpg"
+                src="/images/strength-living.webp"
                 alt="Salon avec baies vitrées"
                 fill
                 className="object-cover"
@@ -141,7 +141,7 @@ export default function Strengths() {
           <CardWrap i={5} className="md:col-span-2 h-full min-h-[200px]">
             <div className="relative rounded-[20px] overflow-hidden h-full">
               <Image
-                src="/images/strength-worker.jpg"
+                src="/images/strength-worker.webp"
                 alt="Technicien professionnel en intervention"
                 fill
                 className="object-cover"

@@ -43,7 +43,7 @@ export default function Hero() {
           className="absolute inset-0"
         >
           <Image
-            src="/images/hero-terrace.jpg"
+            src="/images/hero-terrace.webp"
             alt="Terrasse moderne avec baies vitrées et vue jardin"
             fill
             className="object-cover scale-x-100"
@@ -61,7 +61,7 @@ export default function Hero() {
             {/* Logo — left, with top padding */}
             <Link href="/" className="relative shrink-0 pt-6">
               <Image
-                src="/images/logo-blanc.png"
+                src="/images/logo-blanc.webp"
                 alt="ISO Tradition"
                 width={300}
                 height={90}

@@ -6,19 +6,19 @@ import { FadeIn } from "./Motion";
 
 const posts = [
   {
-    image: "/images/blog-1.jpg",
+    image: "/images/blog-1.webp",
     tag: "Conseils",
     title: "Comment choisir les bonnes fenêtres pour votre habitat",
     date: "15 mars 2025",
   },
   {
-    image: "/images/blog-2.jpg",
+    image: "/images/blog-2.webp",
     tag: "Économies",
     title: "Réduire sa facture énergétique grâce à l'isolation des fenêtres",
     date: "28 février 2025",
   },
   {
-    image: "/images/blog-3.jpg",
+    image: "/images/blog-3.webp",
     tag: "Tendances",
     title: "Les tendances 2025 en menuiserie et design intérieur",
     date: "10 février 2025",

@@ -8,13 +8,13 @@ export const metadata: Metadata = {
 
 const product = {
   name: "Fenêtres & portes-fenêtres",
-  heroImage: "/images/sol-fenetres.jpg",
+  heroImage: "/images/sol-fenetres.webp",
   intro: "Le remplacement de vos fenêtres représente de nombreux atouts. Il empêche les courants d'air, fait baisser la facture de chauffage et améliore la qualité de l'habitat.",
   materials: ["PVC", "Bois", "Aluminium", "Bois-Aluminium", "Double vitrage", "Triple vitrage"],
   whyTitle: "Pourquoi remplacer vos fenêtres ?",
   whyText: "Des fenêtres performantes sont essentielles pour le confort thermique, l'isolation acoustique et la sécurité de votre habitat. Les anciennes fenêtres sont souvent responsables de 25% des déperditions de chaleur.",
-  whyImage: "/images/products/fenetres/why.jpg",
-  advantagesImage: "/images/products/fenetres/advantages.jpg",
+  whyImage: "/images/products/fenetres/why.webp",
+  advantagesImage: "/images/products/fenetres/advantages.webp",
   advantages: [
     "Isolation thermique renforcée",
     "Réduction des nuisances sonores",
@@ -27,10 +27,10 @@ const product = {
     "Valorisation de votre bien immobilier",
   ],
   types: [
-    { name: "PVC", description: "Remarquables caractéristiques techniques en isolation, durabilité et étanchéité. Faciles d'entretien et compétitives au niveau prix.", image: "/images/products/fenetres/pvc.jpg" },
-    { name: "Aluminium", description: "Adaptées aux grandes surfaces vitrées, peu d'entretien. Sécurité renforcée grâce aux systèmes de verrouillage multipoints.", image: "/images/products/fenetres/alu.jpg" },
-    { name: "Bois", description: "Aspect naturel pour un grand nombre d'applications. Robustes et intelligemment conçues, une solution durable et élégante.", image: "/images/products/fenetres/bois.jpg" },
-    { name: "Bois-Aluminium", description: "Le meilleur des deux mondes : chaleur du bois à l'intérieur, résistance de l'aluminium à l'extérieur.", image: "/images/products/fenetres/bois-alu.jpg" },
+    { name: "PVC", description: "Remarquables caractéristiques techniques en isolation, durabilité et étanchéité. Faciles d'entretien et compétitives au niveau prix.", image: "/images/products/fenetres/pvc.webp" },
+    { name: "Aluminium", description: "Adaptées aux grandes surfaces vitrées, peu d'entretien. Sécurité renforcée grâce aux systèmes de verrouillage multipoints.", image: "/images/products/fenetres/alu.webp" },
+    { name: "Bois", description: "Aspect naturel pour un grand nombre d'applications. Robustes et intelligemment conçues, une solution durable et élégante.", image: "/images/products/fenetres/bois.webp" },
+    { name: "Bois-Aluminium", description: "Le meilleur des deux mondes : chaleur du bois à l'intérieur, résistance de l'aluminium à l'extérieur.", image: "/images/products/fenetres/bois-alu.webp" },
   ],
   typesLabel: "Matériaux",
   personalisationLabel: "Vitrages",
@@ -39,23 +39,23 @@ const product = {
       icon: "formes", 
       label: "Formes", 
       items: [
-        { name: "Rectangulaire", image: "/images/icons/rectangulaire.png" },
-        { name: "Ronde", image: "/images/icons/ronde.png" },
-        { name: "Trapèze", image: "/images/icons/trapeze.png" },
-        { name: "Triangulaire", image: "/images/icons/triangulaire.png" }
+        { name: "Rectangulaire", image: "/images/icons/rectangulaire.webp" },
+        { name: "Ronde", image: "/images/icons/ronde.webp" },
+        { name: "Trapèze", image: "/images/icons/trapeze.webp" },
+        { name: "Triangulaire", image: "/images/icons/triangulaire.webp" }
       ] 
     },
     { 
       icon: "couleurs", 
       label: "Couleurs", 
       items: [
-        { name: "Couleurs à l'infini", image: "/images/icons/couleurs.png" }
+        { name: "Couleurs à l'infini", image: "/images/icons/couleurs.webp" }
       ] 
     },
   ],
   personalisation: [
-    { name: "Double vitrage", description: "Convient à la plupart des rénovations courantes. Bonne isolation thermique et acoustique.", image: "/images/products/fenetres/double-vitrage-v2.jpg" },
-    { name: "Triple vitrage", description: "Plus performant, maximise le confort, réduit les pertes de chaleur et améliore l'efficacité énergétique.", image: "/images/products/fenetres/triple-vitrage.jpg" },
+    { name: "Double vitrage", description: "Convient à la plupart des rénovations courantes. Bonne isolation thermique et acoustique.", image: "/images/products/fenetres/double-vitrage-v2.webp" },
+    { name: "Triple vitrage", description: "Plus performant, maximise le confort, réduit les pertes de chaleur et améliore l'efficacité énergétique.", image: "/images/products/fenetres/triple-vitrage.webp" },
   ],
   didYouKnow: "Le double vitrage convient à la plupart des rénovations courantes et offre déjà une bonne isolation thermique et acoustique.\nLe triple vitrage, plus performant, maximise le confort, réduit encore les pertes de chaleur et améliore l'efficacité énergétique.",
   faq: [

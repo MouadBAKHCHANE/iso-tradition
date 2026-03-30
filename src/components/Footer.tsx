@@ -41,7 +41,7 @@ export default function Footer() {
           {/* Logo + description + newsletter */}
           <div className="lg:col-span-1">
             <Image
-              src="/images/logo-blanc.png"
+              src="/images/logo-blanc.webp"
               alt="ISO Tradition"
               width={300}
               height={90}

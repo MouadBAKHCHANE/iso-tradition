@@ -9,7 +9,7 @@ export default function ServiceArea() {
       {/* Background Swiss landscape */}
       <div className="absolute inset-0">
         <Image
-          src="/images/suisse-paysage.jpg"
+          src="/images/suisse-paysage.webp"
           alt="Paysage suisse"
           fill
           className="object-cover"

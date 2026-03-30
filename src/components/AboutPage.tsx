@@ -145,7 +145,7 @@ export default function AboutPage() {
               >
                 <div className="relative aspect-[4/3] rounded-[20px] overflow-hidden">
                   <Image
-                    src="/images/about-install.jpg"
+                    src="/images/about-install.webp"
                     alt="Technicien installant une fenêtre"
                     fill
                     className="object-cover"
@@ -163,7 +163,7 @@ export default function AboutPage() {
               >
                 <div className="relative aspect-[5/4] rounded-[20px] overflow-hidden shadow-2xl">
                   <Image
-                    src="/images/about-family.jpg"
+                    src="/images/about-family.webp"
                     alt="Famille profitant du confort de son intérieur"
                     fill
                     className="object-cover"
@@ -182,7 +182,7 @@ export default function AboutPage() {
               >
                 <div className="relative aspect-[4/3] rounded-[20px] overflow-hidden">
                   <Image
-                    src="/images/about-gate.jpg"
+                    src="/images/about-gate.webp"
                     alt="Installation portail par nos équipes"
                     fill
                     className="object-cover"
@@ -269,7 +269,7 @@ export default function AboutPage() {
           <FadeIn delay={0.3}>
             <div className="relative mx-auto max-w-4xl">
               <Image
-                src="/images/carte.png"
+                src="/images/carte.webp"
                 alt="Carte de la Suisse — Bureaux à Mies (VD)"
                 width={1200}
                 height={700}
@@ -410,7 +410,7 @@ export default function AboutPage() {
             <FadeIn direction="right" delay={0.2} className="h-full">
               <div className="relative rounded-[20px] overflow-hidden h-full min-h-[400px]">
                 <Image
-                  src="/images/about-cozy.jpg"
+                  src="/images/about-cozy.webp"
                   alt="Moments chaleureux dans un intérieur rénové"
                   fill
                   className="object-cover"
@@ -534,7 +534,7 @@ export default function AboutPage() {
       {/* ── Bureaux & Zones d'intervention ── */}
       <section className="relative py-14 lg:py-20 overflow-hidden">
         <Image
-          src="/images/suisse-paysage.jpg"
+          src="/images/suisse-paysage.webp"
           alt="Paysage suisse"
           fill
           className="object-cover"
