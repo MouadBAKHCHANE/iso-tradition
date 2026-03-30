@@ -202,7 +202,7 @@ export default function ProductPage({ product }: { product: ProductData }) {
             )}
 
             {/* Contact card */}
-            <div className="bg-primary rounded-[20px] p-5">
+            <div className="hidden lg:block bg-primary rounded-[20px] p-5">
               <h3 className="font-bold text-white text-[14px] mb-1">Besoin d&apos;un conseil ?</h3>
               <p className="text-white/60 text-[13px] mb-4 leading-snug">Nos experts se déplacent gratuitement.</p>
               <a href="https://form.typeform.com/to/astTYipT" target="_blank" rel="noopener noreferrer"

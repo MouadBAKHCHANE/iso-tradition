@@ -32,7 +32,7 @@ const product = {
       icon: "materiaux", 
       label: "Matériaux", 
       items: [
-        { name: "PVC", image: "/images/icons/config.png" },
+        { name: "PVC", image: "/images/icons/pvc.png" },
         { name: "Aluminium", image: "/images/icons/alu.png" },
         { name: "Bois", image: "/images/icons/bois.png" }
       ] 
