@@ -32,9 +32,9 @@ export default function Hero() {
   const [solutionsOpen, setSolutionsOpen] = useState(false);
 
   return (
-    <section className="px-2 sm:px-4 pt-2">
+    <section className="px-2 sm:px-4 pt-2 2xl:pb-0">
       {/* Rounded hero container */}
-      <div className="relative min-h-[85vh] sm:min-h-screen lg:min-h-[85vh] rounded-[20px] overflow-hidden bg-primary">
+      <div className="relative min-h-[85vh] sm:min-h-screen lg:min-h-[85vh] 2xl:min-h-[85vh] rounded-[20px] overflow-hidden bg-primary">
         {/* Background image */}
         <motion.div
           initial={{ scale: 1.08 }}
@@ -65,15 +65,15 @@ export default function Hero() {
                 alt="ISO Tradition"
                 width={300}
                 height={90}
-                className="h-16 lg:h-16 xl:h-20 2xl:h-24 w-auto"
+                className="h-16 lg:h-16 xl:h-20 2xl:h-32 w-auto"
                 priority
               />
             </Link>
 
             {/* White nav bar — centered, flush to top with concave notch ears */}
             <div className="hidden lg:block relative">
-              {/* White bar — flat top, rounded bottom */}
-              <div className="bg-white rounded-b-[20px] px-5 lg:px-6 xl:px-10 2xl:px-14 py-3 lg:py-3 xl:py-4 2xl:py-5 flex items-center gap-4 lg:gap-5 xl:gap-8 2xl:gap-10 relative">
+              {/* White nav bar — centered, flush to top with concave notch ears */}
+              <div className="bg-white rounded-b-[20px] px-5 lg:px-6 xl:px-10 2xl:px-16 py-3 lg:py-3 xl:py-4 2xl:py-7 flex items-center gap-4 lg:gap-5 xl:gap-8 2xl:gap-14 relative">
                 {navLinks.map((link) => {
                   const isInternal = link.href.startsWith("/");
                   const Tag = isInternal ? Link : "a";
@@ -109,7 +109,7 @@ export default function Hero() {
                     <Tag
                       key={link.label}
                       href={link.href}
-                      className="font-medium text-[12px] lg:text-[12px] xl:text-[14px] 2xl:text-[16px] text-primary/70 hover:text-primary transition-colors relative after:absolute after:bottom-[-3px] after:left-0 after:h-[2px] after:w-0 hover:after:w-full after:bg-accent after:transition-all whitespace-nowrap"
+                      className="font-medium text-[12px] lg:text-[12px] xl:text-[14px] 2xl:text-[22px] text-primary/70 hover:text-primary transition-colors relative after:absolute after:bottom-[-3px] after:left-0 after:h-[2px] after:w-0 hover:after:w-full after:bg-accent after:transition-all whitespace-nowrap"
                     >
                       {link.label}
                     </Tag>
@@ -134,11 +134,11 @@ export default function Hero() {
                 href="https://form.typeform.com/to/astTYipT"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="hidden lg:inline-flex items-center gap-2 bg-accent hover:bg-accent-hover text-primary-dark font-bold px-4 lg:px-5 xl:px-6 2xl:px-8 py-2 lg:py-2 xl:py-2.5 2xl:py-3 rounded-full text-xs lg:text-xs xl:text-sm 2xl:text-base transition-colors group"
+                className="hidden lg:inline-flex items-center gap-2 bg-accent hover:bg-accent-hover text-primary-dark font-bold px-4 lg:px-5 xl:px-6 2xl:px-14 py-2 lg:py-2 xl:py-2.5 2xl:py-5 rounded-full text-xs lg:text-xs xl:text-sm 2xl:text-2xl transition-colors group"
               >
                 Demander une offre
-                <span className="flex items-center justify-center w-6 h-6 rounded-full bg-primary-dark/15 transition-transform group-hover:translate-x-0.5">
-                  <svg className="w-3 h-3" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
+                <span className="flex items-center justify-center w-6 h-6 2xl:w-10 2xl:h-10 rounded-full bg-primary-dark/15 transition-transform group-hover:translate-x-0.5">
+                  <svg className="w-3 h-3 2xl:w-6 2xl:h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
                     <path strokeLinecap="round" strokeLinejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" />
                   </svg>
                 </span>
@@ -242,7 +242,7 @@ export default function Hero() {
         </div>
 
         {/* ====== HERO CONTENT — bottom-left ====== */}
-        <div className="relative z-10 flex flex-col justify-end min-h-[85vh] sm:min-h-screen lg:min-h-[85vh] px-5 sm:px-12 lg:px-20 2xl:px-28 pb-8 sm:pb-12 lg:pb-16 2xl:pb-24">
+        <div className="relative z-10 flex flex-col justify-end min-h-[85vh] sm:min-h-screen lg:min-h-[85vh] 2xl:min-h-[85vh] px-5 sm:px-12 lg:px-20 2xl:px-28 pb-8 sm:pb-12 lg:pb-16 2xl:pb-24">
           <div className="max-w-xl xl:max-w-3xl 2xl:max-w-4xl">
             {/* Overline */}
             <motion.div
@@ -262,7 +262,7 @@ export default function Hero() {
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.7, delay: 0.5, ease }}
-              className="text-[26px] sm:text-4xl lg:text-5xl xl:text-[56px] 2xl:text-[72px] font-bold text-white leading-[1.2] mb-3 sm:mb-4 2xl:mb-6"
+              className="text-[26px] sm:text-4xl lg:text-5xl xl:text-[56px] 2xl:text-[110px] font-bold text-white leading-[1.1] mb-3 sm:mb-4 2xl:mb-12"
             >
               Votre nouvel <span className="text-accent">art de vivre</span>
             </motion.h1>
@@ -272,7 +272,7 @@ export default function Hero() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.7, ease }}
-              className="text-sm sm:text-base 2xl:text-lg text-white/75 max-w-lg 2xl:max-w-xl mb-6 sm:mb-8 2xl:mb-10 leading-relaxed"
+              className="text-sm sm:text-base 2xl:text-2xl text-white/75 max-w-lg 2xl:max-w-3xl mb-6 sm:mb-8 2xl:mb-16 leading-relaxed"
             >
               Des fenêtres et portes d&apos;exception, alliant savoir-faire
               traditionnel suisse et technologies de pointe pour un confort
@@ -288,11 +288,11 @@ export default function Hero() {
             >
               <Link
                 href="/nos-solutions"
-                className="inline-flex items-center gap-3 bg-accent hover:bg-accent-hover text-primary-dark font-bold px-6 py-3 rounded-full transition-colors text-sm group"
+                className="inline-flex items-center gap-3 bg-accent hover:bg-accent-hover text-primary-dark font-bold px-6 py-3 2xl:px-14 2xl:py-6 rounded-full transition-colors text-sm 2xl:text-2xl group"
               >
                 Nos solutions
-                <span className="flex items-center justify-center w-8 h-8 rounded-full bg-primary-dark/15 transition-transform group-hover:translate-x-1">
-                  <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
+                <span className="flex items-center justify-center w-8 h-8 2xl:w-12 2xl:h-12 rounded-full bg-primary-dark/15 transition-transform group-hover:translate-x-1">
+                  <svg className="w-4 h-4 2xl:w-7 2xl:h-7" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
                     <path strokeLinecap="round" strokeLinejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" />
                   </svg>
                 </span>
@@ -302,12 +302,12 @@ export default function Hero() {
                 href="tel:+41216245300"
                 className="inline-flex items-center gap-3 text-white/80 hover:text-accent transition-colors"
               >
-                <span className="flex items-center justify-center w-10 h-10 rounded-full border border-white/25">
-                  <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                <span className="flex items-center justify-center w-10 h-10 2xl:w-16 2xl:h-16 rounded-full border border-white/25">
+                  <svg className="w-4 h-4 2xl:w-8 2xl:h-8" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
                     <path strokeLinecap="round" strokeLinejoin="round" d="M2.25 6.75c0 8.284 6.716 15 15 15h2.25a2.25 2.25 0 002.25-2.25v-1.372c0-.516-.351-.966-.852-1.091l-4.423-1.106c-.44-.11-.902.055-1.173.417l-.97 1.293c-.282.376-.769.542-1.21.38a12.035 12.035 0 01-7.143-7.143c-.162-.441.004-.928.38-1.21l1.293-.97c.363-.271.527-.734.417-1.173L6.963 3.102a1.125 1.125 0 00-1.091-.852H4.5A2.25 2.25 0 002.25 4.5v2.25z" />
                   </svg>
                 </span>
-                <span className="font-semibold text-sm">021 624 53 00</span>
+                <span className="font-semibold text-sm 2xl:text-2xl">021 624 53 00</span>
               </a>
             </motion.div>
           </div>

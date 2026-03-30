@@ -52,7 +52,7 @@ const solutions = [
 
 function Card({ sol }: { sol: (typeof solutions)[number] }) {
   return (
-    <Link href={sol.slug} className="group relative flex-shrink-0 w-[180px] sm:w-[220px] touch-manipulation">
+    <Link href={sol.slug} className="group relative flex-shrink-0 w-[180px] sm:w-[220px] 2xl:w-[280px] touch-manipulation">
       <div className="relative rounded-xl overflow-hidden shadow-md group-hover:shadow-2xl group-active:shadow-2xl transition-all duration-500 group-hover:-translate-y-3 group-active:-translate-y-3">
         <div className="relative aspect-[3/4] overflow-hidden">
           <Image
@@ -65,8 +65,8 @@ function Card({ sol }: { sol: (typeof solutions)[number] }) {
           <div className="absolute inset-0 bg-accent/20 opacity-0 group-hover:opacity-100 group-active:opacity-100 transition-opacity duration-500" />
 
           {/* Title */}
-          <div className="absolute bottom-0 left-0 right-0 p-4">
-            <h3 className="font-bold text-white text-sm drop-shadow-md">
+          <div className="absolute bottom-0 left-0 right-0 p-4 2xl:p-6">
+            <h3 className="font-bold text-white text-sm 2xl:text-xl drop-shadow-md">
               {sol.title}
             </h3>
           </div>
@@ -94,7 +94,8 @@ export default function Solutions() {
       const w = window.innerWidth;
       if (w < 1280) setDesktopEnd("-55%");      // 1024-1279
       else if (w < 1536) setDesktopEnd("-35%");  // 1280-1535 (1440px range)
-      else setDesktopEnd("-25%");                 // 1536+ (4K)
+      else if (w < 1920) setDesktopEnd("-25%");  // 1536-1919
+      else setDesktopEnd("0%");                 // 1920+ (4K)
     };
     update();
     window.addEventListener("resize", update);
@@ -106,15 +107,15 @@ export default function Solutions() {
 
   return (
     <section id="services">
-      <div ref={sectionRef} className="relative h-[250vh] sm:h-[250vh] lg:h-[280vh] xl:h-[200vh]">
-        <div className="sticky top-0 h-screen flex flex-col justify-center overflow-hidden bg-white">
+      <div ref={sectionRef} className="relative h-[250vh] sm:h-[250vh] lg:h-[280vh] xl:h-[200vh] 2xl:h-auto 2xl:py-24">
+        <div className="sticky top-0 h-screen flex flex-col justify-center 2xl:static 2xl:h-auto overflow-hidden bg-white">
           {/* Background decorative icon */}
           <div className="absolute top-1/2 -translate-y-1/2 -left-20 opacity-[0.07] pointer-events-none">
             <BrandIcon className="w-[600px]" color="#215e84" />
           </div>
 
           {/* Section header */}
-          <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 text-center mb-3 lg:mb-4 xl:mb-6 relative z-10">
+          <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 text-center mb-2 lg:mb-3 2xl:mb-4 relative z-10">
             <FadeIn>
               <div className="flex items-center justify-center gap-3 mb-3">
                 <span className="h-px w-10 bg-primary/40" />
@@ -125,19 +126,19 @@ export default function Solutions() {
               </div>
             </FadeIn>
             <FadeIn delay={0.1}>
-              <h2 className="text-2xl sm:text-3xl lg:text-4xl xl:text-5xl 2xl:text-6xl font-bold text-primary leading-tight mb-3 lg:mb-2 xl:mb-4">
+              <h2 className="text-2xl sm:text-3xl lg:text-4xl xl:text-5xl 2xl:text-7xl font-bold text-primary leading-tight mb-2 lg:mb-2 xl:mb-2 2xl:mb-10">
                 Des solutions pour chaque{" "}
                 <span className="text-accent">besoin</span>
               </h2>
             </FadeIn>
             <FadeIn delay={0.15}>
-              <div className="flex items-center justify-center gap-4 mt-2 lg:mt-2 xl:mt-4">
+              <div className="flex items-center justify-center gap-4 mt-2 lg:mt-2 xl:mt-4 2xl:mt-8">
                 <a
                   href="/nos-solutions"
-                  className="inline-flex items-center gap-2 bg-accent hover:bg-accent-hover text-primary-dark font-semibold px-6 py-2.5 rounded-full transition-colors text-sm uppercase tracking-wider group"
+                  className="inline-flex items-center gap-3 bg-accent hover:bg-accent-hover text-primary-dark font-semibold px-6 py-2.5 2xl:px-12 2xl:py-5 rounded-full transition-colors text-sm 2xl:text-2xl uppercase tracking-wider group"
                 >
                   Toutes nos solutions
-                  <svg className="w-3.5 h-3.5 transition-transform group-hover:translate-x-1" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
+                  <svg className="w-3.5 h-3.5 2xl:w-6 2xl:h-6 transition-transform group-hover:translate-x-1" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
                     <path strokeLinecap="round" strokeLinejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" />
                   </svg>
                 </a>
@@ -157,13 +158,20 @@ export default function Solutions() {
           </motion.div>
           <motion.div
             style={{ x }}
-            className="hidden lg:flex gap-5 pl-[8vw] w-max relative z-10 items-center mt-2 lg:mt-2 xl:mt-4"
+            className="hidden lg:flex 2xl:hidden gap-5 2xl:gap-8 pl-[8vw] 2xl:pl-0 w-max 2xl:w-full 2xl:max-w-none 2xl:justify-center relative z-10 items-center mt-2 lg:mt-2 xl:mt-3 2xl:mt-10"
           >
             {solutions.map((sol) => (
               <Card key={sol.title} sol={sol} />
             ))}
             <div className="flex-shrink-0 w-[8vw]" />
           </motion.div>
+
+          {/* 4K Static View */}
+          <div className="hidden 2xl:flex gap-8 w-full max-w-[2800px] mx-auto justify-center px-10 relative z-10 items-center mt-10">
+            {solutions.map((sol) => (
+              <Card key={sol.title} sol={sol} />
+            ))}
+          </div>
 
           {/* Scroll hint */}
           <motion.div

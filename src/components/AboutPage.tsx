@@ -64,15 +64,6 @@ const processSteps = [
   { num: "09", title: "Conseils d'utilisation", description: "Chaque client reçoit des conseils d'entretien pour préserver la longévité des menuiseries.", icon: "M12 18v-5.25m0 0a6.01 6.01 0 001.5-.189m-1.5.189a6.01 6.01 0 01-1.5-.189m3.75 7.478a12.06 12.06 0 01-4.5 0m3.75 2.383a14.406 14.406 0 01-3 0M14.25 18v-.192c0-.983.658-1.823 1.508-2.316a7.5 7.5 0 10-7.517 0c.85.493 1.509 1.333 1.509 2.316V18" },
 ];
 
-const partners = [
-  { name: "Internorm", description: "Leader européen des fenêtres et portes" },
-  { name: "Schüco", description: "Systèmes aluminium haut de gamme" },
-  { name: "VELUX", description: "Fenêtres de toit et solutions lumière" },
-  { name: "Somfy", description: "Motorisation et domotique" },
-  { name: "Griesser", description: "Stores et protections solaires suisses" },
-  { name: "Minergie", description: "Label d'efficacité énergétique suisse" },
-];
-
 const zones = [
   "Canton de Vaud",
   "Canton de Genève",
@@ -536,52 +527,6 @@ export default function AboutPage() {
                 );
               })}
             </div>
-          </div>
-        </div>
-      </section>
-
-      {/* ── Nos Partenaires ── */}
-      <section className="py-14 lg:py-20 bg-white">
-        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-10 lg:mb-14">
-            <FadeIn>
-              <div className="flex items-center justify-center gap-3 mb-3">
-                <span className="h-px w-10 bg-primary/40" />
-                <span className="font-secondary text-primary/60 font-medium text-sm uppercase tracking-[0.2em]">
-                  Nos partenaires
-                </span>
-                <span className="h-px w-10 bg-primary/40" />
-              </div>
-            </FadeIn>
-            <FadeIn delay={0.1}>
-              <h2 className="text-2xl sm:text-3xl lg:text-5xl 2xl:text-6xl font-bold text-primary leading-tight mb-4">
-                Ils nous font <span className="text-accent">confiance</span>
-              </h2>
-            </FadeIn>
-            <FadeIn delay={0.15}>
-              <p className="text-primary/60 text-[15px] leading-relaxed max-w-2xl mx-auto">
-                Nous collaborons avec les leaders de l&apos;industrie pour vous offrir des produits
-                de la plus haute qualité, certifiés et garantis.
-              </p>
-            </FadeIn>
-          </div>
-          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4">
-            {partners.map((partner, i) => (
-              <motion.div
-                key={i}
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.5, delay: i * 0.08, ease: [...ease] }}
-                viewport={{ once: true, amount: 0.3 }}
-                className="bg-secondary/50 hover:bg-secondary rounded-[20px] p-6 flex flex-col items-center justify-center text-center transition-colors group"
-              >
-                <div className="w-12 h-12 rounded-full bg-primary/10 group-hover:bg-primary/20 flex items-center justify-center mb-3 transition-colors">
-                  <span className="text-primary font-bold text-lg">{partner.name.charAt(0)}</span>
-                </div>
-                <h3 className="text-sm font-bold text-primary mb-1">{partner.name}</h3>
-                <p className="text-primary/50 text-[12px] leading-snug">{partner.description}</p>
-              </motion.div>
-            ))}
           </div>
         </div>
       </section>

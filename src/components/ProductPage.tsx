@@ -104,7 +104,7 @@ export default function ProductPage({ product }: { product: ProductData }) {
       <Header forceVisible />
 
       {/* Hero */}
-      <section className="relative pt-24 lg:pt-28 pb-14 lg:pb-20 overflow-hidden">
+      <section className="relative pt-24 lg:pt-28 pb-10 lg:pb-14 overflow-hidden">
         <Image src={product.heroImage} alt={product.name} fill className="object-cover" />
         <div className="absolute inset-0 bg-primary/55" />
         <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
@@ -146,7 +146,7 @@ export default function ProductPage({ product }: { product: ProductData }) {
       </section>
 
       {/* Sidebar + Content layout */}
-      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-12 lg:py-16">
+      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 pt-4 lg:pt-6 pb-10 lg:pb-12">
         <div className="grid lg:grid-cols-[260px_1fr] gap-8 lg:gap-12 items-start">
 
           {/* ── Sidebar ── */}
@@ -219,7 +219,7 @@ export default function ProductPage({ product }: { product: ProductData }) {
           </aside>
 
           {/* ── Main content ── */}
-          <main className="space-y-8">
+          <main className="space-y-6">
 
             {/* Why Replace */}
             <FadeIn>
