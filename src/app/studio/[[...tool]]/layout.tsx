@@ -1,0 +1,11 @@
+export const metadata = {
+  title: "ISO Tradition – Studio",
+};
+
+export default function StudioLayout({ children }: { children: React.ReactNode }) {
+  return (
+    <html lang="fr">
+      <body style={{ margin: 0 }}>{children}</body>
+    </html>
+  );
+}

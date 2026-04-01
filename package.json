@@ -14,12 +14,21 @@
   "license": "ISC",
   "type": "module",
   "dependencies": {
+    "@sanity/client": "^7.20.0",
+    "@sanity/icons": "^3.7.4",
+    "@sanity/image-url": "^2.1.1",
+    "@sanity/types": "^5.18.0",
+    "@sanity/ui": "^3.1.14",
     "framer-motion": "^12.38.0",
     "next": "^16.2.1",
+    "next-sanity": "^12.2.1",
     "nodemailer": "^8.0.4",
     "playwright": "^1.58.2",
     "react": "^19.2.4",
-    "react-dom": "^19.2.4"
+    "react-dom": "^19.2.4",
+    "react-is": "^19.2.4",
+    "sanity": "^5.18.0",
+    "styled-components": "^6.3.12"
   },
   "devDependencies": {
     "@tailwindcss/postcss": "^4.2.2",

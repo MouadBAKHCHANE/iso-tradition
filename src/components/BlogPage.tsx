@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import Image from "next/image";
+import Link from "next/link";
 import Header from "./Header";
 import Footer from "./Footer";
 import BrandIcon from "./BrandIcon";
@@ -111,28 +112,30 @@ export default function BlogPage() {
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5, delay: i * 0.1, ease: [...ease] }}
                 viewport={{ once: true, amount: 0.2 }}
-                className="group cursor-pointer"
+                className="group"
               >
-                {/* Image */}
-                <div className="relative rounded-[20px] overflow-hidden mb-4">
-                  {/* Tag badge */}
-                  <span className="absolute top-4 left-4 z-10 bg-white text-primary text-[12px] font-semibold px-3 py-1 rounded-full shadow-md">
-                    {article.tag}
-                  </span>
-                  <div className="relative aspect-[4/3] overflow-hidden">
-                    <Image
-                      src={article.image}
-                      alt={article.title}
-                      fill
-                      className="object-cover transition-transform duration-700 group-hover:scale-105"
-                    />
+                <Link href={`/actualites/${article.slug}`} className="block">
+                  {/* Image */}
+                  <div className="relative rounded-[20px] overflow-hidden mb-4">
+                    {/* Tag badge */}
+                    <span className="absolute top-4 left-4 z-10 bg-white text-primary text-[12px] font-semibold px-3 py-1 rounded-full shadow-md">
+                      {article.tag}
+                    </span>
+                    <div className="relative aspect-[4/3] overflow-hidden">
+                      <Image
+                        src={article.image}
+                        alt={article.title}
+                        fill
+                        className="object-cover transition-transform duration-700 group-hover:scale-105"
+                      />
+                    </div>
                   </div>
-                </div>
-                {/* Text */}
-                <h2 className="text-lg lg:text-xl font-bold text-primary leading-snug mb-2 group-hover:text-accent transition-colors">
-                  {article.title}
-                </h2>
-                <p className="text-primary/50 text-sm">{article.date}</p>
+                  {/* Text */}
+                  <h2 className="text-lg lg:text-xl font-bold text-primary leading-snug mb-2 group-hover:text-accent transition-colors">
+                    {article.title}
+                  </h2>
+                  <p className="text-primary/50 text-sm">{article.date}</p>
+                </Link>
               </motion.article>
             ))}
           </div>

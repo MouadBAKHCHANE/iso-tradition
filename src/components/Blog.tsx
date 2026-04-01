@@ -7,21 +7,21 @@ import { FadeIn } from "./Motion";
 const posts = [
   {
     image: "/images/blog-1.webp",
-    tag: "Conseils",
-    title: "Comment choisir les bonnes fenêtres pour votre habitat",
-    date: "15 mars 2025",
+    tag: "Subventions",
+    title: "Les subventions 2026 en Suisse pour la rénovation énergétique",
+    date: "15 mars 2026",
   },
   {
     image: "/images/blog-2.webp",
-    tag: "Économies",
-    title: "Réduire sa facture énergétique grâce à l'isolation des fenêtres",
-    date: "28 février 2025",
+    tag: "Conseils",
+    title: "Triple vitrage ou double vitrage ? Le guide complet",
+    date: "10 mars 2026",
   },
   {
     image: "/images/blog-3.webp",
-    tag: "Tendances",
-    title: "Les tendances 2025 en menuiserie et design intérieur",
-    date: "10 février 2025",
+    tag: "Réglementation",
+    title: "Les normes Uw : qu'est-ce que c'est et pourquoi c'est important ?",
+    date: "5 mars 2026",
   },
 ];
 
@@ -48,7 +48,7 @@ export default function Blog() {
           </div>
           <FadeIn delay={0.15}>
             <a
-              href="#actualites"
+              href="/actualites"
               className="inline-flex items-center gap-2 bg-accent hover:bg-accent-hover text-primary-dark font-semibold px-6 py-2.5 rounded-full transition-colors text-sm group"
             >
               Voir tout
@@ -64,7 +64,7 @@ export default function Blog() {
           {posts.map((post, i) => (
             <motion.a
               key={post.title}
-              href="#"
+              href="/actualites"
               initial={{ opacity: 0, y: 40 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: i * 0.12, ease: [0.25, 0.1, 0.25, 1] }}
