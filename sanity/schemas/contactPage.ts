@@ -1,15 +1,18 @@
 import { defineType, defineField } from "sanity";
+import { EnvelopeIcon } from '@sanity/icons';
 import { seoFields } from "./helpers/seoFields";
 
 export default defineType({
   name: "contactPage",
   title: "Page Contact",
   type: "document",
+  icon: EnvelopeIcon,
   groups: [
     { name: "hero", title: "Hero", default: true },
     { name: "info", title: "Informations" },
     { name: "form", title: "Formulaire" },
     { name: "map", title: "Carte" },
+    { name: "sections", title: "Sections" },
     { name: "seo", title: "SEO" },
   ],
   fields: [
@@ -33,6 +36,32 @@ export default defineType({
 
     defineField({ name: "mapTitle", title: "Titre section carte", type: "string", group: "map" }),
     defineField({ name: "mapSubtitle", title: "Sous-titre", type: "text", rows: 2, group: "map" }),
+
+    defineField({
+      name: "sections",
+      title: "Ordre et visibilité des sections",
+      description: "Glissez-déposez pour réordonner. Décochez « Visible » pour masquer une section.",
+      type: "array",
+      group: "sections",
+      of: [
+        {
+          type: "object",
+          fields: [
+            { name: "id", title: "Section", type: "string", readOnly: true },
+            { name: "label", title: "Nom", type: "string", readOnly: true },
+            { name: "visible", title: "Visible", type: "boolean", initialValue: true },
+          ],
+          preview: {
+            select: { title: "label", visible: "visible" },
+            prepare(value: Record<string, unknown>) {
+              const title = value.title as string;
+              const visible = value.visible as boolean;
+              return { title: `${visible === false ? "🔴" : "🟢"} ${title}` };
+            },
+          },
+        },
+      ],
+    }),
 
     ...seoFields,
   ],

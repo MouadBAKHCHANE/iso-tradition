@@ -56,7 +56,7 @@ export default function Footer() {
           {/* Nav columns */}
           {navCols.map((col) => (
             <div key={col.title} className={col.title === "Solutions" ? "lg:col-span-2" : ""}>
-              <h4 className="font-bold text-[15px] mb-5 text-accent">
+              <h4 className="font-bold text-[15px] mb-5 text-white">
                 {col.title}
               </h4>
               <ul className={col.title === "Solutions" ? "grid grid-cols-2 gap-x-8 gap-y-3" : "space-y-3"}>
@@ -76,7 +76,7 @@ export default function Footer() {
 
           {/* Contact info */}
           <div>
-            <h4 className="font-bold text-[15px] mb-5 text-accent">Contact</h4>
+            <h4 className="font-bold text-[15px] mb-5 text-white">Contact</h4>
             <ul className="space-y-4">
               <li>
                 <a

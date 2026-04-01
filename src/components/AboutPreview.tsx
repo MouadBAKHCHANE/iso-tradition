@@ -6,7 +6,7 @@ import BrandIcon from "./BrandIcon";
 
 export default function AboutPreview() {
   return (
-    <section id="apropos" className="py-14 lg:py-20 2xl:py-24 3xl:py-32 bg-white overflow-hidden relative scroll-mt-24 lg:scroll-mt-32">
+    <section id="apropos" className="py-8 lg:py-12 2xl:py-16 3xl:py-24 bg-white overflow-hidden relative scroll-mt-24 lg:scroll-mt-32">
       {/* Background brand icon — right side */}
       <div className="absolute bottom-8 right-4 lg:right-8 xl:right-16 2xl:right-20 3xl:right-24 pointer-events-none opacity-[0.06]">
         <BrandIcon className="w-40 lg:w-52 xl:w-64 2xl:w-[300px] 3xl:w-[500px]" color="#f8ad0c" />
@@ -70,7 +70,7 @@ export default function AboutPreview() {
               <FadeIn direction="right" delay={0.3}>
                 <a
                   href="/qui-sommes-nous"
-                  className="inline-flex items-center gap-3 bg-accent hover:bg-accent-hover text-primary-dark font-semibold px-5 lg:px-5 xl:px-6 2xl:px-8 3xl:px-12 py-2.5 lg:py-2 xl:py-3 2xl:py-4 3xl:py-5 rounded-full transition-colors text-[13px] lg:text-[13px] xl:text-[15px] 2xl:text-lg 3xl:text-2xl group"
+                  className="inline-flex items-center gap-3 border-2 border-primary/30 hover:border-accent text-primary hover:text-accent font-semibold px-5 lg:px-5 xl:px-6 2xl:px-8 3xl:px-12 py-2.5 lg:py-2 xl:py-3 2xl:py-4 3xl:py-5 rounded-full transition-all text-[13px] lg:text-[13px] xl:text-[15px] 2xl:text-lg 3xl:text-2xl group"
                 >
                   En savoir plus
                   <svg
@@ -97,27 +97,21 @@ export default function AboutPreview() {
                   {/* Avatar stack */}
                   <div className="flex -space-x-4">
                     {[
-                      "bg-primary/20",
-                      "bg-accent/30",
-                      "bg-primary/30",
-                    ].map((bg, i) => (
+                      { src: "/avatars/client-1.png", alt: "Client Suisse 1" },
+                      { src: "/avatars/client-2.png", alt: "Client Suisse 2" },
+                      { src: "/avatars/client-3.png", alt: "Client Suisse 3" },
+                    ].map((client, i) => (
                       <div
                         key={i}
-                        className={`w-12 h-12 lg:w-11 lg:h-11 xl:w-14 xl:h-14 rounded-full ${bg} border-[3px] border-white flex items-center justify-center`}
+                        className="w-12 h-12 lg:w-11 lg:h-11 xl:w-14 xl:h-14 rounded-full border-[3px] border-white flex items-center justify-center overflow-hidden bg-gray-100"
                       >
-                        <svg
-                          className="w-6 h-6 text-primary/50"
-                          fill="none"
-                          viewBox="0 0 24 24"
-                          stroke="currentColor"
-                          strokeWidth={1.5}
-                        >
-                          <path
-                            strokeLinecap="round"
-                            strokeLinejoin="round"
-                            d="M15.75 6a3.75 3.75 0 11-7.5 0 3.75 3.75 0 017.5 0zM4.501 20.118a7.5 7.5 0 0114.998 0A17.933 17.933 0 0112 21.75c-2.676 0-5.216-.584-7.499-1.632z"
-                          />
-                        </svg>
+                        <Image
+                          src={client.src}
+                          alt={client.alt}
+                          width={60}
+                          height={60}
+                          className="object-cover w-full h-full"
+                        />
                       </div>
                     ))}
                   </div>

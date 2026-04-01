@@ -1,10 +1,12 @@
 import { defineType, defineField } from "sanity";
+import { DocumentIcon } from '@sanity/icons';
 import { seoFields } from "./helpers/seoFields";
 
 export default defineType({
   name: "legalPage",
   title: "Pages légales",
   type: "document",
+  icon: DocumentIcon,
   groups: [
     { name: "content", title: "Contenu", default: true },
     { name: "seo", title: "SEO" },

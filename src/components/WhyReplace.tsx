@@ -56,7 +56,7 @@ export default function WhyReplace() {
             <FadeIn delay={0.1}>
               <h2 className="text-2xl sm:text-3xl lg:text-3xl xl:text-4xl 2xl:text-5xl font-bold text-primary leading-tight mb-4 lg:mb-4 xl:mb-6">
                 Pourquoi remplacer vos{" "}
-                <span className="text-accent">portes & fenêtres ?</span>
+                <span className="text-accent">portes &amp; fenêtres ?</span>
               </h2>
             </FadeIn>
             {reasons.map((reason, i) => {
@@ -79,7 +79,7 @@ export default function WhyReplace() {
                     </span>
                     <svg
                       className={`w-6 h-6 flex-shrink-0 transition-colors duration-300 ${
-                        isActive ? "text-primary" : "text-gray-400"
+                        isActive ? "text-accent" : "text-gray-400"
                       }`}
                       fill="none"
                       viewBox="0 0 24 24"

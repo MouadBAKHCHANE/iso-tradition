@@ -1,4 +1,6 @@
 import LegalPage from "@/components/LegalPage";
+import LegalPageSanity from "@/components/LegalPageSanity";
+import { getLegalPageBySlug } from "@/lib/queries";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
@@ -60,7 +62,19 @@ const sections = [
   },
 ];
 
-export default function MentionsLegales() {
+export default async function MentionsLegales() {
+  const sanityData = await getLegalPageBySlug("mentions-legales");
+
+  if (sanityData?.body && Array.isArray(sanityData.body) && sanityData.body.length > 0) {
+    return (
+      <LegalPageSanity
+        title={sanityData.title || "Mentions légales"}
+        lastUpdated={sanityData.lastUpdated || "28 mars 2026"}
+        body={sanityData.body}
+      />
+    );
+  }
+
   return (
     <LegalPage
       title="Mentions légales"

@@ -1,10 +1,12 @@
 import { defineType, defineField } from "sanity";
+import { DocumentTextIcon } from '@sanity/icons';
 import { seoFields } from "./helpers/seoFields";
 
 export default defineType({
   name: "blogPost",
   title: "Articles de blog",
   type: "document",
+  icon: DocumentTextIcon,
   groups: [
     { name: "content", title: "Contenu", default: true },
     { name: "seo", title: "SEO" },

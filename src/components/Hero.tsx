@@ -52,7 +52,7 @@ export default function Hero() {
         </motion.div>
 
         {/* Gradient overlay — left side */}
-        <div className="absolute inset-0 bg-gradient-to-r from-primary/90 via-primary/40 via-30% to-transparent" />
+        <div className="absolute inset-0 bg-gradient-to-r from-black/85 via-black/40 via-35% to-transparent" />
 
         {/* ====== TOP NAV AREA — flush to top of hero ====== */}
         <div className="absolute top-0 left-0 right-0 z-20 px-6 sm:px-10 lg:px-14">
@@ -134,10 +134,10 @@ export default function Hero() {
                 href="https://form.typeform.com/to/astTYipT"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="hidden lg:inline-flex items-center gap-2 bg-accent hover:bg-accent-hover text-primary-dark font-bold px-4 lg:px-5 xl:px-6 2xl:px-8 3xl:px-14 py-2 lg:py-2 xl:py-2.5 2xl:py-3 3xl:py-5 rounded-full text-xs lg:text-xs xl:text-sm 2xl:text-sm 3xl:text-2xl transition-colors group"
+                className="hidden lg:inline-flex items-center gap-2 border-2 border-white/40 hover:border-accent text-white hover:text-accent font-bold px-4 lg:px-5 xl:px-6 2xl:px-8 3xl:px-14 py-2 lg:py-2 xl:py-2.5 2xl:py-3 3xl:py-5 rounded-full text-xs lg:text-xs xl:text-sm 2xl:text-sm 3xl:text-2xl transition-all group"
               >
                 Demander une offre
-                <span className="flex items-center justify-center w-6 h-6 2xl:w-8 2xl:h-8 3xl:w-10 3xl:h-10 rounded-full bg-primary-dark/15 transition-transform group-hover:translate-x-0.5">
+                <span className="flex items-center justify-center w-6 h-6 2xl:w-8 2xl:h-8 3xl:w-10 3xl:h-10 rounded-full bg-white/20 transition-transform group-hover:translate-x-0.5">
                   <svg className="w-3 h-3 2xl:w-4 2xl:h-4 3xl:w-6 3xl:h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
                     <path strokeLinecap="round" strokeLinejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" />
                   </svg>
@@ -252,7 +252,7 @@ export default function Hero() {
               className="flex items-center gap-3 mb-3 sm:mb-4"
             >
               <span className="h-px w-12 bg-white/50" />
-              <span className="font-secondary text-white/80 font-medium text-sm uppercase tracking-[0.2em]">
+              <span className="font-secondary text-white font-medium text-sm uppercase tracking-[0.2em]">
                 Fenêtres &amp; Portes Suisses
               </span>
             </motion.div>
@@ -272,7 +272,7 @@ export default function Hero() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.7, ease }}
-              className="text-sm sm:text-base 2xl:text-lg 3xl:text-2xl text-white/75 max-w-lg 2xl:max-w-2xl 3xl:max-w-3xl mb-6 sm:mb-8 2xl:mb-10 3xl:mb-16 leading-relaxed"
+              className="text-sm sm:text-base 2xl:text-lg 3xl:text-2xl text-white max-w-lg 2xl:max-w-2xl 3xl:max-w-3xl mb-6 sm:mb-8 2xl:mb-10 3xl:mb-16 leading-relaxed"
             >
               Des fenêtres et portes d&apos;exception, alliant savoir-faire
               traditionnel suisse et technologies de pointe pour un confort
@@ -288,10 +288,10 @@ export default function Hero() {
             >
               <Link
                 href="/nos-solutions"
-                className="inline-flex items-center gap-3 bg-accent hover:bg-accent-hover text-primary-dark font-bold px-6 py-3 2xl:px-8 3xl:px-14 2xl:py-4 3xl:py-6 rounded-full transition-colors text-sm 2xl:text-base 3xl:text-2xl group"
+                className="inline-flex items-center gap-3 border-2 border-white/40 hover:border-accent text-white hover:text-accent font-bold px-6 py-3 2xl:px-8 3xl:px-14 2xl:py-4 3xl:py-6 rounded-full transition-all text-sm 2xl:text-base 3xl:text-2xl group"
               >
                 Nos solutions
-                <span className="flex items-center justify-center w-8 h-8 2xl:w-9 2xl:h-9 3xl:w-12 3xl:h-12 rounded-full bg-primary-dark/15 transition-transform group-hover:translate-x-1">
+                <span className="flex items-center justify-center w-8 h-8 2xl:w-9 2xl:h-9 3xl:w-12 3xl:h-12 rounded-full bg-white/15 transition-transform group-hover:translate-x-1">
                   <svg className="w-4 h-4 2xl:w-5 2xl:h-5 3xl:w-7 3xl:h-7" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
                     <path strokeLinecap="round" strokeLinejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" />
                   </svg>

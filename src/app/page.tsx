@@ -10,7 +10,8 @@ import Blog from "@/components/Blog";
 import ServiceArea from "@/components/ServiceArea";
 import FAQ from "@/components/FAQ";
 import Footer from "@/components/Footer";
-import { getHomepage } from "@/lib/queries";
+import { getHomepage, getAllBlogPosts } from "@/lib/queries";
+import { urlForImage } from "@/lib/sanity";
 
 export async function generateMetadata(): Promise<Metadata> {
   const page = await getHomepage();
@@ -30,9 +31,38 @@ export async function generateMetadata(): Promise<Metadata> {
   };
 }
 
+/* eslint-disable @typescript-eslint/no-explicit-any */
+function formatDate(dateStr: string | null | undefined): string {
+  if (!dateStr) return "";
+  try {
+    return new Date(dateStr).toLocaleDateString("fr-CH", {
+      day: "numeric",
+      month: "long",
+      year: "numeric",
+    });
+  } catch {
+    return dateStr;
+  }
+}
+
 export default async function Home() {
-  // Fetch homepage data from Sanity (used for metadata now; will be passed to components later)
-  // const homepage = await getHomepage();
+  const blogPosts = await getAllBlogPosts();
+
+  const latestPosts =
+    blogPosts && blogPosts.length > 0
+      ? blogPosts
+          .slice(0, 3)
+          .filter((p: any) => p.slug && p.title)
+          .map((p: any) => ({
+            slug: p.slug,
+            tag: p.category || "Article",
+            title: p.title,
+            date: formatDate(p.date),
+            image: p.image?.asset
+              ? urlForImage(p.image).width(800).height(600).url()
+              : "/images/blog-1.webp",
+          }))
+      : undefined;
 
   return (
     <>
@@ -44,7 +74,7 @@ export default async function Home() {
         <WhyReplace />
         <Strengths />
         <ProjectCTA />
-        <Blog />
+        <Blog posts={latestPosts && latestPosts.length > 0 ? latestPosts : undefined} />
         <ServiceArea />
         <FAQ />
       </main>

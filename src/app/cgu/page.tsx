@@ -1,4 +1,6 @@
 import LegalPage from "@/components/LegalPage";
+import LegalPageSanity from "@/components/LegalPageSanity";
+import { getLegalPageBySlug } from "@/lib/queries";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
@@ -83,7 +85,19 @@ const sections = [
   },
 ];
 
-export default function CGU() {
+export default async function CGU() {
+  const sanityData = await getLegalPageBySlug("cgu");
+
+  if (sanityData?.body && Array.isArray(sanityData.body) && sanityData.body.length > 0) {
+    return (
+      <LegalPageSanity
+        title={sanityData.title || "Conditions générales d'utilisation"}
+        lastUpdated={sanityData.lastUpdated || "28 mars 2026"}
+        body={sanityData.body}
+      />
+    );
+  }
+
   return (
     <LegalPage
       title="Conditions générales d'utilisation"

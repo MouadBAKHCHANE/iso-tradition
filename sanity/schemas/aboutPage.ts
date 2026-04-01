@@ -1,19 +1,22 @@
 import { defineType, defineField } from "sanity";
+import { UsersIcon } from '@sanity/icons';
 import { seoFields } from "./helpers/seoFields";
 
 export default defineType({
   name: "aboutPage",
   title: "Page Qui sommes-nous",
   type: "document",
+  icon: UsersIcon,
   groups: [
     { name: "hero", title: "Hero", default: true },
     { name: "gallery", title: "Galerie" },
     { name: "mission", title: "Mission" },
     { name: "stats", title: "Chiffres clés" },
-    { name: "values", title: "Atouts" },
+    { name: "values", title: "Valeurs & Atouts" },
     { name: "process", title: "Processus" },
     { name: "zones", title: "Zones d'intervention" },
     { name: "cta", title: "CTA" },
+    { name: "sections", title: "Sections" },
     { name: "seo", title: "SEO" },
   ],
   fields: [
@@ -57,13 +60,39 @@ export default defineType({
       ],
     }),
 
-    // Values / atouts
+    // Nos valeurs (3 cards)
+    defineField({ name: "valeursTitle", title: "Titre", type: "string", group: "values", initialValue: "Nos" }),
+    defineField({ name: "valeursTitleAccent", title: "Mot accentué", type: "string", group: "values", initialValue: "valeurs" }),
+    defineField({
+      name: "valeurs",
+      title: "Cartes valeurs (3 max)",
+      type: "array",
+      group: "values",
+      of: [
+        {
+          type: "object",
+          fields: [
+            { name: "title", title: "Titre", type: "string" },
+            { name: "description", title: "Description", type: "text", rows: 3 },
+            { name: "variant", title: "Style", type: "string", options: { list: [
+              { title: "Orange (accent)", value: "accent" },
+              { title: "Bleu foncé (dark)", value: "dark" },
+              { title: "Clair (light)", value: "light" },
+            ]}},
+          ],
+          preview: { select: { title: "title" } },
+        },
+      ],
+      validation: (Rule) => Rule.max(3),
+    }),
+
+    // Nos atouts (list)
     defineField({ name: "valuesOverline", title: "Surtitre", type: "string", group: "values" }),
-    defineField({ name: "valuesTitle", title: "Titre", type: "string", group: "values" }),
+    defineField({ name: "valuesTitle", title: "Titre atouts", type: "string", group: "values" }),
     defineField({ name: "valuesTitleAccent", title: "Mot accentué", type: "string", group: "values" }),
     defineField({
       name: "values",
-      title: "Atouts",
+      title: "Liste des atouts",
       type: "array",
       group: "values",
       of: [{ type: "string" }],
@@ -104,6 +133,33 @@ export default defineType({
     defineField({ name: "ctaTitle", title: "Titre CTA", type: "string", group: "cta" }),
     defineField({ name: "ctaTitleAccent", title: "Mot accentué", type: "string", group: "cta" }),
     defineField({ name: "ctaSubtitle", title: "Sous-titre", type: "text", rows: 2, group: "cta" }),
+
+    // Sections — drag to reorder, toggle to show/hide
+    defineField({
+      name: "sections",
+      title: "Ordre et visibilité des sections",
+      description: "Glissez-déposez pour réordonner. Décochez « Visible » pour masquer une section.",
+      type: "array",
+      group: "sections",
+      of: [
+        {
+          type: "object",
+          fields: [
+            { name: "id", title: "Section", type: "string", readOnly: true },
+            { name: "label", title: "Nom", type: "string", readOnly: true },
+            { name: "visible", title: "Visible", type: "boolean", initialValue: true },
+          ],
+          preview: {
+            select: { title: "label", visible: "visible" },
+            prepare(value: Record<string, unknown>) {
+              const title = value.title as string;
+              const visible = value.visible as boolean;
+              return { title: `${visible === false ? "🔴" : "🟢"} ${title}` };
+            },
+          },
+        },
+      ],
+    }),
 
     // SEO
     ...seoFields,

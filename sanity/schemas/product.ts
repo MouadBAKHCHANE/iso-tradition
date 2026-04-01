@@ -1,10 +1,12 @@
 import { defineType, defineField } from "sanity";
+import { TagIcon } from '@sanity/icons';
 import { seoFields } from "./helpers/seoFields";
 
 export default defineType({
   name: "product",
   title: "Pages services",
   type: "document",
+  icon: TagIcon,
   groups: [
     { name: "general", title: "Général", default: true },
     { name: "why", title: "Pourquoi changer" },
@@ -12,6 +14,7 @@ export default defineType({
     { name: "types", title: "Types & options" },
     { name: "didYouKnow", title: "Le saviez-vous" },
     { name: "faq", title: "FAQ" },
+    { name: "sections", title: "Sections" },
     { name: "seo", title: "SEO" },
   ],
   fields: [
@@ -152,6 +155,33 @@ export default defineType({
             { name: "question", title: "Question", type: "string" },
             { name: "answer", title: "Réponse", type: "text", rows: 4 },
           ],
+        },
+      ],
+    }),
+
+    // Sections — drag to reorder, toggle to show/hide
+    defineField({
+      name: "sections",
+      title: "Ordre et visibilité des sections",
+      description: "Glissez-déposez pour réordonner. Décochez « Visible » pour masquer une section.",
+      type: "array",
+      group: "sections",
+      of: [
+        {
+          type: "object",
+          fields: [
+            { name: "id", title: "Section", type: "string", readOnly: true },
+            { name: "label", title: "Nom", type: "string", readOnly: true },
+            { name: "visible", title: "Visible", type: "boolean", initialValue: true },
+          ],
+          preview: {
+            select: { title: "label", visible: "visible" },
+            prepare(value: Record<string, unknown>) {
+              const title = value.title as string;
+              const visible = value.visible as boolean;
+              return { title: `${visible === false ? "🔴" : "🟢"} ${title}` };
+            },
+          },
         },
       ],
     }),

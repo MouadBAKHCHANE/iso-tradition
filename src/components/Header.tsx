@@ -107,10 +107,10 @@ export default function Header({ forceVisible = false }: { forceVisible?: boolea
             href="https://form.typeform.com/to/astTYipT"
             target="_blank"
             rel="noopener noreferrer"
-            className="hidden lg:inline-flex items-center gap-2 bg-accent hover:bg-accent-hover text-primary-dark font-bold px-4 xl:px-6 py-2 xl:py-2.5 rounded-full text-xs xl:text-sm transition-colors group whitespace-nowrap"
+            className="hidden lg:inline-flex items-center gap-2 border-2 border-primary/30 hover:border-accent text-primary hover:text-accent font-bold px-4 xl:px-6 py-2 xl:py-2.5 rounded-full text-xs xl:text-sm transition-all group whitespace-nowrap"
           >
             Demander une offre
-            <span className="flex items-center justify-center w-6 h-6 rounded-full bg-primary-dark/15 transition-transform group-hover:translate-x-0.5">
+            <span className="flex items-center justify-center w-6 h-6 rounded-full bg-primary/10 group-hover:bg-primary-dark/15 transition-all group-hover:translate-x-0.5">
               <svg className="w-3 h-3" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
                 <path strokeLinecap="round" strokeLinejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" />
               </svg>
@@ -189,7 +189,7 @@ export default function Header({ forceVisible = false }: { forceVisible?: boolea
               target="_blank"
               rel="noopener noreferrer"
               onClick={() => setMobileOpen(false)}
-              className="block mt-3 bg-accent hover:bg-accent-hover text-primary-dark font-bold px-4 py-3 rounded-full text-center text-sm transition-colors"
+              className="block mt-3 border-2 border-primary/30 hover:border-accent text-primary hover:text-accent font-bold px-4 py-3 rounded-full text-center text-sm transition-all"
             >
               Demander une offre
             </a>

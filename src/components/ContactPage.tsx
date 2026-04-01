@@ -143,7 +143,7 @@ export default function ContactPage() {
                 {/* Card */}
                 <div className={`rounded-[20px] pt-10 pb-7 px-7 transition-shadow hover:shadow-lg ${
                   card.variant === "accent"
-                    ? "bg-accent"
+                    ? "border-2 border-accent bg-transparent"
                     : card.variant === "dark"
                     ? "bg-primary"
                     : "bg-secondary"
@@ -179,81 +179,97 @@ export default function ContactPage() {
 
             {/* Right — Form */}
             <FadeIn direction="right" delay={0.15}>
-              <div className="bg-secondary rounded-[20px] p-8 lg:p-10">
-                <h2 className="text-xl lg:text-2xl font-bold text-primary mb-8">
+              <div className="bg-primary rounded-[20px] p-6 lg:p-8">
+                <h2 className="text-lg lg:text-xl font-bold text-white mb-5">
                   Nous sommes là pour tous vos projets de menuiserie
                 </h2>
                 <form
                   onSubmit={handleSubmit}
-                  className="space-y-5"
+                  className="space-y-3"
                 >
                   {/* Name */}
                   <div>
-                    <label className="block text-sm font-semibold text-primary mb-1.5">Nom</label>
+                    <label className="block text-xs font-semibold text-white mb-1">Nom</label>
                     <input
                       type="text"
                       name="name"
                       required
                       placeholder="Jean Dupont"
-                      className="w-full bg-white rounded-full px-5 py-3 text-sm text-primary placeholder:text-primary/40 border-0 outline-none focus:ring-2 focus:ring-accent/40 transition"
+                      className="w-full bg-white rounded-full px-4 py-2.5 text-sm text-primary placeholder:text-primary/40 border-0 outline-none focus:ring-2 focus:ring-accent/40 transition"
                     />
                   </div>
 
                   {/* Email */}
                   <div>
-                    <label className="block text-sm font-semibold text-primary mb-1.5">Email</label>
+                    <label className="block text-xs font-semibold text-white mb-1">Email</label>
                     <input
                       type="email"
                       name="email"
                       required
                       placeholder="exemple@email.com"
-                      className="w-full bg-white rounded-full px-5 py-3 text-sm text-primary placeholder:text-primary/40 border-0 outline-none focus:ring-2 focus:ring-accent/40 transition"
+                      className="w-full bg-white rounded-full px-4 py-2.5 text-sm text-primary placeholder:text-primary/40 border-0 outline-none focus:ring-2 focus:ring-accent/40 transition"
                     />
                   </div>
 
                   {/* Phone + Service */}
-                  <div className="grid sm:grid-cols-2 gap-5">
+                  <div className="grid sm:grid-cols-2 gap-3">
                     <div>
-                      <label className="block text-sm font-semibold text-primary mb-1.5">Téléphone</label>
+                      <label className="block text-xs font-semibold text-white mb-1">Téléphone</label>
                       <input
                         type="tel"
                         name="phone"
                         placeholder="+41 XX XXX XX XX"
-                        className="w-full bg-white rounded-full px-5 py-3 text-sm text-primary placeholder:text-primary/40 border-0 outline-none focus:ring-2 focus:ring-accent/40 transition"
+                        className="w-full bg-white rounded-full px-4 py-2.5 text-sm text-primary placeholder:text-primary/40 border-0 outline-none focus:ring-2 focus:ring-accent/40 transition"
                       />
                     </div>
                     <div>
-                      <label className="block text-sm font-semibold text-primary mb-1.5">Service</label>
+                      <label className="block text-xs font-semibold text-white mb-1">Service</label>
+                      <div className="relative">
                       <select
                         name="service"
-                        className="w-full bg-white rounded-full px-5 py-3 text-sm text-primary/60 border-0 outline-none focus:ring-2 focus:ring-accent/40 transition appearance-none"
+                        className="w-full bg-white rounded-full px-5 py-3 pr-10 text-sm text-primary/60 border-0 outline-none focus:ring-2 focus:ring-accent/40 transition appearance-none"
                       >
                         <option value="">Choisir un service...</option>
                         {services.map((s) => (
                           <option key={s} value={s}>{s}</option>
                         ))}
                       </select>
+                      <svg className="absolute right-4 top-1/2 -translate-y-1/2 w-4 h-4 text-primary/40 pointer-events-none" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                        <path strokeLinecap="round" strokeLinejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5" />
+                      </svg>
+                      </div>
                     </div>
                   </div>
 
+                  {/* Message */}
+                  <div>
+                    <label className="block text-xs font-semibold text-white mb-1">Message</label>
+                    <textarea
+                      name="message"
+                      rows={3}
+                      placeholder="Décrivez votre projet ou posez vos questions..."
+                      className="w-full bg-white rounded-2xl px-4 py-2.5 text-sm text-primary placeholder:text-primary/40 border-0 outline-none focus:ring-2 focus:ring-accent/40 transition resize-none"
+                    />
+                  </div>
+
                   {/* Location + Date */}
-                  <div className="grid sm:grid-cols-2 gap-5">
+                  <div className="grid sm:grid-cols-2 gap-3">
                     <div>
-                      <label className="block text-sm font-semibold text-primary mb-1.5">Localisation</label>
+                      <label className="block text-xs font-semibold text-white mb-1">Localisation</label>
                       <input
                         type="text"
                         name="location"
                         placeholder="Ville / Canton"
-                        className="w-full bg-white rounded-full px-5 py-3 text-sm text-primary placeholder:text-primary/40 border-0 outline-none focus:ring-2 focus:ring-accent/40 transition"
+                        className="w-full bg-white rounded-full px-4 py-2.5 text-sm text-primary placeholder:text-primary/40 border-0 outline-none focus:ring-2 focus:ring-accent/40 transition"
                       />
                     </div>
                     <div>
-                      <label className="block text-sm font-semibold text-primary mb-1.5">Date souhaitée</label>
+                      <label className="block text-xs font-semibold text-white mb-1">Date souhaitée</label>
                       <input
                         type="text"
                         name="date"
                         placeholder="jj-mm-aaaa"
-                        className="w-full bg-white rounded-full px-5 py-3 text-sm text-primary placeholder:text-primary/40 border-0 outline-none focus:ring-2 focus:ring-accent/40 transition"
+                        className="w-full bg-white rounded-full px-4 py-2.5 text-sm text-primary placeholder:text-primary/40 border-0 outline-none focus:ring-2 focus:ring-accent/40 transition"
                       />
                     </div>
                   </div>
@@ -274,9 +290,16 @@ export default function ContactPage() {
                   <button
                     type="submit"
                     disabled={status === "sending"}
-                    className="w-full bg-accent hover:bg-accent-hover disabled:opacity-60 disabled:cursor-not-allowed text-primary-dark font-bold py-3.5 rounded-full text-[15px] transition-colors mt-2"
+                    className="w-full bg-white hover:bg-white border-2 border-white hover:border-accent text-primary hover:text-accent disabled:opacity-60 disabled:cursor-not-allowed font-bold py-2.5 rounded-full text-[14px] transition-colors mt-1 inline-flex items-center justify-center gap-2"
                   >
-                    {status === "sending" ? "Envoi en cours..." : "Envoyer"}
+                    {status === "sending" ? "Envoi en cours..." : (
+                      <>
+                        Envoyer
+                        <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
+                          <path strokeLinecap="round" strokeLinejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" />
+                        </svg>
+                      </>
+                    )}
                   </button>
                 </form>
               </div>
@@ -387,10 +410,10 @@ export default function ContactPage() {
                 href="https://form.typeform.com/to/astTYipT"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 bg-accent hover:bg-accent-hover text-primary-dark font-bold px-8 py-3.5 rounded-full text-[15px] transition-colors group"
+                className="inline-flex items-center gap-2 border-2 border-primary/30 hover:border-accent text-primary hover:text-accent font-bold px-8 py-3.5 rounded-full text-[15px] transition-colors group"
               >
                 Demander un offre
-                <span className="flex items-center justify-center w-7 h-7 rounded-full bg-primary-dark/15 transition-transform group-hover:translate-x-0.5">
+                <span className="flex items-center justify-center w-7 h-7 rounded-full bg-primary/10 transition-transform group-hover:translate-x-0.5">
                   <svg className="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
                     <path strokeLinecap="round" strokeLinejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" />
                   </svg>
@@ -398,7 +421,7 @@ export default function ContactPage() {
               </a>
               <a
                 href="tel:0216245300"
-                className="inline-flex items-center gap-2 border border-primary/20 hover:border-primary/40 text-primary font-semibold px-8 py-3.5 rounded-full text-[15px] transition-colors"
+                className="inline-flex items-center gap-2 border border-primary/20 hover:border-accent hover:text-accent text-primary font-semibold px-8 py-3.5 rounded-full text-[15px] transition-colors"
               >
                 <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
                   <path strokeLinecap="round" strokeLinejoin="round" d="M2.25 6.75c0 8.284 6.716 15 15 15h2.25a2.25 2.25 0 002.25-2.25v-1.372c0-.516-.351-.966-.852-1.091l-4.423-1.106c-.44-.11-.902.055-1.173.417l-.97 1.293c-.282.376-.769.542-1.21.38a12.035 12.035 0 01-7.143-7.143c-.162-.441.004-.928.38-1.21l1.293-.97c.363-.271.527-.734.417-1.173L6.963 3.102a1.125 1.125 0 00-1.091-.852H4.5A2.25 2.25 0 002.25 4.5v2.25z" />

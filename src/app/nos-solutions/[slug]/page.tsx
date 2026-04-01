@@ -67,6 +67,7 @@ function transformProduct(raw: Record<string, unknown>): {
   }[];
   didYouKnow?: string;
   faq: { question: string; answer: string }[];
+  sections?: { id: string; visible: boolean }[];
 } {
   return {
     name: raw.name as string,
@@ -148,6 +149,9 @@ function transformProduct(raw: Record<string, unknown>): {
     ...(raw.didYouKnow ? { didYouKnow: raw.didYouKnow as string } : {}),
 
     faq: (raw.faq as { question: string; answer: string }[]) ?? [],
+
+    // Section visibility & ordering
+    ...(raw.sections ? { sections: (raw.sections as { id: string; visible: boolean }[]).map(s => ({ id: s.id, visible: s.visible })) } : {}),
   };
 }
 

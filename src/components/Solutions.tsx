@@ -62,7 +62,7 @@ function Card({ sol }: { sol: (typeof solutions)[number] }) {
             className="object-cover transition-transform duration-700 group-hover:scale-110 group-active:scale-110"
           />
           <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent" />
-          <div className="absolute inset-0 bg-accent/20 opacity-0 group-hover:opacity-100 group-active:opacity-100 transition-opacity duration-500" />
+          <div className="absolute inset-0 bg-black/20 opacity-0 group-hover:opacity-100 group-active:opacity-100 transition-opacity duration-500" />
 
           {/* Title */}
           <div className="absolute bottom-0 left-0 right-0 p-4 2xl:p-5 3xl:p-6">
@@ -89,26 +89,40 @@ export default function Solutions() {
   // Desktop: smaller translate, Mobile: larger to reach last card
   // Adjust translate based on viewport width
   const [desktopEnd, setDesktopEnd] = useState("-40%");
+  const [scrollHeight, setScrollHeight] = useState("200vh");
   useEffect(() => {
     const update = () => {
       const w = window.innerWidth;
-      if (w < 1280) setDesktopEnd("-55%");      // 1024-1279
-      else if (w < 1536) setDesktopEnd("-35%");  // 1280-1535 (1440px range)
-      else if (w < 2200) setDesktopEnd("-35%");  // 1536-2199 (laptop/desktop)
-      else setDesktopEnd("0%");                 // 2200+ (4K)
+      const h = window.innerHeight;
+      if (w >= 2200) {
+        // 4K — static, no scroll animation
+        setDesktopEnd("0%");
+        setScrollHeight("auto");
+      } else if (w >= 1024) {
+        // Desktop/laptop — minimal scroll distance
+        const needed = h + Math.max(200, h * 0.25); // viewport + 25% for scroll
+        setScrollHeight(`${needed}px`);
+        if (w < 1280) setDesktopEnd("-55%");
+        else if (w < 1536) setDesktopEnd("-35%");
+        else setDesktopEnd("-30%");
+      } else {
+        // Mobile/tablet
+        setScrollHeight(`${h * 2}px`);
+        setDesktopEnd("-40%");
+      }
     };
     update();
     window.addEventListener("resize", update);
     return () => window.removeEventListener("resize", update);
   }, []);
-  const x = useTransform(scrollYProgress, [0.05, 0.85], ["0%", desktopEnd]);
-  const xMobile = useTransform(scrollYProgress, [0.05, 0.85], ["0%", "-75%"]);
-  const scrollHintOpacity = useTransform(scrollYProgress, [0, 0.08, 0.8, 1], [0, 1, 1, 0]);
+  const x = useTransform(scrollYProgress, [0, 0.95], ["0%", desktopEnd]);
+  const xMobile = useTransform(scrollYProgress, [0, 0.95], ["0%", "-75%"]);
+  const scrollHintOpacity = useTransform(scrollYProgress, [0, 0.05, 0.85, 1], [0, 1, 1, 0]);
 
   return (
     <section id="services" className="scroll-mt-24 lg:scroll-mt-32">
-      <div ref={sectionRef} className="relative h-[250vh] sm:h-[250vh] lg:h-[250vh] xl:h-[180vh] 2xl:h-[160vh] 3xl:h-auto 3xl:py-16">
-        <div className="sticky top-0 h-screen flex flex-col justify-center 3xl:static 3xl:h-auto overflow-hidden bg-white">
+      <div ref={sectionRef} className="relative 3xl:py-16" style={{ height: scrollHeight === "auto" ? "auto" : scrollHeight }}>
+        <div className={`${scrollHeight === "auto" ? "relative" : "sticky top-0 h-screen"} flex flex-col justify-center overflow-hidden bg-white`}>
           {/* Background decorative icon */}
           <div className="absolute top-1/2 -translate-y-1/2 -left-20 opacity-[0.07] pointer-events-none">
             <BrandIcon className="w-[600px] h-auto" color="#032742" />
@@ -134,7 +148,7 @@ export default function Solutions() {
               <div className="flex items-center justify-center gap-4 mt-1 lg:mt-1 xl:mt-2 2xl:mt-3 3xl:mt-8">
                 <a
                   href="/nos-solutions"
-                  className="inline-flex items-center gap-3 bg-accent hover:bg-accent-hover text-primary-dark font-semibold px-6 py-2.5 2xl:px-8 2xl:py-3 3xl:px-12 3xl:py-5 rounded-full transition-colors text-sm 2xl:text-base 3xl:text-2xl uppercase tracking-wider group"
+                  className="inline-flex items-center gap-3 border-2 border-primary/30 hover:border-accent text-primary hover:text-accent font-semibold px-6 py-2.5 2xl:px-8 2xl:py-3 3xl:px-12 3xl:py-5 rounded-full transition-all text-sm 2xl:text-base 3xl:text-2xl uppercase tracking-wider group"
                 >
                   Toutes nos solutions
                   <svg className="w-3.5 h-3.5 2xl:w-4 2xl:h-4 3xl:w-6 3xl:h-6 transition-transform group-hover:translate-x-1" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>

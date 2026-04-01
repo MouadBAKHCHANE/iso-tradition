@@ -51,7 +51,7 @@ export default function Strengths() {
           <FadeIn delay={0.2}>
             <a
               href="https://form.typeform.com/to/astTYipT" target="_blank" rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 bg-accent hover:bg-accent-hover text-primary-dark font-bold px-6 py-3 rounded-full transition-colors text-[15px] group shrink-0"
+              className="inline-flex items-center gap-2 border-2 border-primary/30 hover:border-accent text-primary hover:text-accent font-bold px-6 py-3 rounded-full transition-colors text-[15px] group shrink-0"
             >
               Demander une offre
               <span className="flex items-center justify-center w-6 h-6 rounded-full bg-primary-dark/15 transition-transform group-hover:translate-x-0.5">
@@ -127,8 +127,8 @@ export default function Strengths() {
 
           {/* ===== Row 2, Col 3: Accent card ===== */}
           <CardWrap i={4} className="h-full">
-            <div className="relative bg-accent rounded-[20px] p-8 flex flex-col justify-center h-full">
-              <span className="text-4xl font-bold text-primary mb-2 block">1:1</span>
+            <div className="relative border-2 border-accent bg-transparent rounded-[20px] p-8 flex flex-col justify-center h-full">
+              <span className="text-4xl font-bold text-accent mb-2 block">1:1</span>
               <h3 className="text-2xl font-bold text-primary leading-tight">
                 Un conseil personnalisé
                 <br />

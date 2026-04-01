@@ -4,7 +4,15 @@ import Image from "next/image";
 import { motion } from "framer-motion";
 import { FadeIn } from "./Motion";
 
-const posts = [
+interface BlogPost {
+  slug?: string;
+  image: string;
+  tag: string;
+  title: string;
+  date: string;
+}
+
+const defaultPosts: BlogPost[] = [
   {
     image: "/images/blog-1.webp",
     tag: "Subventions",
@@ -25,7 +33,12 @@ const posts = [
   },
 ];
 
-export default function Blog() {
+interface BlogProps {
+  posts?: BlogPost[];
+}
+
+export default function Blog({ posts: postsProp }: BlogProps) {
+  const posts = postsProp && postsProp.length > 0 ? postsProp : defaultPosts;
   return (
     <section id="actualites" className="py-14 lg:py-20 bg-white">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
@@ -49,7 +62,7 @@ export default function Blog() {
           <FadeIn delay={0.15}>
             <a
               href="/actualites"
-              className="inline-flex items-center gap-2 bg-accent hover:bg-accent-hover text-primary-dark font-semibold px-6 py-2.5 rounded-full transition-colors text-sm group"
+              className="inline-flex items-center gap-2 border-2 border-primary/30 hover:border-accent text-primary hover:text-accent font-semibold px-6 py-2.5 rounded-full transition-colors text-sm group"
             >
               Voir tout
               <svg className="w-3.5 h-3.5 transition-transform group-hover:translate-x-1" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
@@ -64,7 +77,7 @@ export default function Blog() {
           {posts.map((post, i) => (
             <motion.a
               key={post.title}
-              href="/actualites"
+              href={post.slug ? `/actualites/${post.slug}` : "/actualites"}
               initial={{ opacity: 0, y: 40 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: i * 0.12, ease: [0.25, 0.1, 0.25, 1] }}
@@ -80,11 +93,11 @@ export default function Blog() {
                   </span>
                 </div>
                 <div className="relative rounded-[20px] overflow-hidden aspect-[4/3]">
-                  <Image
+                  {/* eslint-disable-next-line @next/next/no-img-element */}
+                  <img
                     src={post.image}
                     alt={post.title}
-                    fill
-                    className="object-cover transition-transform duration-700 group-hover:scale-105"
+                    className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
                   />
                 </div>
               </div>

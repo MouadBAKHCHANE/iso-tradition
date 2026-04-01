@@ -1,4 +1,6 @@
 import LegalPage from "@/components/LegalPage";
+import LegalPageSanity from "@/components/LegalPageSanity";
+import { getLegalPageBySlug } from "@/lib/queries";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
@@ -137,7 +139,19 @@ const sections = [
   },
 ];
 
-export default function Confidentialite() {
+export default async function Confidentialite() {
+  const sanityData = await getLegalPageBySlug("confidentialite");
+
+  if (sanityData?.body && Array.isArray(sanityData.body) && sanityData.body.length > 0) {
+    return (
+      <LegalPageSanity
+        title={sanityData.title || "Politique de confidentialité & Cookies"}
+        lastUpdated={sanityData.lastUpdated || "28 mars 2026"}
+        body={sanityData.body}
+      />
+    );
+  }
+
   return (
     <LegalPage
       title="Politique de confidentialité & Cookies"

@@ -16,7 +16,7 @@ const steps = [
 ];
 
 const colorMap = {
-  accent: { bg: "bg-accent", text: "text-primary", desc: "text-primary/70", numBg: "bg-accent-hover", iconColor: "text-accent-hover/20" },
+  accent: { bg: "bg-transparent border-2 border-accent", text: "text-primary", desc: "text-primary/70", numBg: "bg-accent/20", iconColor: "text-accent/20" },
   dark: { bg: "bg-primary", text: "text-white", desc: "text-white/60", numBg: "bg-primary-dark", iconColor: "text-white/[0.07]" },
   light: { bg: "bg-secondary", text: "text-primary", desc: "text-gray-500", numBg: "bg-gray-300", iconColor: "text-primary/[0.06]" },
 };
@@ -78,7 +78,7 @@ export default function ProjectCTA() {
               <div className="flex flex-col sm:flex-row items-start sm:items-center gap-4 sm:gap-5">
                 <a
                   href="https://form.typeform.com/to/astTYipT" target="_blank" rel="noopener noreferrer"
-                  className="inline-flex items-center gap-2 bg-accent hover:bg-accent-hover text-primary-dark font-bold px-6 py-3 rounded-full transition-colors text-[15px] group"
+                  className="inline-flex items-center gap-2 border-2 border-primary/30 hover:border-accent text-primary hover:text-accent font-bold px-6 py-3 rounded-full transition-colors text-[15px] group"
                 >
                   Demander une offre
                   <span className="flex items-center justify-center w-6 h-6 rounded-full bg-primary-dark/15 transition-transform group-hover:translate-x-0.5">

@@ -79,7 +79,7 @@ export default function FAQ() {
                       <div
                         className={`w-8 h-8 rounded-full flex items-center justify-center flex-shrink-0 transition-colors duration-300 ${
                           isOpen
-                            ? "bg-accent text-primary-dark"
+                            ? "border-2 border-accent text-accent bg-transparent"
                             : "bg-primary/10 text-primary"
                         }`}
                       >

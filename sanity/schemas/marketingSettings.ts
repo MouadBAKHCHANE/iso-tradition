@@ -1,9 +1,11 @@
 import { defineType, defineField } from "sanity";
+import { BarChartIcon } from '@sanity/icons';
 
 export default defineType({
   name: "marketingSettings",
   title: "Marketing & Analytics",
   type: "document",
+  icon: BarChartIcon,
   groups: [
     { name: "analytics", title: "Analytics", default: true },
     { name: "pixels", title: "Pixels & Ads" },

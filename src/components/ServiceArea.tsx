@@ -70,7 +70,7 @@ export default function ServiceArea() {
               <div className="flex flex-wrap items-center gap-4">
                 <a
                   href="https://form.typeform.com/to/astTYipT" target="_blank" rel="noopener noreferrer"
-                  className="inline-flex items-center gap-2 bg-accent hover:bg-accent-hover text-primary-dark font-bold px-6 py-3 rounded-full transition-colors text-[15px] group"
+                  className="inline-flex items-center gap-2 border-2 border-white/40 hover:border-accent text-white hover:text-accent font-bold px-6 py-3 rounded-full transition-colors text-[15px] group"
                 >
                   Demander une offre
                   <span className="flex items-center justify-center w-6 h-6 rounded-full bg-primary-dark/15 transition-transform group-hover:translate-x-0.5">

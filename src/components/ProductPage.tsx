@@ -41,6 +41,7 @@ interface ProductData {
   personalisationOptions?: { icon: string; label: string; values?: string[]; items?: { name: string; image?: string }[] }[];
   didYouKnow?: string;
   faq: { question: string; answer: string }[];
+  sections?: { id: string; visible: boolean }[];
 }
 
 function PersonalisationIcon({ type }: { type: string }) {
@@ -94,6 +95,12 @@ function PersonalisationIcon({ type }: { type: string }) {
   return <>{defaultIcons[type] ?? defaultIcons.configuration}</>;
 }
 
+function isSectionVisible(sections: { id: string; visible: boolean }[] | undefined, id: string): boolean {
+  if (!sections || sections.length === 0) return true;
+  const section = sections.find((s) => s.id === id);
+  return section ? section.visible !== false : true;
+}
+
 export default function ProductPage({ product }: { product: ProductData }) {
   const [openFaq, setOpenFaq] = useState<number | null>(0);
   const pathname = usePathname();
@@ -104,7 +111,7 @@ export default function ProductPage({ product }: { product: ProductData }) {
 
       {/* Hero */}
       <section className="relative pt-24 lg:pt-28 pb-10 lg:pb-14 overflow-hidden">
-        <Image src={product.heroImage} alt={product.name} fill className="object-cover" />
+        <img src={product.heroImage} alt={product.name} className="absolute inset-0 w-full h-full object-cover" />
         <div className="absolute inset-0 bg-primary/55" />
         <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <FadeIn>
@@ -133,10 +140,10 @@ export default function ProductPage({ product }: { product: ProductData }) {
           )}
           <FadeIn delay={0.25}>
             <a href="https://form.typeform.com/to/astTYipT" target="_blank" rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 bg-accent hover:bg-accent-hover text-primary-dark font-bold px-6 py-3 rounded-full text-[15px] transition-colors group"
+              className="inline-flex items-center gap-2 border-2 border-white/40 hover:border-accent text-white hover:text-accent font-bold px-6 py-3 rounded-full text-[15px] transition-colors group"
             >
               Demander un devis
-              <span className="flex items-center justify-center w-7 h-7 rounded-full bg-primary-dark/15 transition-transform group-hover:translate-x-0.5">
+              <span className="flex items-center justify-center w-7 h-7 rounded-full bg-white/15 transition-transform group-hover:translate-x-0.5">
                 <svg className="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}><path strokeLinecap="round" strokeLinejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" /></svg>
               </span>
             </a>
@@ -167,7 +174,7 @@ export default function ProductPage({ product }: { product: ProductData }) {
                       href={sol.href}
                       className={`flex items-center gap-2 px-3 py-2.5 rounded-xl text-[13px] font-medium transition-colors ${
                         pathname === sol.href
-                          ? "bg-accent text-primary-dark font-bold"
+                          ? "border-2 border-accent text-accent font-bold"
                           : "text-primary/70 hover:text-primary hover:bg-white"
                       }`}
                     >
@@ -186,15 +193,15 @@ export default function ProductPage({ product }: { product: ProductData }) {
 
                 <div className="flex flex-wrap gap-1.5">
                   {product.typesLabel && (
-                    <span className="bg-accent text-primary-dark text-[11px] font-bold tracking-[0.12em] uppercase px-3 py-1 rounded-full">{product.typesLabel}</span>
+                    <span className="border border-accent text-accent text-[11px] font-bold tracking-[0.12em] uppercase px-3 py-1 rounded-full">{product.typesLabel}</span>
                   )}
 
                   {product.personalisationLabel && (
-                    <span className="bg-accent text-primary-dark text-[11px] font-bold tracking-[0.12em] uppercase px-3 py-1 rounded-full">{product.personalisationLabel}</span>
+                    <span className="border border-accent text-accent text-[11px] font-bold tracking-[0.12em] uppercase px-3 py-1 rounded-full">{product.personalisationLabel}</span>
                   )}
 
                   {product.personalisationOptions?.map((opt) => (
-                    <span key={opt.label} className="bg-accent text-primary-dark text-[11px] font-bold tracking-[0.12em] uppercase px-3 py-1 rounded-full">{opt.label}</span>
+                    <span key={opt.label} className="border border-accent text-accent text-[11px] font-bold tracking-[0.12em] uppercase px-3 py-1 rounded-full">{opt.label}</span>
                   ))}
                 </div>
               </div>
@@ -205,11 +212,11 @@ export default function ProductPage({ product }: { product: ProductData }) {
               <h3 className="font-bold text-white text-[14px] mb-1">Besoin d&apos;un conseil ?</h3>
               <p className="text-white/60 text-[13px] mb-4 leading-snug">Nos experts se déplacent gratuitement.</p>
               <a href="https://form.typeform.com/to/astTYipT" target="_blank" rel="noopener noreferrer"
-                className="block w-full text-center bg-accent hover:bg-accent-hover text-primary-dark font-bold px-4 py-2.5 rounded-full text-[13px] transition-colors mb-3"
+                className="block w-full text-center border-2 border-white/40 hover:border-accent text-white hover:text-accent font-bold px-4 py-2.5 rounded-full text-[13px] transition-colors mb-3"
               >
                 Demander une offre
               </a>
-              <a href="tel:0216245300" className="flex items-center justify-center gap-2 text-white/60 hover:text-white text-[13px] transition-colors">
+              <a href="tel:0216245300" className="flex items-center justify-center gap-2 text-white/60 hover:text-accent text-[13px] transition-colors">
                 <svg className="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}><path strokeLinecap="round" strokeLinejoin="round" d="M2.25 6.75c0 8.284 6.716 15 15 15h2.25a2.25 2.25 0 002.25-2.25v-1.372c0-.516-.351-.966-.852-1.091l-4.423-1.106c-.44-.11-.902.055-1.173.417l-.97 1.293c-.282.376-.769.542-1.21.38a12.035 12.035 0 01-7.143-7.143c-.162-.441.004-.928.38-1.21l1.293-.97c.363-.271.527-.734.417-1.173L6.963 3.102a1.125 1.125 0 00-1.091-.852H4.5A2.25 2.25 0 002.25 4.5v2.25z" /></svg>
                 021 624 53 00
               </a>
@@ -221,7 +228,7 @@ export default function ProductPage({ product }: { product: ProductData }) {
           <main className="space-y-6">
 
             {/* Why Replace */}
-            <FadeIn>
+            {isSectionVisible(product.sections, "why") && product.whyTitle && <FadeIn>
               <div className="bg-white rounded-[20px] overflow-hidden">
                 {product.whyImage ? (
                   <div className="flex flex-col lg:flex-row">
@@ -230,7 +237,7 @@ export default function ProductPage({ product }: { product: ProductData }) {
                       <p className="text-primary/70 text-[15px] leading-relaxed">{product.whyText}</p>
                     </div>
                     <div className="relative w-full lg:w-64 h-52 lg:h-auto flex-shrink-0">
-                      <Image src={product.whyImage} alt={product.whyTitle} fill className="object-cover" />
+                      <img src={product.whyImage} alt={product.whyTitle} className="absolute inset-0 w-full h-full object-cover" />
                     </div>
                   </div>
                 ) : (
@@ -240,15 +247,15 @@ export default function ProductPage({ product }: { product: ProductData }) {
                   </div>
                 )}
               </div>
-            </FadeIn>
+            </FadeIn>}
 
             {/* Advantages */}
-            <FadeIn delay={0.05}>
+            {isSectionVisible(product.sections, "advantages") && product.advantages?.length > 0 && <FadeIn delay={0.05}>
               <div className="relative rounded-[20px] overflow-hidden">
                 {/* Background image */}
                 {product.advantagesImage && (
                   <>
-                    <Image src={product.advantagesImage} alt="Atouts" fill className="object-cover object-center" />
+                    <img src={product.advantagesImage} alt="Atouts" className="absolute inset-0 w-full h-full object-cover object-center" />
                     <div className="absolute inset-0 bg-primary/55" />
                   </>
                 )}
@@ -279,10 +286,10 @@ export default function ProductPage({ product }: { product: ProductData }) {
                   </div>
                 </div>
               </div>
-            </FadeIn>
+            </FadeIn>}
 
             {/* Types + Personalisation — combined section */}
-            {(product.types?.length || product.personalisation?.length || product.personalisationOptions?.length) ? (
+            {isSectionVisible(product.sections, "types") && (product.types?.length || product.personalisation?.length || product.personalisationOptions?.length) ? (
               <FadeIn delay={0.05}>
                 <div className="bg-white rounded-[20px] p-8">
                   <h2 className="text-2xl sm:text-3xl font-bold text-primary leading-tight mb-6">
@@ -294,7 +301,7 @@ export default function ProductPage({ product }: { product: ProductData }) {
                     <div className={`${(product.personalisation?.length || product.personalisationOptions?.length) ? "mb-6" : ""}`}>
                       {product.typesLabel && (
                         <div className="mb-3">
-                          <span className="bg-accent text-primary-dark text-[11px] font-bold tracking-[0.12em] uppercase px-3 py-1 rounded-full">{product.typesLabel}</span>
+                          <span className="border border-accent text-accent text-[11px] font-bold tracking-[0.12em] uppercase px-3 py-1 rounded-full">{product.typesLabel}</span>
                         </div>
                       )}
                     <div className="grid grid-cols-1 lg:grid-cols-2 gap-3">
@@ -308,12 +315,12 @@ export default function ProductPage({ product }: { product: ProductData }) {
                           className="group relative rounded-[16px] overflow-hidden cursor-default h-64"
                         >
                           {type.image ? (
-                            <Image src={type.image} alt={type.name} fill sizes="(max-width: 768px) 50vw, 300px" className="object-cover transition-transform duration-700 ease-out group-hover:scale-110" />
+                            <img src={type.image} alt={type.name} className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-110" />
                           ) : (
                             <div className="absolute inset-0 bg-gradient-to-br from-primary to-primary/80" />
                           )}
                           <div className="absolute inset-0 bg-gradient-to-t from-primary/70 via-primary/15 to-transparent" />
-                          <div className="absolute inset-x-0 bottom-0 h-24 bg-gradient-to-t from-accent/0 group-hover:from-accent/40 to-transparent transition-colors duration-500" />
+                          <div className="absolute inset-x-0 bottom-0 h-24 bg-gradient-to-t from-black/0 group-hover:from-black/30 to-transparent transition-colors duration-500" />
                           <div className="absolute bottom-0 left-0 right-0 h-[2px] bg-accent origin-left scale-x-0 group-hover:scale-x-100 transition-transform duration-500 ease-out" />
                           <div className="absolute inset-x-0 bottom-0 p-5">
                             <p className="text-[10px] font-bold tracking-[0.25em] uppercase text-accent mb-1.5 opacity-80">{String(i + 1).padStart(2, "0")}</p>
@@ -333,7 +340,7 @@ export default function ProductPage({ product }: { product: ProductData }) {
                     <div className={`${product.personalisationOptions?.length ? "mb-6" : ""}`}>
                       {product.personalisationLabel && (
                         <div className="mb-3">
-                          <span className="bg-accent text-primary-dark text-[11px] font-bold tracking-[0.12em] uppercase px-3 py-1 rounded-full">{product.personalisationLabel}</span>
+                          <span className="border border-accent text-accent text-[11px] font-bold tracking-[0.12em] uppercase px-3 py-1 rounded-full">{product.personalisationLabel}</span>
                         </div>
                       )}
                     <div className="grid grid-cols-1 lg:grid-cols-2 gap-3">
@@ -347,12 +354,12 @@ export default function ProductPage({ product }: { product: ProductData }) {
                           className="group relative rounded-[16px] overflow-hidden cursor-default h-64"
                         >
                           {item.image ? (
-                            <Image src={item.image} alt={item.name} fill sizes="(max-width: 768px) 50vw, 300px" className="object-cover transition-transform duration-700 ease-out group-hover:scale-110" />
+                            <img src={item.image} alt={item.name} className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-110" />
                           ) : (
                             <div className="absolute inset-0 bg-gradient-to-br from-primary to-primary/80" />
                           )}
                           <div className="absolute inset-0 bg-gradient-to-t from-primary/70 via-primary/15 to-transparent" />
-                          <div className="absolute inset-x-0 bottom-0 h-24 bg-gradient-to-t from-accent/0 group-hover:from-accent/40 to-transparent transition-colors duration-500" />
+                          <div className="absolute inset-x-0 bottom-0 h-24 bg-gradient-to-t from-black/0 group-hover:from-black/30 to-transparent transition-colors duration-500" />
                           <div className="absolute bottom-0 left-0 right-0 h-[2px] bg-accent origin-left scale-x-0 group-hover:scale-x-100 transition-transform duration-500 ease-out" />
                           <div className="absolute inset-x-0 bottom-0 p-5">
                             <p className="text-[10px] font-bold tracking-[0.25em] uppercase text-accent mb-1.5 opacity-80">{String(i + 1).padStart(2, "0")}</p>
@@ -379,7 +386,7 @@ export default function ProductPage({ product }: { product: ProductData }) {
                           viewport={{ once: true, amount: 0.3 }}
                         >
                           <div className="mb-3">
-                            <span className="bg-accent text-primary-dark text-[11px] font-bold tracking-[0.12em] uppercase px-3 py-1 rounded-full">{opt.label}</span>
+                            <span className="border border-accent text-accent text-[11px] font-bold tracking-[0.12em] uppercase px-3 py-1 rounded-full">{opt.label}</span>
                           </div>
                           
                           {opt.values && opt.values.length > 0 && (
@@ -413,7 +420,7 @@ export default function ProductPage({ product }: { product: ProductData }) {
             ) : null}
 
             {/* Did You Know */}
-            {product.didYouKnow && (
+            {isSectionVisible(product.sections, "didYouKnow") && product.didYouKnow && (
               <FadeIn delay={0.05}>
                 <div className="bg-accent/10 border border-accent/20 rounded-[20px] p-8 flex gap-5">
                   <div className="flex-shrink-0 w-10 h-10 rounded-full bg-accent flex items-center justify-center mt-0.5">
@@ -430,7 +437,7 @@ export default function ProductPage({ product }: { product: ProductData }) {
             )}
 
             {/* FAQ */}
-            <FadeIn delay={0.05}>
+            {isSectionVisible(product.sections, "faq") && product.faq?.length > 0 && <FadeIn delay={0.05}>
               <div className="bg-primary rounded-[20px] p-8 relative overflow-hidden">
                 <BrandIcon className="absolute -right-10 -bottom-10 w-[250px] h-[250px] text-white opacity-[0.04]" />
                 <h2 className="text-2xl sm:text-3xl font-bold text-white leading-tight mb-6 relative z-10">
@@ -446,7 +453,7 @@ export default function ProductPage({ product }: { product: ProductData }) {
                         <span className={`text-[14px] font-semibold transition-colors pr-4 ${openFaq === i ? "text-accent" : "text-white"}`}>
                           {item.question}
                         </span>
-                        <div className={`w-7 h-7 rounded-full flex items-center justify-center flex-shrink-0 transition-colors ${openFaq === i ? "bg-accent" : "bg-white/10"}`}>
+                        <div className={`w-7 h-7 rounded-full flex items-center justify-center flex-shrink-0 transition-colors ${openFaq === i ? "border-2 border-accent bg-transparent" : "bg-white/10"}`}>
                           <svg className={`w-3.5 h-3.5 transition-transform ${openFaq === i ? "rotate-45 text-primary-dark" : "text-white"}`} fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
                             <path strokeLinecap="round" strokeLinejoin="round" d="M12 4.5v15m7.5-7.5h-15" />
                           </svg>
@@ -469,7 +476,7 @@ export default function ProductPage({ product }: { product: ProductData }) {
                   ))}
                 </div>
               </div>
-            </FadeIn>
+            </FadeIn>}
 
           </main>
         </div>
@@ -488,10 +495,10 @@ export default function ProductPage({ product }: { product: ProductData }) {
           </FadeIn>
           <FadeIn delay={0.2}>
             <a href="https://form.typeform.com/to/astTYipT" target="_blank" rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 bg-accent hover:bg-accent-hover text-primary-dark font-bold px-8 py-3.5 rounded-full text-[15px] transition-colors group"
+              className="inline-flex items-center gap-2 border-2 border-primary/30 hover:border-accent text-primary hover:text-accent font-bold px-8 py-3.5 rounded-full text-[15px] transition-colors group"
             >
               Demander un offre
-              <span className="flex items-center justify-center w-7 h-7 rounded-full bg-primary-dark/15 transition-transform group-hover:translate-x-0.5">
+              <span className="flex items-center justify-center w-7 h-7 rounded-full bg-primary/10 transition-transform group-hover:translate-x-0.5">
                 <svg className="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}><path strokeLinecap="round" strokeLinejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" /></svg>
               </span>
             </a>
