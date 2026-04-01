@@ -241,7 +241,7 @@ export default function SolutionsListPage() {
             <FadeIn delay={0.2}>
               <div className="bg-secondary rounded-[20px] overflow-hidden flex flex-col lg:flex-row">
                 <div className="p-8 flex flex-col flex-1">
-                  <div className="mb-5"><span className="inline-block bg-accent text-primary-dark font-bold text-[13px] px-4 py-1.5 rounded-full">Aides financières &amp; subventions</span></div>
+                  <div className="mb-5"><span className="inline-block border-2 border-accent text-accent font-bold text-[13px] px-4 py-1.5 rounded-full">Aides financières &amp; subventions</span></div>
                   <p className="text-primary/70 text-[15px] leading-relaxed mb-4">
                     Le Programme Bâtiments est le principal outil fédéral et cantonal d&apos;aide aux rénovations énergétiques. Il peut financer jusqu&apos;à environ <span className="text-accent font-bold">30%</span> des coûts d&apos;investissement d&apos;une rénovation.
                   </p>
@@ -252,8 +252,8 @@ export default function SolutionsListPage() {
                     Pour en bénéficier, le projet doit s&apos;inscrire dans un projet global de rénovation énergétique. La plupart des cantons exigent un diagnostic énergétique (certificat CECB/CECB Plus) ou une labellisation (Minergie).
                   </p>
                 </div>
-                <div className="relative w-full lg:w-1/3 h-48 lg:h-auto flex-shrink-0">
-                  <Image src="/images/programme-batiments.webp" alt="Le Programme Bâtiments" fill className="object-contain object-center scale-150" />
+                <div className="relative w-full lg:w-1/3 min-h-[180px] lg:min-h-0 flex-shrink-0 flex items-center justify-center p-6">
+                  <Image src="/images/programme-batiments.webp" alt="Le Programme Bâtiments" fill className="object-contain object-center p-4" />
                 </div>
               </div>
             </FadeIn>
@@ -261,7 +261,7 @@ export default function SolutionsListPage() {
             <FadeIn delay={0.3}>
               <div className="bg-primary rounded-[20px] overflow-hidden flex flex-col lg:flex-row">
                 <div className="p-8 flex flex-col flex-1">
-                  <div className="mb-5"><span className="inline-block bg-accent text-primary-dark font-bold text-[13px] px-4 py-1.5 rounded-full">Normes &amp; performances</span></div>
+                  <div className="mb-5"><span className="inline-block border-2 border-accent text-accent font-bold text-[13px] px-4 py-1.5 rounded-full">Normes &amp; performances</span></div>
                   <p className="text-white/80 text-[15px] leading-relaxed mb-5">
                     Les nouvelles menuiseries doivent respecter des valeurs &ldquo;U&rdquo; minimales (performance thermique) fixées par :
                   </p>
