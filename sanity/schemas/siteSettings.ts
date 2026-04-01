@@ -8,6 +8,7 @@ export default defineType({
   icon: CogIcon,
   groups: [
     { name: "general", title: "Général", default: true },
+    { name: "colors", title: "Couleurs" },
     { name: "contact", title: "Contact" },
     { name: "social", title: "Réseaux sociaux" },
     { name: "cta", title: "Boutons d'action" },
@@ -17,6 +18,53 @@ export default defineType({
     defineField({ name: "siteDescription", title: "Description du site", type: "text", rows: 3, group: "general" }),
     defineField({ name: "logo", title: "Logo (couleur)", type: "image", group: "general", options: { hotspot: true } }),
     defineField({ name: "logoWhite", title: "Logo (blanc)", type: "image", group: "general", options: { hotspot: true } }),
+
+    // Colors
+    defineField({
+      name: "colorPrimary",
+      title: "Couleur principale (bleu)",
+      type: "string",
+      group: "colors",
+      description: "Code HEX. Ex: #215e84. Utilisée pour les titres, fonds, navigation.",
+      initialValue: "#215e84",
+      validation: (Rule) => Rule.regex(/^#[0-9a-fA-F]{6}$/).warning("Format: #RRGGBB"),
+    }),
+    defineField({
+      name: "colorPrimaryDark",
+      title: "Couleur principale foncée",
+      type: "string",
+      group: "colors",
+      description: "Variante plus foncée. Ex: #1a4b6a",
+      initialValue: "#1a4b6a",
+      validation: (Rule) => Rule.regex(/^#[0-9a-fA-F]{6}$/).warning("Format: #RRGGBB"),
+    }),
+    defineField({
+      name: "colorAccent",
+      title: "Couleur d'accent (orange)",
+      type: "string",
+      group: "colors",
+      description: "Code HEX. Ex: #f8ad0c. Utilisée pour les mots-clés, hover, icônes.",
+      initialValue: "#f8ad0c",
+      validation: (Rule) => Rule.regex(/^#[0-9a-fA-F]{6}$/).warning("Format: #RRGGBB"),
+    }),
+    defineField({
+      name: "colorAccentHover",
+      title: "Couleur d'accent hover",
+      type: "string",
+      group: "colors",
+      description: "Variante pour le hover. Ex: #e09a00",
+      initialValue: "#e09a00",
+      validation: (Rule) => Rule.regex(/^#[0-9a-fA-F]{6}$/).warning("Format: #RRGGBB"),
+    }),
+    defineField({
+      name: "colorSecondary",
+      title: "Couleur secondaire (fond clair)",
+      type: "string",
+      group: "colors",
+      description: "Fond des sections claires. Ex: #ebe9e5",
+      initialValue: "#ebe9e5",
+      validation: (Rule) => Rule.regex(/^#[0-9a-fA-F]{6}$/).warning("Format: #RRGGBB"),
+    }),
 
     // Contact
     defineField({ name: "phone", title: "Téléphone", type: "string", group: "contact" }),

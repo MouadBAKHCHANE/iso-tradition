@@ -2,6 +2,8 @@ import type { Metadata } from "next";
 import { Bai_Jamjuree, Outfit } from "next/font/google";
 import "./globals.css";
 import ScrollToTop from "@/components/ScrollToTop";
+import ThemeProvider from "@/components/ThemeProvider";
+import { getSiteSettings } from "@/lib/queries";
 
 const baiJamjuree = Bai_Jamjuree({
   subsets: ["latin"],
@@ -71,11 +73,12 @@ export const metadata: Metadata = {
   },
 };
 
-export default function RootLayout({
+export default async function RootLayout({
   children,
 }: {
   children: React.ReactNode;
 }) {
+  const settings = await getSiteSettings().catch(() => null);
   return (
     <html lang="fr">
       <head>
@@ -137,6 +140,13 @@ export default function RootLayout({
       <body
         className={`${baiJamjuree.variable} ${outfit.variable} font-sans antialiased`}
       >
+        <ThemeProvider colors={settings ? {
+          colorPrimary: settings.colorPrimary,
+          colorPrimaryDark: settings.colorPrimaryDark,
+          colorAccent: settings.colorAccent,
+          colorAccentHover: settings.colorAccentHover,
+          colorSecondary: settings.colorSecondary,
+        } : null} />
         <ScrollToTop />
         {children}
       </body>
