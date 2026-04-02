@@ -1,58 +1,25 @@
 "use client";
 
+import { useRef, useState, useEffect } from "react";
 import Image from "next/image";
 import Link from "next/link";
-import { useRef, useState, useEffect } from "react";
-import { motion, useScroll, useTransform } from "framer-motion";
 import { FadeIn } from "./Motion";
 import BrandIcon from "./BrandIcon";
 
 const solutions = [
-  {
-    title: "Fenêtres",
-    slug: "/nos-solutions/fenetres",
-    image: "/images/sol-fenetres.webp",
-  },
-  {
-    title: "Baies coulissantes",
-    slug: "/nos-solutions/baies-coulissantes",
-    image: "/images/sol-baies.webp",
-  },
-  {
-    title: "Portes d'entrée",
-    slug: "/nos-solutions/portes-entree",
-    image: "/images/sol-portes.webp",
-  },
-  {
-    title: "Volets",
-    slug: "/nos-solutions/volets",
-    image: "/images/sol-volets.webp",
-  },
-  {
-    title: "Portes de garage",
-    slug: "/nos-solutions/portes-garage",
-    image: "/images/sol-garage.webp",
-  },
-  {
-    title: "Stores bannes",
-    slug: "/nos-solutions/stores-bannes",
-    image: "/images/sol-stores.webp",
-  },
-  {
-    title: "Films solaires",
-    slug: "/nos-solutions/films-solaires",
-    image: "/images/sol-film.webp",
-  },
-  {
-    title: "Carports & Pergolas",
-    slug: "/nos-solutions/carports-pergolas",
-    image: "/images/sol-carport.webp",
-  },
+  { title: "Fenêtres", slug: "/nos-solutions/fenetres", image: "/images/sol-fenetres.webp" },
+  { title: "Baies coulissantes", slug: "/nos-solutions/baies-coulissantes", image: "/images/sol-baies.webp" },
+  { title: "Portes d'entrée", slug: "/nos-solutions/portes-entree", image: "/images/sol-portes.webp" },
+  { title: "Volets", slug: "/nos-solutions/volets", image: "/images/sol-volets.webp" },
+  { title: "Portes de garage", slug: "/nos-solutions/portes-garage", image: "/images/sol-garage.webp" },
+  { title: "Stores bannes", slug: "/nos-solutions/stores-bannes", image: "/images/sol-stores.webp" },
+  { title: "Films solaires", slug: "/nos-solutions/films-solaires", image: "/images/sol-film.webp" },
+  { title: "Carports & Pergolas", slug: "/nos-solutions/carports-pergolas", image: "/images/sol-carport.webp" },
 ];
 
 function Card({ sol }: { sol: (typeof solutions)[number] }) {
   return (
-    <Link href={sol.slug} className="group relative flex-shrink-0 w-[180px] sm:w-[220px] 2xl:w-[240px] 3xl:w-[280px] touch-manipulation">
+    <Link href={sol.slug} className="group relative flex-shrink-0 w-[160px] sm:w-[180px] lg:w-[200px] xl:w-[220px] 2xl:w-[240px] 3xl:w-[280px] touch-manipulation">
       <div className="relative rounded-xl overflow-hidden shadow-md group-hover:shadow-2xl group-active:shadow-2xl transition-all duration-500 group-hover:-translate-y-3 group-active:-translate-y-3">
         <div className="relative aspect-[3/4] overflow-hidden">
           <Image
@@ -63,15 +30,11 @@ function Card({ sol }: { sol: (typeof solutions)[number] }) {
           />
           <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent" />
           <div className="absolute inset-0 bg-black/20 opacity-0 group-hover:opacity-100 group-active:opacity-100 transition-opacity duration-500" />
-
-          {/* Title */}
-          <div className="absolute bottom-0 left-0 right-0 p-4 2xl:p-5 3xl:p-6">
-            <h3 className="font-bold text-white text-sm 2xl:text-base 3xl:text-xl drop-shadow-md">
+          <div className="absolute bottom-0 left-0 right-0 p-3 sm:p-4 2xl:p-5 3xl:p-6">
+            <h3 className="font-bold text-white text-xs sm:text-sm 2xl:text-base 3xl:text-xl drop-shadow-md">
               {sol.title}
             </h3>
           </div>
-
-          {/* Bottom accent line */}
           <div className="absolute bottom-0 left-0 right-0 h-[3px] bg-accent scale-x-0 group-hover:scale-x-100 group-active:scale-x-100 transition-transform duration-500 origin-left" />
         </div>
       </div>
@@ -80,131 +43,112 @@ function Card({ sol }: { sol: (typeof solutions)[number] }) {
 }
 
 export default function Solutions() {
-  const sectionRef = useRef<HTMLDivElement>(null);
-  const { scrollYProgress } = useScroll({
-    target: sectionRef,
-    offset: ["start start", "end end"],
-  });
+  const scrollRef = useRef<HTMLDivElement>(null);
+  const [canScrollLeft, setCanScrollLeft] = useState(false);
+  const [canScrollRight, setCanScrollRight] = useState(true);
 
-  // Desktop: smaller translate, Mobile: larger to reach last card
-  // Adjust translate based on viewport width
-  const [desktopEnd, setDesktopEnd] = useState("-40%");
-  const [scrollHeight, setScrollHeight] = useState("200vh");
+  const checkScroll = () => {
+    const el = scrollRef.current;
+    if (!el) return;
+    setCanScrollLeft(el.scrollLeft > 10);
+    setCanScrollRight(el.scrollLeft < el.scrollWidth - el.clientWidth - 10);
+  };
+
   useEffect(() => {
-    const update = () => {
-      const w = window.innerWidth;
-      const h = window.innerHeight;
-      if (w >= 2200) {
-        // 4K — static, no scroll animation
-        setDesktopEnd("0%");
-        setScrollHeight("auto");
-      } else if (w >= 1024) {
-        // Desktop/laptop — minimal scroll distance
-        const needed = h + Math.max(200, h * 0.25); // viewport + 25% for scroll
-        setScrollHeight(`${needed}px`);
-        if (w < 1280) setDesktopEnd("-55%");
-        else if (w < 1536) setDesktopEnd("-35%");
-        else setDesktopEnd("-30%");
-      } else {
-        // Mobile/tablet
-        setScrollHeight(`${h * 2}px`);
-        setDesktopEnd("-40%");
-      }
+    checkScroll();
+    const el = scrollRef.current;
+    if (el) el.addEventListener("scroll", checkScroll, { passive: true });
+    window.addEventListener("resize", checkScroll);
+    return () => {
+      if (el) el.removeEventListener("scroll", checkScroll);
+      window.removeEventListener("resize", checkScroll);
     };
-    update();
-    window.addEventListener("resize", update);
-    return () => window.removeEventListener("resize", update);
   }, []);
-  const x = useTransform(scrollYProgress, [0, 0.95], ["0%", desktopEnd]);
-  const xMobile = useTransform(scrollYProgress, [0, 0.95], ["0%", "-75%"]);
-  const scrollHintOpacity = useTransform(scrollYProgress, [0, 0.05, 0.85, 1], [0, 1, 1, 0]);
+
+  const scroll = (dir: "left" | "right") => {
+    const el = scrollRef.current;
+    if (!el) return;
+    const amount = el.clientWidth * 0.6;
+    el.scrollBy({ left: dir === "left" ? -amount : amount, behavior: "smooth" });
+  };
 
   return (
-    <section id="services" className="scroll-mt-24 lg:scroll-mt-32">
-      <div ref={sectionRef} className="relative 3xl:py-16" style={{ height: scrollHeight === "auto" ? "auto" : scrollHeight }}>
-        <div className={`${scrollHeight === "auto" ? "relative" : "sticky top-0 h-screen"} flex flex-col justify-center overflow-hidden bg-white`}>
-          {/* Background decorative icon */}
-          <div className="absolute top-1/2 -translate-y-1/2 -left-20 opacity-[0.07] pointer-events-none">
-            <BrandIcon className="w-[600px] h-auto" color="#032742" />
+    <section id="services" className="py-14 sm:py-16 lg:py-10 xl:py-12 2xl:py-14 3xl:py-20 bg-white relative overflow-hidden">
+      {/* Background decorative icon */}
+      <div className="absolute top-1/2 -translate-y-1/2 -left-20 opacity-[0.07] pointer-events-none">
+        <BrandIcon className="w-[600px] h-auto" color="#032742" />
+      </div>
+
+      {/* Header */}
+      <div className="text-center px-4 mb-5 sm:mb-6 lg:mb-6 xl:mb-8 2xl:mb-10 3xl:mb-14 relative z-10">
+        <FadeIn>
+          <div className="flex items-center justify-center gap-3 mb-3 sm:mb-4">
+            <span className="h-px w-10 bg-primary/40" />
+            <span className="font-secondary text-primary/60 font-medium text-sm uppercase tracking-[0.2em]">
+              Nos solutions
+            </span>
+            <span className="h-px w-10 bg-primary/40" />
           </div>
-
-          <div className="text-center px-4 mb-2 lg:mb-2 xl:mb-3 2xl:mb-4 3xl:mb-12 relative z-10">
-            <FadeIn>
-              <div className="flex items-center justify-center gap-3 mb-2">
-                <span className="h-px w-10 bg-primary/40" />
-                <span className="font-secondary text-primary/60 font-medium text-sm uppercase tracking-[0.2em]">
-                  Nos solutions
-                </span>
-                <span className="h-px w-10 bg-primary/40" />
-              </div>
-            </FadeIn>
-            <FadeIn delay={0.1}>
-              <h2 className="text-2xl sm:text-3xl lg:text-3xl xl:text-4xl 2xl:text-4xl 3xl:text-6xl font-bold text-primary leading-tight mb-1 lg:mb-1 xl:mb-1 2xl:mb-2 3xl:mb-8">
-                Des solutions pour chaque{" "}
-                <span className="text-accent">besoin</span>
-              </h2>
-            </FadeIn>
-            <FadeIn delay={0.15}>
-              <div className="flex items-center justify-center gap-4 mt-1 lg:mt-1 xl:mt-2 2xl:mt-3 3xl:mt-8">
-                <a
-                  href="/nos-solutions"
-                  className="inline-flex items-center gap-3 border-2 border-primary/30 hover:border-accent text-primary hover:text-accent font-semibold px-6 py-2.5 2xl:px-8 2xl:py-3 3xl:px-12 3xl:py-5 rounded-full transition-all text-sm 2xl:text-base 3xl:text-2xl uppercase tracking-wider group"
-                >
-                  Toutes nos solutions
-                  <svg className="w-3.5 h-3.5 2xl:w-4 2xl:h-4 3xl:w-6 3xl:h-6 transition-transform group-hover:translate-x-1" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
-                    <path strokeLinecap="round" strokeLinejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" />
-                  </svg>
-                </a>
-              </div>
-            </FadeIn>
-          </div>
-
-          {/* Horizontal scroll track — uses xMobile on small screens, x on desktop */}
-          <motion.div
-            style={{ x: xMobile }}
-            className="flex gap-4 pl-4 sm:pl-6 w-max relative z-10 items-center mt-4 lg:hidden"
-          >
-            {solutions.map((sol) => (
-              <Card key={sol.title} sol={sol} />
-            ))}
-            <div className="flex-shrink-0 w-4" />
-          </motion.div>
-          <motion.div
-            style={{ x }}
-            className="hidden lg:flex 3xl:hidden gap-5 2xl:gap-6 3xl:gap-8 pl-[8vw] 3xl:pl-0 w-max 3xl:w-full 3xl:max-w-none 3xl:justify-center relative z-10 items-center mt-2 lg:mt-2 xl:mt-3 2xl:mt-6 3xl:mt-10"
-          >
-            {solutions.map((sol) => (
-              <Card key={sol.title} sol={sol} />
-            ))}
-            <div className="flex-shrink-0 w-[8vw]" />
-          </motion.div>
-
-          {/* 4K Static View */}
-          <div className="hidden 3xl:flex gap-8 w-full max-w-[2800px] mx-auto justify-center px-10 relative z-10 items-center mt-10">
-            {solutions.map((sol) => (
-              <Card key={sol.title} sol={sol} />
-            ))}
-          </div>
-
-          {/* Scroll hint */}
-          <motion.div
-            style={{ opacity: scrollHintOpacity }}
-            className="absolute bottom-4 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 3xl:hidden"
-          >
-            <motion.div
-              animate={{ y: [0, 8, 0] }}
-              transition={{
-                repeat: Infinity,
-                duration: 1.5,
-                ease: "easeInOut",
-              }}
-              className="w-8 h-8 rounded-full border-2 border-primary/30 flex items-center justify-center"
+        </FadeIn>
+        <FadeIn delay={0.1}>
+          <h2 className="text-2xl sm:text-3xl lg:text-3xl xl:text-4xl 2xl:text-4xl 3xl:text-6xl font-bold text-primary leading-tight mb-3 sm:mb-4">
+            Des solutions pour chaque{" "}
+            <span className="text-accent">besoin</span>
+          </h2>
+        </FadeIn>
+        <FadeIn delay={0.15}>
+          <div className="flex items-center justify-center gap-4 mt-1 sm:mt-2">
+            <a
+              href="/nos-solutions"
+              className="inline-flex items-center gap-3 border-2 border-primary/30 hover:border-accent text-primary hover:text-accent font-semibold px-6 py-2.5 2xl:px-8 2xl:py-3 3xl:px-12 3xl:py-5 rounded-full transition-all text-sm 2xl:text-base 3xl:text-2xl uppercase tracking-wider group"
             >
-              <svg className="w-4 h-4 text-primary/40" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={3}>
-                <path strokeLinecap="round" strokeLinejoin="round" d="M19.5 13.5L12 21m0 0l-7.5-7.5M12 21V3" />
+              Toutes nos solutions
+              <svg className="w-3.5 h-3.5 2xl:w-4 2xl:h-4 3xl:w-6 3xl:h-6 transition-transform group-hover:translate-x-1" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
+                <path strokeLinecap="round" strokeLinejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" />
               </svg>
-            </motion.div>
-          </motion.div>
+            </a>
+          </div>
+        </FadeIn>
+      </div>
+
+      {/* Cards — horizontal scroll with arrows */}
+      <div className="relative z-10">
+        {/* Left arrow */}
+        <button
+          onClick={() => scroll("left")}
+          className={`absolute left-2 sm:left-4 lg:left-6 top-1/2 -translate-y-1/2 z-20 w-10 h-10 sm:w-11 sm:h-11 rounded-full bg-white/90 shadow-lg flex items-center justify-center transition-all duration-300 hover:bg-accent hover:text-white ${
+            canScrollLeft ? "opacity-100" : "opacity-0 pointer-events-none"
+          }`}
+          aria-label="Défiler à gauche"
+        >
+          <svg className="w-5 h-5 text-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
+            <path strokeLinecap="round" strokeLinejoin="round" d="M15.75 19.5L8.25 12l7.5-7.5" />
+          </svg>
+        </button>
+
+        {/* Right arrow */}
+        <button
+          onClick={() => scroll("right")}
+          className={`absolute right-2 sm:right-4 lg:right-6 top-1/2 -translate-y-1/2 z-20 w-10 h-10 sm:w-11 sm:h-11 rounded-full bg-white/90 shadow-lg flex items-center justify-center transition-all duration-300 hover:bg-accent hover:text-white ${
+            canScrollRight ? "opacity-100" : "opacity-0 pointer-events-none"
+          }`}
+          aria-label="Défiler à droite"
+        >
+          <svg className="w-5 h-5 text-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
+            <path strokeLinecap="round" strokeLinejoin="round" d="M8.25 4.5l7.5 7.5-7.5 7.5" />
+          </svg>
+        </button>
+
+        {/* Scrollable container */}
+        <div
+          ref={scrollRef}
+          className="overflow-x-auto scrollbar-hide scroll-smooth"
+        >
+          <div className="flex gap-4 sm:gap-5 lg:gap-6 px-6 sm:px-8 lg:px-[5vw] xl:px-[8vw] 2xl:px-[6vw] 3xl:px-10 w-max mx-auto 3xl:w-full 3xl:justify-center pb-4">
+            {solutions.map((sol) => (
+              <Card key={sol.title} sol={sol} />
+            ))}
+          </div>
         </div>
       </div>
     </section>

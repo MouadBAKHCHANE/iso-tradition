@@ -2,14 +2,13 @@
 
 import Image from "next/image";
 import { FadeIn } from "./Motion";
-import BrandIcon from "./BrandIcon";
 
 export default function AboutPreview() {
   return (
-    <section id="apropos" className="py-8 lg:py-12 2xl:py-16 3xl:py-24 bg-white overflow-hidden relative scroll-mt-24 lg:scroll-mt-32">
-      {/* Background brand icon — right side */}
-      <div className="absolute bottom-8 right-4 lg:right-8 xl:right-16 2xl:right-20 3xl:right-24 pointer-events-none opacity-[0.06]">
-        <BrandIcon className="w-40 lg:w-52 xl:w-64 2xl:w-[300px] 3xl:w-[500px]" color="#f8ad0c" />
+    <section id="apropos" className="pt-8 pb-2 sm:pb-4 lg:py-12 2xl:py-16 3xl:py-24 bg-white overflow-hidden relative scroll-mt-24 lg:scroll-mt-32">
+      {/* Swiss flag background — right side */}
+      <div className="absolute bottom-0 right-0 lg:right-4 xl:right-8 pointer-events-none opacity-[0.07]">
+        <img src="/images/swiss-flag-bg.webp" alt="" className="w-48 lg:w-64 xl:w-80 2xl:w-[350px] 3xl:w-[500px] object-contain" />
       </div>
       <div className="grid lg:grid-cols-2 2xl:grid-cols-2 gap-12 lg:gap-16 2xl:gap-18 3xl:gap-24 items-center relative">
         {/* ===== Left — Image flush to left edge ===== */}

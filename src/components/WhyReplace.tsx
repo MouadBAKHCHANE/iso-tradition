@@ -40,7 +40,7 @@ export default function WhyReplace() {
   const [activeIndex, setActiveIndex] = useState(0);
 
   return (
-    <section className="py-14 lg:py-8 xl:py-12 bg-white overflow-clip">
+    <section className="pt-4 pb-8 sm:pt-6 sm:pb-10 lg:py-8 xl:py-12 bg-white overflow-clip">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="grid lg:grid-cols-2 gap-10 lg:gap-6 xl:gap-16 items-start">
           {/* Accordion left */}
