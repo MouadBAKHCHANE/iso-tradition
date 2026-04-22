@@ -9,7 +9,7 @@ iso-tradition/
 # Source assets folder (large files)
 ISO TRADITION/
 
-# Claude
+# Local tooling
 .claude/
 
 # PDFs and large assets
@@ -36,3 +36,6 @@ scripts/
 *.bak
 
 .vercel
+
+# TypeScript build info
+tsconfig.tsbuildinfo
