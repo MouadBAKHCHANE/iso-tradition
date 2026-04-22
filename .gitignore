@@ -9,9 +9,6 @@ iso-tradition/
 # Source assets folder (large files)
 ISO TRADITION/
 
-# Local tooling
-.claude/
-
 # PDFs and large assets
 *.pdf
 
