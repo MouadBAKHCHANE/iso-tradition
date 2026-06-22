@@ -68,9 +68,9 @@ export const metadata: Metadata = {
       "Spécialiste en fenêtres, portes, volets et protections solaires en Suisse romande.",
     images: ["/images/hero-terrace.webp"],
   },
-  alternates: {
-    canonical: "https://www.isotradition.ch",
-  },
+  // NOTE: pas de canonical ici — sinon TOUTES les pages héritent de ce canonical
+  // (= elles pointeraient toutes vers la home). Chaque page définit son propre
+  // `alternates.canonical` (relatif) ; sinon Next.js laisse l'auto-canonical par page.
 };
 
 export default async function RootLayout({

@@ -21,12 +21,24 @@ export async function generateMetadata(): Promise<Metadata> {
   return {
     title: page.seoTitle || undefined,
     description: page.seoDescription || undefined,
+    alternates: { canonical: "/" },
     openGraph: {
+      type: "website",
+      locale: "fr_CH",
+      url: "https://www.isotradition.ch",
+      siteName: "ISO Tradition",
       title: page.seoTitle || undefined,
       description: page.seoDescription || undefined,
-      ...(page.ogImage?.asset?.url && {
-        images: [{ url: page.ogImage.asset.url }],
-      }),
+      images: page.ogImage?.asset?.url
+        ? [{ url: page.ogImage.asset.url }]
+        : [
+            {
+              url: "/images/hero-terrace.webp",
+              width: 2000,
+              height: 1334,
+              alt: "ISO Tradition – Fenêtres et portes suisses",
+            },
+          ],
     },
   };
 }

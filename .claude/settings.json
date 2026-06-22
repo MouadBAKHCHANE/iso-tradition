@@ -1,0 +1,29 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(curl -s -L https://roofinger-wbs.webflow.io/)",
+      "Bash(curl -s -L \"https://cdn.prod.website-files.com/670f4a042a66942f7e529f31/css/roofinger-wbs.webflow.shared.53a5da970.min.css\")",
+      "Read(//tmp/**)",
+      "Read(//c/tmp/**)",
+      "Bash(npx next:*)",
+      "Bash(taskkill //PID 62428 //F)",
+      "Bash(curl -s -o /dev/null -w \"%{http_code}\" http://localhost:3000)",
+      "Bash(taskkill //PID 40376 //F)",
+      "Bash(taskkill //PID 87184 //F)",
+      "Bash(npm install:*)",
+      "Bash(npx vercel:*)",
+      "Bash(ls \"c:/Users/EliteBook/OneDrive/Desktop/naoenergy.ch/ISO TRADITION/public/images/logo-\"*)",
+      "Read(//c/Users/EliteBook/OneDrive/Desktop/naoenergy.ch/ISO/ TRADITION/**)",
+      "Bash(pip install:*)",
+      "Bash(pip3 install:*)",
+      "Bash(python -c \":*)",
+      "Bash(find '/c/Users/EliteBook/OneDrive/Desktop/naoenergy.ch/ISO TRADITION/public/images' -type f -name *)",
+      "Bash(npx playwright:*)",
+      "Bash(node -e \":*)",
+      "Bash(python run_rembg.py)",
+      "Bash(__NEW_LINE_a271c0c30a5195ac__ cp:*)",
+      "Bash(__NEW_LINE_a271c0c30a5195ac__ echo:*)",
+      "Bash(python3 -c \":*)"
+    ]
+  }
+}
