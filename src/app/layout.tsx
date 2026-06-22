@@ -3,7 +3,12 @@ import { Bai_Jamjuree, Outfit } from "next/font/google";
 import "./globals.css";
 import ScrollToTop from "@/components/ScrollToTop";
 import ThemeProvider from "@/components/ThemeProvider";
-import { getSiteSettings } from "@/lib/queries";
+import { getSiteSettings, getMarketingSettings } from "@/lib/queries";
+import {
+  TrackingHead,
+  TrackingBodyStart,
+  TrackingBodyEnd,
+} from "@/components/tracking/TrackingScripts";
 
 const baiJamjuree = Bai_Jamjuree({
   subsets: ["latin"],
@@ -73,15 +78,19 @@ export const metadata: Metadata = {
   // `alternates.canonical` (relatif) ; sinon Next.js laisse l'auto-canonical par page.
 };
 
+export const revalidate = 60;
+
 export default async function RootLayout({
   children,
 }: {
   children: React.ReactNode;
 }) {
   const settings = await getSiteSettings().catch(() => null);
+  const marketing = await getMarketingSettings().catch(() => null);
   return (
     <html lang="fr">
       <head>
+        <TrackingHead data={marketing} />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{
@@ -140,6 +149,7 @@ export default async function RootLayout({
       <body
         className={`${baiJamjuree.variable} ${outfit.variable} font-sans antialiased`}
       >
+        <TrackingBodyStart data={marketing} />
         <ThemeProvider colors={settings ? {
           colorPrimary: settings.colorPrimary,
           colorPrimaryDark: settings.colorPrimaryDark,
@@ -149,6 +159,7 @@ export default async function RootLayout({
         } : null} />
         <ScrollToTop />
         {children}
+        <TrackingBodyEnd data={marketing} />
       </body>
     </html>
   );
