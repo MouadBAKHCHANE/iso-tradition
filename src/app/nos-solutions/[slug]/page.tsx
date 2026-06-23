@@ -20,6 +20,7 @@ export async function generateMetadata({
   const product = await getProductBySlug(slug);
   if (!product) return {};
   return {
+    alternates: { canonical: `/nos-solutions/${slug}` },
     title: product.seoTitle ?? `${product.name} – ISO Tradition`,
     description:
       product.seoDescription ??

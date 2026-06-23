@@ -14,6 +14,7 @@ export async function generateMetadata(): Promise<Metadata> {
   }
 
   return {
+    alternates: { canonical: "/qui-sommes-nous" },
     title: page.seoTitle || "Qui sommes-nous – ISO Tradition",
     description:
       page.seoDescription ||

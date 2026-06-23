@@ -4,6 +4,7 @@ import { getLegalPageBySlug } from "@/lib/queries";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
+  alternates: { canonical: "/confidentialite" },
   title: "Politique de confidentialité & Cookies – ISO Tradition",
   description: "Politique de confidentialité et gestion des cookies du site isotradition.ch, conforme à la nLPD suisse.",
 };

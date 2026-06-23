@@ -4,6 +4,7 @@ import { getLegalPageBySlug } from "@/lib/queries";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
+  alternates: { canonical: "/cgu" },
   title: "Conditions générales d'utilisation – ISO Tradition",
   description: "Conditions générales d'utilisation du site isotradition.ch.",
 };

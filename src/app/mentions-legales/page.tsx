@@ -4,6 +4,7 @@ import { getLegalPageBySlug } from "@/lib/queries";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
+  alternates: { canonical: "/mentions-legales" },
   title: "Mentions légales – ISO Tradition",
   description: "Mentions légales du site isotradition.ch. Informations sur l'éditeur, l'hébergeur et la propriété intellectuelle.",
 };

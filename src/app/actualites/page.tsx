@@ -7,6 +7,7 @@ export async function generateMetadata(): Promise<Metadata> {
   const settings = await getSiteSettings();
 
   return {
+    alternates: { canonical: "/actualites" },
     title: "Actualités – ISO Tradition",
     description:
       settings?.seoDescription ||

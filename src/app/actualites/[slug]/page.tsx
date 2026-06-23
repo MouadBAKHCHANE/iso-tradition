@@ -36,6 +36,7 @@ export async function generateMetadata({
   const post = await getBlogPostBySlug(slug);
   if (!post) return {};
   return {
+    alternates: { canonical: `/actualites/${slug}` },
     title: post.seoTitle || `${post.title} – ISO Tradition`,
     description: post.seoDescription || post.excerpt || undefined,
     openGraph: {
