@@ -9,6 +9,7 @@ import {
   TrackingBodyStart,
   TrackingBodyEnd,
 } from "@/components/tracking/TrackingScripts";
+import TypeformLeadPopup from "@/components/tracking/TypeformLeadPopup";
 
 const baiJamjuree = Bai_Jamjuree({
   subsets: ["latin"],
@@ -159,6 +160,7 @@ export default async function RootLayout({
         } : null} />
         <ScrollToTop />
         {children}
+        <TypeformLeadPopup />
         <TrackingBodyEnd data={marketing} />
       </body>
     </html>
