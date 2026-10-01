@@ -25,12 +25,12 @@ export default function AboutPreview() {
 
             {/* Counter badge — top right, overlapping image */}
             <div className="absolute -top-2 right-0 lg:right-[15%] 2xl:right-[10%] 3xl:right-[5%]">
-              <div className="relative bg-white pt-4 pb-5 px-8 2xl:px-10 3xl:px-14 2xl:pt-6 3xl:pt-8 2xl:pb-7 3xl:pb-10 rounded-b-[20px] 2xl:rounded-b-[30px] 3xl:rounded-b-[40px] shadow-sm">
-                <span className="block text-5xl lg:text-6xl 2xl:text-7xl 3xl:text-8xl font-bold leading-none">
+              <div className="relative bg-white pt-3 pb-4 px-5 lg:px-6 2xl:pt-4 2xl:pb-5 2xl:px-7 rounded-b-[20px] shadow-sm">
+                <span className="block text-3xl lg:text-4xl 2xl:text-5xl font-bold leading-none">
                   <span className="text-[#f7ad0c]">+</span>
                   <span className="text-primary">35</span>
                 </span>
-                <span className="block text-sm 2xl:text-base 3xl:text-xl text-primary font-medium mt-1 2xl:mt-2 3xl:mt-3">
+                <span className="block text-xs lg:text-sm 2xl:text-base text-primary font-medium mt-1">
                   années d&apos;expérience
                 </span>
               </div>
