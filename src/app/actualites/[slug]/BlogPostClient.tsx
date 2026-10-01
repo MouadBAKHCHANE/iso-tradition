@@ -396,10 +396,10 @@ export default function BlogPostClient({
                 href="https://form.typeform.com/to/astTYipT"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 border-2 border-primary/30 hover:border-accent text-primary hover:text-accent font-bold px-8 py-3.5 rounded-full text-[15px] transition-colors group"
+                className="btn border-2 border-primary/30 hover:border-accent text-primary hover:text-accent group"
               >
-                Demander un offre
-                <span className="flex items-center justify-center w-7 h-7 rounded-full bg-primary/10 transition-transform group-hover:translate-x-0.5">
+                Demander une offre
+                <span className="btn-arrow bg-primary/10">
                   <svg
                     className="w-3.5 h-3.5"
                     fill="none"
@@ -417,7 +417,7 @@ export default function BlogPostClient({
               </a>
               <a
                 href="tel:0216245300"
-                className="inline-flex items-center gap-2 border border-primary/20 hover:border-accent hover:text-accent text-primary font-semibold px-8 py-3.5 rounded-full text-[15px] transition-colors"
+                className="btn border border-primary/20 hover:border-accent hover:text-accent text-primary font-semibold"
               >
                 <svg
                   className="w-4 h-4"

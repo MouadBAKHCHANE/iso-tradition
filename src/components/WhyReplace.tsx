@@ -68,18 +68,13 @@ export default function WhyReplace() {
                 >
                   <button
                     onClick={() => setActiveIndex(i)}
-                    className="w-full flex items-center justify-between py-3 xl:py-4 text-left group cursor-pointer"
+                    aria-expanded={isActive}
+                    aria-controls={`why-replace-panel-${i}`}
+                    className="w-full flex items-center gap-3 py-3 xl:py-4 text-left group cursor-pointer"
                   >
-                    <span
-                      className={`font-bold text-lg transition-colors duration-300 ${
-                        isActive ? "text-primary" : "text-primary/60 group-hover:text-primary"
-                      }`}
-                    >
-                      {reason.title}
-                    </span>
                     <svg
                       className={`w-6 h-6 flex-shrink-0 transition-colors duration-300 ${
-                        isActive ? "text-accent" : "text-gray-400"
+                        isActive ? "text-accent" : "text-gray-400 group-hover:text-accent"
                       }`}
                       fill="none"
                       viewBox="0 0 24 24"
@@ -92,18 +87,38 @@ export default function WhyReplace() {
                         d={reason.icon}
                       />
                     </svg>
+                    <span
+                      className={`flex-1 font-bold text-lg transition-colors duration-300 ${
+                        isActive ? "text-primary" : "text-primary/60 group-hover:text-primary"
+                      }`}
+                    >
+                      {reason.title}
+                    </span>
+                    {/* Chevron */}
+                    <span
+                      className={`flex items-center justify-center w-8 h-8 rounded-full border transition-all duration-300 ${
+                        isActive
+                          ? "bg-accent border-accent text-white rotate-180"
+                          : "border-gray-300 text-primary/60 group-hover:border-accent group-hover:text-accent"
+                      }`}
+                    >
+                      <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
+                        <path strokeLinecap="round" strokeLinejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5" />
+                      </svg>
+                    </span>
                   </button>
 
                   <AnimatePresence initial={false}>
                     {isActive && (
                       <motion.div
+                        id={`why-replace-panel-${i}`}
                         initial={{ height: 0, opacity: 0 }}
                         animate={{ height: "auto", opacity: 1 }}
                         exit={{ height: 0, opacity: 0 }}
                         transition={{ duration: 0.35, ease: [0.25, 0.1, 0.25, 1] }}
                         className="overflow-hidden"
                       >
-                        <div className="pb-3 xl:pb-4">
+                        <div className="pb-3 xl:pb-4 pl-9 lg:pr-11">
                           {/* Image inside accordion — mobile/tablet only */}
                           <div className="lg:hidden relative rounded-xl overflow-hidden aspect-[16/9] mb-4">
                             <Image

@@ -253,10 +253,10 @@ export default function AboutPage() {
                 href="https://form.typeform.com/to/astTYipT"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 border-2 border-white/40 hover:border-accent text-white hover:text-accent font-bold px-6 py-3 rounded-full text-[15px] transition-colors group"
+                className="btn border-2 border-white/40 hover:border-accent text-white hover:text-accent group"
               >
                 Demander une offre
-                <span className="flex items-center justify-center w-7 h-7 rounded-full bg-white/15 transition-transform group-hover:translate-x-0.5">
+                <span className="btn-arrow bg-white/15">
                   <svg className="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
                     <path strokeLinecap="round" strokeLinejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" />
                   </svg>
@@ -458,10 +458,10 @@ export default function AboutPage() {
                     href="https://form.typeform.com/to/astTYipT"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="inline-flex items-center gap-2 border-2 border-primary/30 hover:border-accent text-primary hover:text-accent font-bold px-6 py-3 rounded-full text-[15px] transition-colors group"
+                    className="btn border-2 border-primary/30 hover:border-accent text-primary hover:text-accent group"
                   >
                     Demander une offre
-                    <span className="flex items-center justify-center w-7 h-7 rounded-full bg-primary/10 transition-transform group-hover:translate-x-0.5">
+                    <span className="btn-arrow bg-primary/10">
                       <svg className="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
                         <path strokeLinecap="round" strokeLinejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" />
                       </svg>
@@ -500,24 +500,22 @@ export default function AboutPage() {
                         : "bg-white text-primary"
                     }`}
                   >
-                    {/* Background icon */}
-                    <svg
-                      className={`absolute -right-2 -bottom-2 w-24 h-24 ${
-                        isAccent ? "text-primary-dark/[0.07]" : isDark ? "text-white/[0.07]" : "text-primary/[0.06]"
+                    {/* Icon */}
+                    <span
+                      className={`absolute top-6 right-6 w-12 h-12 rounded-full flex items-center justify-center ${
+                        isAccent ? "bg-accent/15 text-primary" : isDark ? "bg-white/10 text-accent" : "bg-primary/10 text-primary"
                       }`}
-                      fill="none"
-                      viewBox="0 0 24 24"
-                      stroke="currentColor"
-                      strokeWidth={0.8}
                     >
-                      <path strokeLinecap="round" strokeLinejoin="round" d={step.icon} />
-                    </svg>
+                      <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.6}>
+                        <path strokeLinecap="round" strokeLinejoin="round" d={step.icon} />
+                      </svg>
+                    </span>
                     <span className={`font-secondary text-sm font-bold tracking-wider ${
                       isAccent ? "text-primary-dark/40" : isDark ? "text-white/30" : "text-primary/30"
                     }`}>
                       {step.num}
                     </span>
-                    <h3 className="text-lg font-bold mt-1 mb-2 relative">{step.title}</h3>
+                    <h3 className="text-lg font-bold mt-1 mb-2 pr-14 relative">{step.title}</h3>
                     <p className={`text-[14px] leading-relaxed relative ${
                       isAccent ? "text-primary-dark/70" : isDark ? "text-white/70" : "text-primary/60"
                     }`}>
@@ -578,10 +576,10 @@ export default function AboutPage() {
                     href="https://form.typeform.com/to/astTYipT"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="inline-flex items-center gap-2 border-2 border-white/40 hover:border-accent text-white hover:text-accent font-bold px-6 py-3 rounded-full text-[15px] transition-colors group"
+                    className="btn border-2 border-white/40 hover:border-accent text-white hover:text-accent group"
                   >
                     Demander une offre
-                    <span className="flex items-center justify-center w-7 h-7 rounded-full bg-white/15 transition-transform group-hover:translate-x-0.5">
+                    <span className="btn-arrow bg-white/15">
                       <svg className="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
                         <path strokeLinecap="round" strokeLinejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" />
                       </svg>
@@ -589,7 +587,7 @@ export default function AboutPage() {
                   </a>
                   <a
                     href="tel:0216245300"
-                    className="inline-flex items-center gap-2 border border-white/30 hover:border-accent text-white hover:text-accent font-semibold px-6 py-3 rounded-full text-[15px] transition-colors"
+                    className="btn border border-white/30 hover:border-accent text-white hover:text-accent font-semibold"
                   >
                     <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
                       <path strokeLinecap="round" strokeLinejoin="round" d="M2.25 6.75c0 8.284 6.716 15 15 15h2.25a2.25 2.25 0 002.25-2.25v-1.372c0-.516-.351-.966-.852-1.091l-4.423-1.106c-.44-.11-.902.055-1.173.417l-.97 1.293c-.282.376-.769.542-1.21.38a12.035 12.035 0 01-7.143-7.143c-.162-.441.004-.928.38-1.21l1.293-.97c.363-.271.527-.734.417-1.173L6.963 3.102a1.125 1.125 0 00-1.091-.852H4.5A2.25 2.25 0 002.25 4.5v2.25z" />
@@ -636,10 +634,10 @@ export default function AboutPage() {
                 href="https://form.typeform.com/to/astTYipT"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 border-2 border-primary/30 hover:border-accent text-primary hover:text-accent font-bold px-8 py-3.5 rounded-full text-[15px] transition-colors group"
+                className="btn border-2 border-primary/30 hover:border-accent text-primary hover:text-accent group"
               >
-                Demander un offre
-                <span className="flex items-center justify-center w-7 h-7 rounded-full bg-primary/10 transition-transform group-hover:translate-x-0.5">
+                Demander une offre
+                <span className="btn-arrow bg-primary/10">
                   <svg className="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
                     <path strokeLinecap="round" strokeLinejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" />
                   </svg>
@@ -647,7 +645,7 @@ export default function AboutPage() {
               </a>
               <a
                 href="tel:0216245300"
-                className="inline-flex items-center gap-2 border border-primary/20 hover:border-accent hover:text-accent text-primary font-semibold px-8 py-3.5 rounded-full text-[15px] transition-colors"
+                className="btn border border-primary/20 hover:border-accent hover:text-accent text-primary font-semibold"
               >
                 <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
                   <path strokeLinecap="round" strokeLinejoin="round" d="M2.25 6.75c0 8.284 6.716 15 15 15h2.25a2.25 2.25 0 002.25-2.25v-1.372c0-.516-.351-.966-.852-1.091l-4.423-1.106c-.44-.11-.902.055-1.173.417l-.97 1.293c-.282.376-.769.542-1.21.38a12.035 12.035 0 01-7.143-7.143c-.162-.441.004-.928.38-1.21l1.293-.97c.363-.271.527-.734.417-1.173L6.963 3.102a1.125 1.125 0 00-1.091-.852H4.5A2.25 2.25 0 002.25 4.5v2.25z" />

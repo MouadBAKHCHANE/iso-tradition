@@ -139,37 +139,43 @@ export default function SolutionsListPage() {
                 titleLine1: "Confort",
                 titleLine2: "de vie optimal",
                 items: ["une température intérieure plus stable", "un confort optimal été comme hiver", "une meilleure luminosité"],
-                image: "/images/icons/confort.webp"
+                image: "/images/icons/confort.webp",
+                iconAspect: 1.007
               },
               {
                 titleLine1: "Réduction",
                 titleLine2: "des factures",
                 items: ["limite les déperditions de chaleur", "réduit les besoins en chauffage", "conserve l'énergie produite"],
-                image: "/images/icons/reductions.webp"
+                image: "/images/icons/reductions.webp",
+                iconAspect: 1.163
               },
               {
                 titleLine1: "Impact",
                 titleLine2: "écologique",
                 items: ["réduction des émissions de CO₂", "utilisation responsable des ressources", "démarche durable d'avenir"],
-                image: "/images/icons/impact.webp"
+                image: "/images/icons/impact.webp",
+                iconAspect: 0.869
               },
               {
                 titleLine1: "Isolation",
                 titleLine2: "acoustique",
                 items: ["circulation routière", "voisinage", "environnement urbain ou périurbain"],
-                image: "/images/icons/isolation.webp"
+                image: "/images/icons/isolation.webp",
+                iconAspect: 1
               },
               {
                 titleLine1: "Sécurité",
                 titleLine2: "renforcée",
                 items: ["ferrures renforcées", "vitrages de sécurité", "systèmes de fermeture multipoints"],
-                image: "/images/icons/securite.webp"
+                image: "/images/icons/securite.webp",
+                iconAspect: 1.094
               },
               {
                 titleLine1: "Plus-value",
                 titleLine2: "du bien",
                 items: ["étiquette verte", "matériaux robustes et durables", "finitions personnalisables et élégantes"],
-                image: "/images/icons/plusvalue.webp"
+                image: "/images/icons/plusvalue.webp",
+                iconAspect: 1.539
               },
             ].map((card, i) => (
               <motion.div
@@ -180,9 +186,12 @@ export default function SolutionsListPage() {
                 viewport={{ once: true, amount: 0.3 }}
                 className="group border border-white/10 rounded-2xl p-6 lg:p-7 flex flex-col gap-6 relative overflow-hidden bg-white/10 shadow-xl"
               >
-                {/* Background icon */}
-                <div className="absolute -right-6 -top-6 w-[140px] h-[140px] opacity-20 pointer-events-none transition-all duration-500 group-hover:scale-110 group-hover:opacity-70 group-hover:-rotate-6">
-                  <Image src={card.image} alt="" fill className="object-contain" />
+                                {/* Icon — sized by aspect ratio so all icons look equal */}
+                <div
+                  className="absolute right-4 top-4 w-[calc(3.5rem*var(--ia))] h-[calc(3.5rem/var(--ia))] lg:w-[calc(4rem*var(--ia))] lg:h-[calc(4rem/var(--ia))] pointer-events-none drop-shadow-md transition-transform duration-500 group-hover:scale-110 group-hover:-rotate-6"
+                  style={{ "--ia": Math.sqrt(card.iconAspect) } as React.CSSProperties}
+                >
+                  <Image src={card.image} alt="" fill sizes="80px" className="object-contain" />
                 </div>
 
                 <div className="flex items-start relative z-10">
@@ -253,7 +262,7 @@ export default function SolutionsListPage() {
                   </p>
                 </div>
                 <div className="relative w-full lg:w-1/3 min-h-[180px] lg:min-h-0 flex-shrink-0 flex items-center justify-center p-6">
-                  <Image src="/images/programme-batiments.webp" alt="Le Programme Bâtiments" fill className="object-contain object-center p-4" />
+                  <Image src="/images/programme-batiments.webp" alt="Le Programme Bâtiments" fill sizes="(min-width: 1024px) 400px, 90vw" className="object-contain object-center p-6" />
                 </div>
               </div>
             </FadeIn>
@@ -308,14 +317,14 @@ export default function SolutionsListPage() {
           <FadeIn delay={0.2}>
             <div className="flex flex-wrap justify-center gap-4">
               <a href="https://form.typeform.com/to/astTYipT" target="_blank" rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 border-2 border-primary/30 hover:border-accent text-primary hover:text-accent font-bold px-8 py-3.5 rounded-full text-[15px] transition-colors group"
+                className="btn border-2 border-primary/30 hover:border-accent text-primary hover:text-accent group"
               >
-                Demander un offre
-                <span className="flex items-center justify-center w-7 h-7 rounded-full bg-primary/10 transition-transform group-hover:translate-x-0.5">
+                Demander une offre
+                <span className="btn-arrow bg-primary/10">
                   <svg className="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}><path strokeLinecap="round" strokeLinejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" /></svg>
                 </span>
               </a>
-              <a href="tel:0216245300" className="inline-flex items-center gap-2 border border-primary/20 hover:border-accent hover:text-accent text-primary font-semibold px-8 py-3.5 rounded-full text-[15px] transition-colors">
+              <a href="tel:0216245300" className="btn border border-primary/20 hover:border-accent hover:text-accent text-primary font-semibold">
                 <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}><path strokeLinecap="round" strokeLinejoin="round" d="M2.25 6.75c0 8.284 6.716 15 15 15h2.25a2.25 2.25 0 002.25-2.25v-1.372c0-.516-.351-.966-.852-1.091l-4.423-1.106c-.44-.11-.902.055-1.173.417l-.97 1.293c-.282.376-.769.542-1.21.38a12.035 12.035 0 01-7.143-7.143c-.162-.441.004-.928.38-1.21l1.293-.97c.363-.271.527-.734.417-1.173L6.963 3.102a1.125 1.125 0 00-1.091-.852H4.5A2.25 2.25 0 002.25 4.5v2.25z" /></svg>
                 021 624 53 00
               </a>

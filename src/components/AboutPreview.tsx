@@ -15,11 +15,11 @@ export default function AboutPreview() {
         <FadeIn direction="left" className="relative">
           <div className="relative rounded-r-[20px] overflow-hidden lg:ml-0">
             <Image
-              src="/images/about-lake.webp"
-              alt="Vue panoramique sur un lac depuis l'intérieur d'une villa"
+              src="/images/about-install.webp"
+              alt="Technicien ISO Tradition posant une fenêtre"
               width={900}
               height={700}
-              className="w-full h-auto object-cover aspect-[4/3] scale-125"
+              className="w-full h-auto object-cover aspect-[4/3]"
             />
           </div>
 
@@ -69,11 +69,11 @@ export default function AboutPreview() {
               <FadeIn direction="right" delay={0.3}>
                 <a
                   href="/qui-sommes-nous"
-                  className="inline-flex items-center gap-3 border-2 border-primary/30 hover:border-accent text-primary hover:text-accent font-semibold px-5 lg:px-5 xl:px-6 2xl:px-8 3xl:px-12 py-2.5 lg:py-2 xl:py-3 2xl:py-4 3xl:py-5 rounded-full transition-all text-[13px] lg:text-[13px] xl:text-[15px] 2xl:text-lg 3xl:text-2xl group"
+                  className="btn border-2 border-primary/30 hover:border-accent text-primary hover:text-accent group"
                 >
                   En savoir plus
                   <svg
-                    className="w-4 h-4 2xl:w-5 2xl:h-5 3xl:w-6 3xl:h-6 transition-transform group-hover:translate-x-1"
+                    className="w-4 h-4 transition-transform group-hover:translate-x-1"
                     fill="none"
                     viewBox="0 0 24 24"
                     stroke="currentColor"

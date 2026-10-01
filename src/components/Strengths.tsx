@@ -51,11 +51,11 @@ export default function Strengths() {
           <FadeIn delay={0.2}>
             <a
               href="https://form.typeform.com/to/astTYipT" target="_blank" rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 border-2 border-primary/30 hover:border-accent text-primary hover:text-accent font-bold px-6 py-3 rounded-full transition-colors text-[15px] group shrink-0"
+              className="btn border-2 border-primary/30 hover:border-accent text-primary hover:text-accent group shrink-0"
             >
               Demander une offre
-              <span className="flex items-center justify-center w-6 h-6 rounded-full bg-primary-dark/15 transition-transform group-hover:translate-x-0.5">
-                <svg className="w-3 h-3" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
+              <span className="btn-arrow bg-primary-dark/15">
+                <svg className="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
                   <path strokeLinecap="round" strokeLinejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" />
                 </svg>
               </span>

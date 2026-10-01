@@ -58,7 +58,7 @@ export default function Header({ forceVisible = false }: { forceVisible?: boolea
             />
           </Link>
 
-          <ul className="hidden lg:flex items-center gap-4 lg:gap-5 xl:gap-8 absolute left-1/2 -translate-x-1/2">
+          <ul className="hidden lg:flex items-center gap-4 xl:gap-8 absolute left-1/2 -translate-x-1/2">
             {navLinks.map((link) => {
               const isInternal = link.href.startsWith("/");
               const Tag = isInternal ? Link : "a";
@@ -107,10 +107,10 @@ export default function Header({ forceVisible = false }: { forceVisible?: boolea
             href="https://form.typeform.com/to/astTYipT"
             target="_blank"
             rel="noopener noreferrer"
-            className="hidden lg:inline-flex items-center gap-2 border-2 border-primary/30 hover:border-accent text-primary hover:text-accent font-bold px-4 xl:px-6 py-2 xl:py-2.5 rounded-full text-xs xl:text-sm transition-all group whitespace-nowrap"
+            className="btn btn-sm hidden lg:inline-flex border-2 border-primary/30 hover:border-accent text-primary hover:text-accent group"
           >
             Demander une offre
-            <span className="flex items-center justify-center w-6 h-6 rounded-full bg-primary/10 group-hover:bg-primary-dark/15 transition-all group-hover:translate-x-0.5">
+            <span className="btn-arrow hidden xl:flex bg-primary/10 group-hover:bg-primary-dark/15">
               <svg className="w-3 h-3" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
                 <path strokeLinecap="round" strokeLinejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" />
               </svg>
@@ -189,7 +189,7 @@ export default function Header({ forceVisible = false }: { forceVisible?: boolea
               target="_blank"
               rel="noopener noreferrer"
               onClick={() => setMobileOpen(false)}
-              className="block mt-3 border-2 border-primary/30 hover:border-accent text-primary hover:text-accent font-bold px-4 py-3 rounded-full text-center text-sm transition-all"
+              className="btn w-full mt-3 border-2 border-primary/30 hover:border-accent text-primary hover:text-accent"
             >
               Demander une offre
             </a>

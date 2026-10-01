@@ -290,7 +290,7 @@ export default function ContactPage() {
                   <button
                     type="submit"
                     disabled={status === "sending"}
-                    className="w-full bg-white hover:bg-white border-2 border-white hover:border-accent text-primary hover:text-accent disabled:opacity-60 disabled:cursor-not-allowed font-bold py-2.5 rounded-full text-[14px] transition-colors mt-1 inline-flex items-center justify-center gap-2"
+                    className="btn w-full mt-1 bg-white border-2 border-white hover:border-accent text-primary hover:text-accent disabled:opacity-60 disabled:cursor-not-allowed"
                   >
                     {status === "sending" ? "Envoi en cours..." : (
                       <>
@@ -376,7 +376,7 @@ export default function ContactPage() {
             <FadeIn direction="right" delay={0.1}>
               <div className="relative rounded-[20px] overflow-hidden shadow-2xl aspect-[4/3]">
                 <iframe
-                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2762.8!2d6.1638!3d46.2968!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x478c67ef5d8d251f%3A0xce93767682c6cdd6!2sIso%20Tradition!5e0!3m2!1sfr!2sch!4v1"
+                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d800000!2d6.4!3d46.75!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x478c67ef5d8d251f%3A0xce93767682c6cdd6!2sIso%20Tradition!5e0!3m2!1sfr!2sch!4v1"
                   className="w-full h-full min-h-[300px] border-0"
                   allowFullScreen
                   loading="lazy"
@@ -410,10 +410,10 @@ export default function ContactPage() {
                 href="https://form.typeform.com/to/astTYipT"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 border-2 border-primary/30 hover:border-accent text-primary hover:text-accent font-bold px-8 py-3.5 rounded-full text-[15px] transition-colors group"
+                className="btn border-2 border-primary/30 hover:border-accent text-primary hover:text-accent group"
               >
-                Demander un offre
-                <span className="flex items-center justify-center w-7 h-7 rounded-full bg-primary/10 transition-transform group-hover:translate-x-0.5">
+                Demander une offre
+                <span className="btn-arrow bg-primary/10">
                   <svg className="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
                     <path strokeLinecap="round" strokeLinejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" />
                   </svg>
@@ -421,7 +421,7 @@ export default function ContactPage() {
               </a>
               <a
                 href="tel:0216245300"
-                className="inline-flex items-center gap-2 border border-primary/20 hover:border-accent hover:text-accent text-primary font-semibold px-8 py-3.5 rounded-full text-[15px] transition-colors"
+                className="btn border border-primary/20 hover:border-accent hover:text-accent text-primary font-semibold"
               >
                 <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
                   <path strokeLinecap="round" strokeLinejoin="round" d="M2.25 6.75c0 8.284 6.716 15 15 15h2.25a2.25 2.25 0 002.25-2.25v-1.372c0-.516-.351-.966-.852-1.091l-4.423-1.106c-.44-.11-.902.055-1.173.417l-.97 1.293c-.282.376-.769.542-1.21.38a12.035 12.035 0 01-7.143-7.143c-.162-.441.004-.928.38-1.21l1.293-.97c.363-.271.527-.734.417-1.173L6.963 3.102a1.125 1.125 0 00-1.091-.852H4.5A2.25 2.25 0 002.25 4.5v2.25z" />

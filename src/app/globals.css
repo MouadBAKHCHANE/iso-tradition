@@ -26,3 +26,19 @@ html {
 
   --breakpoint-3xl: 137.5rem;
 }
+
+/* Buttons — .btn (48px), .btn-sm (40px) */
+@layer components {
+  .btn {
+    @apply inline-flex items-center justify-center gap-2.5 h-12 px-7 rounded-full text-[15px] font-bold leading-none whitespace-nowrap transition-colors;
+  }
+  .btn-sm {
+    @apply h-10 px-5 gap-2 text-sm;
+  }
+  .btn-arrow {
+    @apply flex items-center justify-center shrink-0 w-7 h-7 rounded-full transition-transform group-hover:translate-x-0.5;
+  }
+  .btn-sm .btn-arrow {
+    @apply w-6 h-6;
+  }
+}

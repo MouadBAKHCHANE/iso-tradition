@@ -29,7 +29,7 @@ export default function ServiceArea() {
                 </span>
               </div>
               <iframe
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d174765.26168010652!2d6.1!3d46.35!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x478c650693d02aad%3A0x13e2510e39f5bc6b!2sRoute%20de%20Suisse%207A%2C%201295%20Mies!5e0!3m2!1sfr!2sch!4v1711460000000!5m2!1sfr!2sch"
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d800000!2d6.4!3d46.75!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x478c650693d02aad%3A0x13e2510e39f5bc6b!2sRoute%20de%20Suisse%207A%2C%201295%20Mies!5e0!3m2!1sfr!2sch!4v1711460000000!5m2!1sfr!2sch"
                 width="100%"
                 height="100%"
                 style={{ border: 0, position: "absolute", inset: 0 }}
@@ -70,11 +70,11 @@ export default function ServiceArea() {
               <div className="flex flex-wrap items-center gap-4">
                 <a
                   href="https://form.typeform.com/to/astTYipT" target="_blank" rel="noopener noreferrer"
-                  className="inline-flex items-center gap-2 border-2 border-white/40 hover:border-accent text-white hover:text-accent font-bold px-6 py-3 rounded-full transition-colors text-[15px] group"
+                  className="btn border-2 border-white/40 hover:border-accent text-white hover:text-accent group"
                 >
                   Demander une offre
-                  <span className="flex items-center justify-center w-6 h-6 rounded-full bg-primary-dark/15 transition-transform group-hover:translate-x-0.5">
-                    <svg className="w-3 h-3" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
+                  <span className="btn-arrow bg-primary-dark/15">
+                    <svg className="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
                       <path strokeLinecap="round" strokeLinejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" />
                     </svg>
                   </span>

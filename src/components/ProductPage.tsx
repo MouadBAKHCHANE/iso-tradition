@@ -139,10 +139,10 @@ export default function ProductPage({ product }: { product: ProductData }) {
           )}
           <FadeIn delay={0.25}>
             <a href="https://form.typeform.com/to/astTYipT" target="_blank" rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 border-2 border-white/40 hover:border-accent text-white hover:text-accent font-bold px-6 py-3 rounded-full text-[15px] transition-colors group"
+              className="btn border-2 border-white/40 hover:border-accent text-white hover:text-accent group"
             >
               Demander un devis
-              <span className="flex items-center justify-center w-7 h-7 rounded-full bg-white/15 transition-transform group-hover:translate-x-0.5">
+              <span className="btn-arrow bg-white/15">
                 <svg className="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}><path strokeLinecap="round" strokeLinejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" /></svg>
               </span>
             </a>
@@ -211,7 +211,7 @@ export default function ProductPage({ product }: { product: ProductData }) {
               <h3 className="font-bold text-white text-[14px] mb-1">Besoin d&apos;un conseil ?</h3>
               <p className="text-white/60 text-[13px] mb-4 leading-snug">Nos experts se déplacent gratuitement.</p>
               <a href="https://form.typeform.com/to/astTYipT" target="_blank" rel="noopener noreferrer"
-                className="block w-full text-center border-2 border-white/40 hover:border-accent text-white hover:text-accent font-bold px-4 py-2.5 rounded-full text-[13px] transition-colors mb-3"
+                className="btn btn-sm w-full border-2 border-white/40 hover:border-accent text-white hover:text-accent mb-3"
               >
                 Demander une offre
               </a>
@@ -494,10 +494,10 @@ export default function ProductPage({ product }: { product: ProductData }) {
           </FadeIn>
           <FadeIn delay={0.2}>
             <a href="https://form.typeform.com/to/astTYipT" target="_blank" rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 border-2 border-primary/30 hover:border-accent text-primary hover:text-accent font-bold px-8 py-3.5 rounded-full text-[15px] transition-colors group"
+              className="btn border-2 border-primary/30 hover:border-accent text-primary hover:text-accent group"
             >
-              Demander un offre
-              <span className="flex items-center justify-center w-7 h-7 rounded-full bg-primary/10 transition-transform group-hover:translate-x-0.5">
+              Demander une offre
+              <span className="btn-arrow bg-primary/10">
                 <svg className="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}><path strokeLinecap="round" strokeLinejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" /></svg>
               </span>
             </a>

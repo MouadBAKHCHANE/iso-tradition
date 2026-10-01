@@ -100,10 +100,10 @@ export default function Solutions() {
           <div className="flex items-center justify-center gap-4 mt-1 sm:mt-2">
             <a
               href="/nos-solutions"
-              className="inline-flex items-center gap-3 border-2 border-primary/30 hover:border-accent text-primary hover:text-accent font-semibold px-6 py-2.5 2xl:px-8 2xl:py-3 3xl:px-12 3xl:py-5 rounded-full transition-all text-sm 2xl:text-base 3xl:text-2xl uppercase tracking-wider group"
+              className="btn border-2 border-primary/30 hover:border-accent text-primary hover:text-accent group"
             >
               Toutes nos solutions
-              <svg className="w-3.5 h-3.5 2xl:w-4 2xl:h-4 3xl:w-6 3xl:h-6 transition-transform group-hover:translate-x-1" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
+              <svg className="w-4 h-4 transition-transform group-hover:translate-x-1" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
                 <path strokeLinecap="round" strokeLinejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" />
               </svg>
             </a>

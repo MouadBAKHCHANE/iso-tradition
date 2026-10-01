@@ -61,10 +61,10 @@ export default function Blog({ posts: postsProp }: BlogProps) {
           <FadeIn delay={0.15}>
             <a
               href="/actualites"
-              className="inline-flex items-center gap-2 border-2 border-primary/30 hover:border-accent text-primary hover:text-accent font-semibold px-6 py-2.5 rounded-full transition-colors text-sm group"
+              className="btn border-2 border-primary/30 hover:border-accent text-primary hover:text-accent group"
             >
               Voir tout
-              <svg className="w-3.5 h-3.5 transition-transform group-hover:translate-x-1" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
+              <svg className="w-4 h-4 transition-transform group-hover:translate-x-1" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
                 <path strokeLinecap="round" strokeLinejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" />
               </svg>
             </a>
