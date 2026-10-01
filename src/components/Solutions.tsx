@@ -24,7 +24,7 @@ function Card({ sol }: { sol: (typeof solutions)[number] }) {
         <div className="relative aspect-[3/4] overflow-hidden">
           <Image
             src={sol.image}
-            alt={sol.title}
+            alt=""
             fill
             sizes="280px"
             className="object-cover transition-transform duration-700 group-hover:scale-110 group-active:scale-110"

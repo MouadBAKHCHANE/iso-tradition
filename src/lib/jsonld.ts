@@ -32,14 +32,32 @@ export function localBusinessJsonLd(settings: {
   };
 }
 
-export function serviceJsonLd(service: { name: string; description: string; slug: string }) {
+const AREA_SERVED = [
+  { "@type": "State", name: "Canton de Vaud" },
+  { "@type": "State", name: "Canton de Genève" },
+  { "@type": "State", name: "Canton de Fribourg" },
+  { "@type": "State", name: "Canton du Valais" },
+  { "@type": "State", name: "Canton de Neuchâtel" },
+];
+
+const PUBLISHER = {
+  "@type": "Organization",
+  name: "ISO Tradition",
+  url: SITE_URL,
+  logo: { "@type": "ImageObject", url: `${SITE_URL}/images/logo-couleur.webp` },
+};
+
+export function serviceJsonLd(service: { name: string; description: string; slug: string; image?: string }) {
   return {
     "@context": "https://schema.org",
     "@type": "Service",
     name: service.name,
+    serviceType: service.name,
     description: service.description,
     url: `${SITE_URL}/nos-solutions/${service.slug}`,
-    provider: { "@type": "Organization", name: "ISO Tradition" },
+    image: service.image,
+    areaServed: AREA_SERVED,
+    provider: { "@type": "HomeAndConstructionBusiness", name: "ISO Tradition", url: SITE_URL, telephone: "+41 21 624 53 00" },
   };
 }
 
@@ -60,18 +78,23 @@ export function blogPostingJsonLd(post: {
   slug: string;
   excerpt?: string;
   date?: string;
+  updatedAt?: string;
   imageUrl?: string;
 }) {
+  const url = `${SITE_URL}/actualites/${post.slug}`;
   return {
     "@context": "https://schema.org",
     "@type": "BlogPosting",
     headline: post.title,
     description: post.excerpt,
-    url: `${SITE_URL}/actualites/${post.slug}`,
+    url,
+    mainEntityOfPage: { "@type": "WebPage", "@id": url },
     datePublished: post.date,
+    dateModified: post.updatedAt || post.date,
     image: post.imageUrl,
-    author: { "@type": "Organization", name: "ISO Tradition" },
-    publisher: { "@type": "Organization", name: "ISO Tradition" },
+    inLanguage: "fr-CH",
+    author: { "@type": "Organization", name: "ISO Tradition", url: SITE_URL },
+    publisher: PUBLISHER,
   };
 }
 

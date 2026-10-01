@@ -48,7 +48,7 @@ export default function WhyReplace() {
             <FadeIn>
               <div className="flex items-center gap-3 mb-2">
                 <span className="h-px w-10 bg-primary" />
-                <span className="font-secondary text-primary/60 font-medium text-sm uppercase tracking-[0.2em]">
+                <span className="font-secondary text-primary/85 font-medium text-sm uppercase tracking-[0.2em]">
                   Pourquoi changer ?
                 </span>
               </div>
@@ -89,7 +89,7 @@ export default function WhyReplace() {
                     </svg>
                     <span
                       className={`flex-1 font-bold text-lg transition-colors duration-300 ${
-                        isActive ? "text-primary" : "text-primary/60 group-hover:text-primary"
+                        isActive ? "text-primary" : "text-primary/85 group-hover:text-primary"
                       }`}
                     >
                       {reason.title}
@@ -99,7 +99,7 @@ export default function WhyReplace() {
                       className={`flex items-center justify-center w-8 h-8 rounded-full border transition-all duration-300 ${
                         isActive
                           ? "bg-accent border-accent text-white rotate-180"
-                          : "border-gray-300 text-primary/60 group-hover:border-accent group-hover:text-accent"
+                          : "border-gray-300 text-primary/85 group-hover:border-accent group-hover:text-accent"
                       }`}
                     >
                       <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>

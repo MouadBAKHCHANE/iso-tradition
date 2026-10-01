@@ -471,7 +471,7 @@ export default function AboutPage() {
                     </span>
                   </a>
                   <a
-                    href="tel:0216245300"
+                    href="tel:+41216245300"
                     className="inline-flex items-center gap-2 text-primary/70 hover:text-accent font-semibold text-[15px] transition-colors"
                   >
                     <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
@@ -590,7 +590,7 @@ export default function AboutPage() {
                     </span>
                   </a>
                   <a
-                    href="tel:0216245300"
+                    href="tel:+41216245300"
                     className="btn border border-white/30 hover:border-accent text-white hover:text-accent font-semibold"
                   >
                     <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
@@ -648,7 +648,7 @@ export default function AboutPage() {
                 </span>
               </a>
               <a
-                href="tel:0216245300"
+                href="tel:+41216245300"
                 className="btn border border-primary/20 hover:border-accent hover:text-accent text-primary font-semibold"
               >
                 <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>

@@ -4,6 +4,8 @@ import ProductPage from "@/components/ProductPage";
 import { getProductBySlug, getProductSlugs } from "@/lib/queries";
 import { urlForImage } from "@/lib/sanity";
 import { pageTitle } from "@/lib/seo";
+import JsonLd from "@/components/seo/JsonLd";
+import { serviceJsonLd } from "@/lib/jsonld";
 
 // ── Static params for ISR / SSG ──
 export async function generateStaticParams() {
@@ -172,5 +174,17 @@ export default async function ProductSlugPage({
 
   const product = transformProduct(raw);
 
-  return <ProductPage product={product} />;
+  return (
+    <>
+      <JsonLd
+        data={serviceJsonLd({
+          name: product.name,
+          description: (raw.seoDescription as string) || (raw.intro as string) || "",
+          slug,
+          image: product.heroImage || undefined,
+        })}
+      />
+      <ProductPage product={product} />
+    </>
+  );
 }

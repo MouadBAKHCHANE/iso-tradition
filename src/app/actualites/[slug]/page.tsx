@@ -4,6 +4,8 @@ import { getBlogPostBySlug, getAllBlogPosts } from "@/lib/queries";
 import { urlForImage } from "@/lib/sanity";
 import BlogPostClient from "./BlogPostClient";
 import { pageTitle } from "@/lib/seo";
+import JsonLd from "@/components/seo/JsonLd";
+import { blogPostingJsonLd } from "@/lib/jsonld";
 
 /* eslint-disable @typescript-eslint/no-explicit-any */
 
@@ -99,10 +101,22 @@ export default async function BlogPostPage({
   };
 
   return (
-    <BlogPostClient
-      slug={slug}
-      sanityArticle={article}
-      sanityRelated={related}
-    />
+    <>
+      <JsonLd
+        data={blogPostingJsonLd({
+          title: post.title || "",
+          slug,
+          excerpt: post.seoDescription || post.excerpt || undefined,
+          date: post.date || undefined,
+          updatedAt: post._updatedAt || undefined,
+          imageUrl: post.image?.asset ? article.image : undefined,
+        })}
+      />
+      <BlogPostClient
+        slug={slug}
+        sanityArticle={article}
+        sanityRelated={related}
+      />
+    </>
   );
 }

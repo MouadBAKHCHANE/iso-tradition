@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Bai_Jamjuree, Outfit } from "next/font/google";
 import "./globals.css";
 import ScrollToTop from "@/components/ScrollToTop";
+import BackToTop from "@/components/BackToTop";
 import ThemeProvider from "@/components/ThemeProvider";
 import { getSiteSettings, getMarketingSettings } from "@/lib/queries";
 import {
@@ -162,6 +163,7 @@ export default async function RootLayout({
           colorSecondary: settings.colorSecondary,
         } : null} />
         <ScrollToTop />
+        <BackToTop />
         {children}
         <TypeformLeadPopup />
         <TrackingBodyEnd data={marketing} />

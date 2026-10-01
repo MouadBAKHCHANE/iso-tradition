@@ -6,6 +6,7 @@ import Link from "next/link";
 import Header from "./Header";
 import Footer from "./Footer";
 import BrandIcon from "./BrandIcon";
+import Breadcrumbs from "./Breadcrumbs";
 import { FadeIn } from "./Motion";
 import { motion, AnimatePresence } from "framer-motion";
 
@@ -114,10 +115,14 @@ export default function ProductPage({ product }: { product: ProductData }) {
         <div className="absolute inset-0 bg-primary/55" />
         <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <FadeIn>
-            <Link href="/nos-solutions" className="inline-flex items-center gap-2 text-white/60 hover:text-white text-sm mb-6 transition-colors">
-              <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}><path strokeLinecap="round" strokeLinejoin="round" d="M10.5 19.5L3 12m0 0l7.5-7.5M3 12h18" /></svg>
-              Toutes nos solutions
-            </Link>
+            <Breadcrumbs
+              items={[
+                { name: "Accueil", url: "/" },
+                { name: "Nos solutions", url: "/nos-solutions" },
+                { name: product.name, url: pathname },
+              ]}
+              className="text-white/80 text-sm mb-6"
+            />
           </FadeIn>
           <FadeIn delay={0.1}>
             <h1 className="text-3xl sm:text-4xl lg:text-5xl xl:text-[56px] font-bold text-white leading-tight mb-6">
@@ -215,7 +220,7 @@ export default function ProductPage({ product }: { product: ProductData }) {
               >
                 Demander une offre
               </a>
-              <a href="tel:0216245300" className="flex items-center justify-center gap-2 text-white/60 hover:text-accent text-[13px] transition-colors">
+              <a href="tel:+41216245300" className="flex items-center justify-center gap-2 text-white/60 hover:text-accent text-[13px] transition-colors">
                 <svg className="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}><path strokeLinecap="round" strokeLinejoin="round" d="M2.25 6.75c0 8.284 6.716 15 15 15h2.25a2.25 2.25 0 002.25-2.25v-1.372c0-.516-.351-.966-.852-1.091l-4.423-1.106c-.44-.11-.902.055-1.173.417l-.97 1.293c-.282.376-.769.542-1.21.38a12.035 12.035 0 01-7.143-7.143c-.162-.441.004-.928.38-1.21l1.293-.97c.363-.271.527-.734.417-1.173L6.963 3.102a1.125 1.125 0 00-1.091-.852H4.5A2.25 2.25 0 002.25 4.5v2.25z" /></svg>
                 021 624 53 00
               </a>

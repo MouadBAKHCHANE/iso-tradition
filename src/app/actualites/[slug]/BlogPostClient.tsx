@@ -6,6 +6,7 @@ import Footer from "@/components/Footer";
 import BrandIcon from "@/components/BrandIcon";
 import SanityBlockContent from "@/components/SanityBlockContent";
 import { FadeIn } from "@/components/Motion";
+import Breadcrumbs from "@/components/Breadcrumbs";
 
 /* eslint-disable @typescript-eslint/no-explicit-any */
 
@@ -255,25 +256,14 @@ export default function BlogPostClient({
         <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/30 to-black/10" />
         <div className="relative z-10 flex flex-col justify-end h-full mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 pb-10 lg:pb-14">
           <FadeIn>
-            <Link
-              href="/actualites"
-              className="inline-flex items-center gap-2 text-white/80 hover:text-white text-sm font-medium mb-5 transition-colors"
-            >
-              <svg
-                className="w-4 h-4"
-                fill="none"
-                viewBox="0 0 24 24"
-                stroke="currentColor"
-                strokeWidth={2}
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  d="M10.5 19.5L3 12m0 0l7.5-7.5M3 12h18"
-                />
-              </svg>
-              Retour aux actualités
-            </Link>
+            <Breadcrumbs
+              items={[
+                { name: "Accueil", url: "/" },
+                { name: "Actualités", url: "/actualites" },
+                { name: article.title, url: `/actualites/${slug}` },
+              ]}
+              className="text-white/80 text-sm font-medium mb-5"
+            />
           </FadeIn>
           {article.tag && (
             <FadeIn delay={0.05}>
@@ -416,7 +406,7 @@ export default function BlogPostClient({
                 </span>
               </a>
               <a
-                href="tel:0216245300"
+                href="tel:+41216245300"
                 className="btn border border-primary/20 hover:border-accent hover:text-accent text-primary font-semibold"
               >
                 <svg

@@ -81,7 +81,7 @@ export default function ServiceArea() {
                   </span>
                 </a>
                 <a
-                  href="tel:0216245300"
+                  href="tel:+41216245300"
                   className="inline-flex items-center gap-2 text-white font-semibold text-[15px] hover:text-accent transition-colors"
                 >
                   <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>

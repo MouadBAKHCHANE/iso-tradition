@@ -217,7 +217,7 @@ export default function BlogPage({ articles: articlesProp }: BlogPageProps) {
                 </span>
               </a>
               <a
-                href="tel:0216245300"
+                href="tel:+41216245300"
                 className="btn border border-primary/20 hover:border-accent hover:text-accent text-primary font-semibold"
               >
                 <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
