@@ -43,15 +43,14 @@ html {
   }
 }
 
-/* Hero background — slow zoom on the compositor (no main-thread work) */
+/* Hero background — slow zoom on the compositor, desktop only (keeps mobile LCP fast) */
 @keyframes hero-zoom {
   from { transform: scale(1.08); }
   to { transform: scale(1); }
 }
-.animate-hero-zoom {
-  animation: hero-zoom 8s ease-out both;
-  will-change: transform;
-}
-@media (prefers-reduced-motion: reduce) {
-  .animate-hero-zoom { animation: none; }
+@media (min-width: 1024px) and (prefers-reduced-motion: no-preference) {
+  .animate-hero-zoom {
+    animation: hero-zoom 8s ease-out both;
+    will-change: transform;
+  }
 }
