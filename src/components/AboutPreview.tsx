@@ -24,7 +24,7 @@ export default function AboutPreview() {
           </div>
 
             {/* Counter badge — top right, overlapping image */}
-            <div className="absolute -top-2 right-0 lg:right-8 2xl:right-10">
+            <div className="absolute -top-2 right-4 sm:right-6 lg:right-8 2xl:right-10">
               <div className="relative bg-white flex flex-col items-center text-center pt-3 pb-3.5 px-2.5 lg:pt-3.5 lg:pb-4 lg:px-3 2xl:pt-4 2xl:pb-5 2xl:px-4 rounded-b-[16px] shadow-sm">
                 <span className="block text-3xl lg:text-4xl 2xl:text-5xl font-bold leading-none">
                   <span className="text-[#f7ad0c]">+</span>
