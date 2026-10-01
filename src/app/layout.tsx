@@ -141,6 +141,11 @@ export default async function RootLayout({
                 { "@type": "State", name: "Canton du Valais" },
                 { "@type": "State", name: "Canton de Neuchâtel" },
               ],
+              sameAs: [
+                "https://www.linkedin.com/company/iso-tradition/",
+                "https://www.instagram.com/isotradition/",
+                "https://www.facebook.com/people/Iso-Tradition/61569606287536/",
+              ],
             }),
           }}
         />

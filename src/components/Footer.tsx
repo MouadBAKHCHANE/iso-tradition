@@ -155,15 +155,16 @@ export default function Footer() {
             {/* Social icons */}
             <div className="flex gap-3 mt-6">
               {[
-                { name: "instagram", href: "#" },
-                { name: "facebook", href: "#" },
-                { name: "linkedin", href: "https://www.linkedin.com/company/iso-tradition/" },
+                { name: "instagram", label: "Instagram", href: "https://www.instagram.com/isotradition/" },
+                { name: "facebook", label: "Facebook", href: "https://www.facebook.com/people/Iso-Tradition/61569606287536/" },
+                { name: "linkedin", label: "LinkedIn", href: "https://www.linkedin.com/company/iso-tradition/" },
               ].map((social) => (
                 <a
                   key={social.name}
                   href={social.href}
-                  target={social.href !== "#" ? "_blank" : undefined}
-                  rel={social.href !== "#" ? "noopener noreferrer" : undefined}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label={`ISO Tradition sur ${social.label}`}
                   className="w-10 h-10 rounded-full bg-white/10 hover:bg-accent flex items-center justify-center transition-colors group"
                 >
                   {social.name === "instagram" && (
