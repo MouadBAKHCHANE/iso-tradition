@@ -42,15 +42,26 @@ export default function Hero() {
           transition={{ duration: 8, ease: "easeOut" }}
           className="absolute inset-0"
         >
-          {/* Background image — blurred fill on desktop */}
+          {/* Background image — blurred fill */}
           <Image
             src="/images/about-family.webp"
             alt=""
             fill
-            sizes="100vw"
-            className="object-cover lg:blur-2xl lg:scale-110"
+            sizes="50vw"
+            className="object-cover blur-2xl scale-110"
             priority
           />
+          {/* Mobile/tablet — zoomed-out photo, top */}
+          <div className="lg:hidden absolute inset-x-0 top-0 h-[65%] [mask-image:linear-gradient(to_bottom,#000_70%,transparent)]">
+            <Image
+              src="/images/about-family.webp"
+              alt="Deux enfants devant une grande baie vitrée en hiver"
+              fill
+              sizes="100vw"
+              className="object-cover"
+              priority
+            />
+          </div>
           {/* Desktop — zoomed-out photo, anchored right */}
           <div className="hidden lg:block absolute right-0 top-1/2 -translate-y-1/2 h-[110%] aspect-[3/2] min-w-full [mask-image:linear-gradient(to_right,transparent,#000_12%)]">
             <Image
@@ -66,6 +77,8 @@ export default function Hero() {
 
         {/* Gradient overlay — left side */}
         <div className="absolute inset-0 bg-gradient-to-r from-black/85 via-black/40 via-35% to-transparent" />
+        {/* Gradient overlay — bottom (mobile/tablet) */}
+        <div className="lg:hidden absolute inset-x-0 bottom-0 h-3/5 bg-gradient-to-t from-black/75 via-black/45 to-transparent" />
         {/* Gradient overlay — top */}
         <div className="absolute inset-x-0 top-0 h-48 bg-gradient-to-b from-black/50 to-transparent" />
 
