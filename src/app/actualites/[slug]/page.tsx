@@ -3,6 +3,7 @@ import { notFound } from "next/navigation";
 import { getBlogPostBySlug, getAllBlogPosts } from "@/lib/queries";
 import { urlForImage } from "@/lib/sanity";
 import BlogPostClient from "./BlogPostClient";
+import { pageTitle } from "@/lib/seo";
 
 /* eslint-disable @typescript-eslint/no-explicit-any */
 
@@ -37,7 +38,7 @@ export async function generateMetadata({
   if (!post) return {};
   return {
     alternates: { canonical: `/actualites/${slug}` },
-    title: post.seoTitle || `${post.title} – ISO Tradition`,
+    title: pageTitle(post.seoTitle) || post.title,
     description: post.seoDescription || post.excerpt || undefined,
     openGraph: {
       title: post.seoTitle || post.title || undefined,

@@ -125,6 +125,7 @@ export default function WhyReplace() {
                               src={reason.image}
                               alt={reason.title}
                               fill
+                              sizes="100vw"
                               className="object-cover"
                             />
                           </div>
@@ -162,6 +163,7 @@ export default function WhyReplace() {
                     src={reasons[activeIndex].image}
                     alt={reasons[activeIndex].title}
                     fill
+                    sizes="(min-width: 1024px) 50vw, 100vw"
                     className="object-cover"
                   />
                 </motion.div>

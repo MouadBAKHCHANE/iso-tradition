@@ -42,3 +42,16 @@ html {
     @apply w-6 h-6;
   }
 }
+
+/* Hero background — slow zoom on the compositor (no main-thread work) */
+@keyframes hero-zoom {
+  from { transform: scale(1.08); }
+  to { transform: scale(1); }
+}
+.animate-hero-zoom {
+  animation: hero-zoom 8s ease-out both;
+  will-change: transform;
+}
+@media (prefers-reduced-motion: reduce) {
+  .animate-hero-zoom { animation: none; }
+}

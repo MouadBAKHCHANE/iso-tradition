@@ -26,6 +26,7 @@ function Card({ sol }: { sol: (typeof solutions)[number] }) {
             src={sol.image}
             alt={sol.title}
             fill
+            sizes="280px"
             className="object-cover transition-transform duration-700 group-hover:scale-110 group-active:scale-110"
           />
           <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent" />

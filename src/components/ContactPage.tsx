@@ -172,6 +172,7 @@ export default function ContactPage() {
                   src="/images/contact-team.avif"
                   alt="Équipe Iso Tradition à votre service"
                   fill
+                  sizes="(min-width: 1024px) 50vw, 100vw"
                   className="object-cover"
                 />
               </div>

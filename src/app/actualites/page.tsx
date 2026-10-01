@@ -8,7 +8,7 @@ export async function generateMetadata(): Promise<Metadata> {
 
   return {
     alternates: { canonical: "/actualites" },
-    title: "Actualités – ISO Tradition",
+    title: "Actualités",
     description:
       settings?.seoDescription ||
       "Conseils, guides et actualités sur les fenêtres, portes et rénovation énergétique en Suisse par Iso Tradition.",

@@ -36,20 +36,15 @@ export default function Hero() {
       {/* Rounded hero container */}
       <div className="relative min-h-[85vh] sm:min-h-screen lg:min-h-[85vh] 2xl:min-h-[84vh] 3xl:min-h-[82vh] rounded-[20px] overflow-hidden bg-primary">
         {/* Background image */}
-        <motion.div
-          initial={{ scale: 1.08 }}
-          animate={{ scale: 1 }}
-          transition={{ duration: 8, ease: "easeOut" }}
-          className="absolute inset-0"
-        >
+        <div className="absolute inset-0 animate-hero-zoom">
           {/* Background image — blurred fill */}
           <Image
             src="/images/about-family.webp"
             alt=""
             fill
-            sizes="50vw"
+            sizes="64px"
+            loading="eager"
             className="object-cover blur-2xl scale-110"
-            priority
           />
           {/* Mobile/tablet — zoomed-out photo, top */}
           <div className="lg:hidden absolute inset-x-0 top-0 h-[65%] [mask-image:linear-gradient(to_bottom,#000_70%,transparent)]">
@@ -59,7 +54,8 @@ export default function Hero() {
               fill
               sizes="100vw"
               className="object-cover"
-              priority
+              preload
+              fetchPriority="high"
             />
           </div>
           {/* Desktop — zoomed-out photo, anchored right */}
@@ -70,10 +66,11 @@ export default function Hero() {
               fill
               sizes="100vw"
               className="object-cover"
-              priority
+              preload
+              fetchPriority="high"
             />
           </div>
-        </motion.div>
+        </div>
 
         {/* Gradient overlay — left side */}
         <div className="absolute inset-0 bg-gradient-to-r from-black/85 via-black/40 via-35% to-transparent" />
@@ -93,20 +90,20 @@ export default function Hero() {
               className="flex items-center gap-3 mb-3 sm:mb-4"
             >
               <span className="h-px w-12 bg-white/50" />
-              <span className="font-secondary text-white font-medium text-sm uppercase tracking-[0.2em]">
-                Fenêtres &amp; Portes Suisses
-              </span>
+              <h1 className="font-secondary text-white font-medium text-sm uppercase tracking-[0.2em]">
+                Fenêtres &amp; portes en Suisse romande
+              </h1>
             </motion.div>
 
             {/* Headline */}
-            <motion.h1
+            <motion.p
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.7, delay: 0.5, ease }}
               className="text-[26px] sm:text-4xl lg:text-5xl xl:text-[56px] 2xl:text-[64px] 3xl:text-[95px] font-bold text-white leading-[1.1] mb-3 sm:mb-4 2xl:mb-6 3xl:mb-10"
             >
               Votre nouvel <span className="text-accent">art de vivre</span>
-            </motion.h1>
+            </motion.p>
 
             {/* Subtext */}
             <motion.p

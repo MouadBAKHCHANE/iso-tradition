@@ -12,6 +12,7 @@ export default function ServiceArea() {
           src="/images/suisse-paysage.webp"
           alt="Paysage suisse"
           fill
+          sizes="100vw"
           className="object-cover"
         />
         <div className="absolute inset-0 bg-primary/85" />

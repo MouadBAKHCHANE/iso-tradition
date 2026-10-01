@@ -1,13 +1,14 @@
 import type { Metadata } from "next";
 import ContactPage from "@/components/ContactPage";
 import { getContactPage } from "@/lib/queries";
+import { pageTitle } from "@/lib/seo";
 
 export async function generateMetadata(): Promise<Metadata> {
   const page = await getContactPage();
 
   if (!page) {
     return {
-      title: "Contact – ISO Tradition",
+      title: "Contact",
       description:
         "Contactez Iso Tradition pour vos projets de fenêtres, portes et volets en Suisse romande. Demandez un devis gratuit.",
     };
@@ -15,7 +16,7 @@ export async function generateMetadata(): Promise<Metadata> {
 
   return {
     alternates: { canonical: "/contact" },
-    title: page.seoTitle || "Contact – ISO Tradition",
+    title: pageTitle(page.seoTitle) || "Contact",
     description:
       page.seoDescription ||
       "Contactez Iso Tradition pour vos projets de fenêtres, portes et volets en Suisse romande. Demandez un devis gratuit.",

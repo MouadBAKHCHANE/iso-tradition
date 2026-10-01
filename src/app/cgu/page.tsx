@@ -5,7 +5,7 @@ import type { Metadata } from "next";
 
 export const metadata: Metadata = {
   alternates: { canonical: "/cgu" },
-  title: "Conditions générales d'utilisation – ISO Tradition",
+  title: "Conditions générales d'utilisation",
   description: "Conditions générales d'utilisation du site isotradition.ch.",
 };
 

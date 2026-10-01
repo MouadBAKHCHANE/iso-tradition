@@ -1,26 +1,61 @@
 import type { MetadataRoute } from "next";
+import { client } from "@/lib/sanity";
 
-export default function sitemap(): MetadataRoute.Sitemap {
-  const base = "https://www.isotradition.ch";
+export const revalidate = 3600;
+
+const base = "https://www.isotradition.ch";
+
+const productSlugs = [
+  "fenetres",
+  "baies-coulissantes",
+  "portes-entree",
+  "volets",
+  "portes-garage",
+  "stores-bannes",
+  "films-solaires",
+  "carports-pergolas",
+];
+
+type SanityDoc = { _type: "product" | "blogPost"; slug: string; _updatedAt: string };
+
+export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
+  // Real modification dates from Sanity; static pages simply omit lastModified
+  let docs: SanityDoc[] = [];
+  try {
+    docs = await client.fetch(
+      `*[_type in ["product", "blogPost"] && defined(slug.current)]{ _type, "slug": slug.current, _updatedAt }`
+    );
+  } catch {
+    docs = [];
+  }
+  const updated = (type: SanityDoc["_type"], slug: string) =>
+    docs.find((d) => d._type === type && d.slug === slug)?._updatedAt;
+
+  const products = [...new Set([...productSlugs, ...docs.filter((d) => d._type === "product").map((d) => d.slug)])];
+  const posts = docs.filter((d) => d._type === "blogPost");
 
   return [
-    { url: base, lastModified: new Date(), changeFrequency: "monthly", priority: 1 },
-    { url: `${base}/nos-solutions`, lastModified: new Date(), changeFrequency: "monthly", priority: 0.9 },
-    { url: `${base}/nos-solutions/fenetres`, lastModified: new Date(), changeFrequency: "monthly", priority: 0.8 },
-    { url: `${base}/nos-solutions/baies-coulissantes`, lastModified: new Date(), changeFrequency: "monthly", priority: 0.8 },
-    { url: `${base}/nos-solutions/portes-entree`, lastModified: new Date(), changeFrequency: "monthly", priority: 0.8 },
-    { url: `${base}/nos-solutions/volets`, lastModified: new Date(), changeFrequency: "monthly", priority: 0.8 },
-    { url: `${base}/nos-solutions/portes-garage`, lastModified: new Date(), changeFrequency: "monthly", priority: 0.8 },
-    { url: `${base}/nos-solutions/stores-bannes`, lastModified: new Date(), changeFrequency: "monthly", priority: 0.8 },
-    { url: `${base}/nos-solutions/films-solaires`, lastModified: new Date(), changeFrequency: "monthly", priority: 0.8 },
-    { url: `${base}/nos-solutions/carports-pergolas`, lastModified: new Date(), changeFrequency: "monthly", priority: 0.8 },
-    { url: `${base}/qui-sommes-nous`, lastModified: new Date(), changeFrequency: "monthly", priority: 0.7 },
-    { url: `${base}/actualites`, lastModified: new Date(), changeFrequency: "weekly", priority: 0.6 },
-    { url: `${base}/contact`, lastModified: new Date(), changeFrequency: "yearly", priority: 0.7 },
-    { url: `${base}/mentions-legales`, lastModified: new Date(), changeFrequency: "yearly", priority: 0.2 },
-    { url: `${base}/cgu`, lastModified: new Date(), changeFrequency: "yearly", priority: 0.2 },
-    { url: `${base}/cgv`, lastModified: new Date(), changeFrequency: "yearly", priority: 0.2 },
-    { url: `${base}/cg-entretien`, lastModified: new Date(), changeFrequency: "yearly", priority: 0.2 },
-    { url: `${base}/confidentialite`, lastModified: new Date(), changeFrequency: "yearly", priority: 0.2 },
+    { url: base, changeFrequency: "monthly", priority: 1 },
+    { url: `${base}/nos-solutions`, changeFrequency: "monthly", priority: 0.9 },
+    ...products.map((slug) => ({
+      url: `${base}/nos-solutions/${slug}`,
+      lastModified: updated("product", slug),
+      changeFrequency: "monthly" as const,
+      priority: 0.8,
+    })),
+    { url: `${base}/qui-sommes-nous`, changeFrequency: "monthly", priority: 0.7 },
+    { url: `${base}/actualites`, changeFrequency: "weekly", priority: 0.6 },
+    ...posts.map((p) => ({
+      url: `${base}/actualites/${p.slug}`,
+      lastModified: p._updatedAt,
+      changeFrequency: "monthly" as const,
+      priority: 0.6,
+    })),
+    { url: `${base}/contact`, changeFrequency: "yearly", priority: 0.7 },
+    { url: `${base}/mentions-legales`, changeFrequency: "yearly", priority: 0.2 },
+    { url: `${base}/cgu`, changeFrequency: "yearly", priority: 0.2 },
+    { url: `${base}/cgv`, changeFrequency: "yearly", priority: 0.2 },
+    { url: `${base}/cg-entretien`, changeFrequency: "yearly", priority: 0.2 },
+    { url: `${base}/confidentialite`, changeFrequency: "yearly", priority: 0.2 },
   ];
 }

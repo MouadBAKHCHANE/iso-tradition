@@ -1,13 +1,14 @@
 import type { Metadata } from "next";
 import SolutionsListPage from "@/components/SolutionsListPage";
 import { getSolutionsPage } from "@/lib/queries";
+import { pageTitle } from "@/lib/seo";
 
 export async function generateMetadata(): Promise<Metadata> {
   const page = await getSolutionsPage();
 
   if (!page) {
     return {
-      title: "Nos Solutions – ISO Tradition",
+      title: "Nos solutions",
       description:
         "Découvrez nos solutions de fenêtres, portes, volets et plus. Iso Tradition, votre expert en menuiserie en Suisse romande.",
     };
@@ -15,7 +16,7 @@ export async function generateMetadata(): Promise<Metadata> {
 
   return {
     alternates: { canonical: "/nos-solutions" },
-    title: page.seoTitle || "Nos Solutions – ISO Tradition",
+    title: pageTitle(page.seoTitle) || "Nos solutions",
     description:
       page.seoDescription ||
       "Découvrez nos solutions de fenêtres, portes, volets et plus. Iso Tradition, votre expert en menuiserie en Suisse romande.",

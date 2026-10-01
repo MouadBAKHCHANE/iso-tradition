@@ -49,7 +49,6 @@ const stats = [
   { target: 35, prefix: "+", suffix: "", label: "années d'expérience" },
   { target: 2500, prefix: "+", suffix: "", label: "projets réalisés", format: true },
   { target: 100, prefix: "", suffix: "%", label: "pose interne" },
-  { target: 4.9, prefix: "", suffix: "/5", label: "avis clients", decimals: 1 },
 ];
 
 const processSteps = [
@@ -148,6 +147,7 @@ export default function AboutPage() {
                     src="/images/about-install.webp"
                     alt="Technicien installant une fenêtre"
                     fill
+                    sizes="(min-width: 768px) 30vw, 100vw"
                     className="object-cover"
                   />
                 </div>
@@ -166,6 +166,7 @@ export default function AboutPage() {
                     src="/images/about-family.webp"
                     alt="Famille profitant du confort de son intérieur"
                     fill
+                    sizes="(min-width: 768px) 36vw, (min-width: 640px) 60vw, 85vw"
                     className="object-cover"
                     priority
                   />
@@ -185,6 +186,7 @@ export default function AboutPage() {
                     src="/images/about-gate.webp"
                     alt="Installation portail par nos équipes"
                     fill
+                    sizes="(min-width: 768px) 30vw, 100vw"
                     className="object-cover"
                   />
                 </div>
@@ -199,12 +201,12 @@ export default function AboutPage() {
       {/* ── Stats Bar ── */}
       <section className="bg-white border-b border-gray-100">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-10 lg:py-14">
-          <div className="grid grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-12">
+          <div className="grid grid-cols-3 gap-4 sm:gap-8 lg:gap-12">
             {stats.map((stat, i) => (
               <FadeIn key={i} delay={i * 0.1}>
                 <div className="text-center">
                   <p className="text-3xl lg:text-4xl 2xl:text-5xl font-bold text-primary mb-1">
-                    <CountUp target={stat.target} prefix={stat.prefix} suffix={stat.suffix} decimals={stat.decimals ?? 0} format={stat.format ?? false} />
+                    <CountUp target={stat.target} prefix={stat.prefix} suffix={stat.suffix} format={stat.format ?? false} />
                   </p>
                   <p className="text-primary/60 text-sm font-medium">{stat.label}</p>
                 </div>
@@ -413,6 +415,7 @@ export default function AboutPage() {
                   src="/images/about-cozy.webp"
                   alt="Moments chaleureux dans un intérieur rénové"
                   fill
+                  sizes="(min-width: 1024px) 50vw, 100vw"
                   className="object-cover"
                 />
                 {/* Quote overlay */}
@@ -535,6 +538,7 @@ export default function AboutPage() {
           src="/images/suisse-paysage.webp"
           alt="Paysage suisse"
           fill
+          sizes="100vw"
           className="object-cover"
         />
         <div className="absolute inset-0 bg-primary/85" />

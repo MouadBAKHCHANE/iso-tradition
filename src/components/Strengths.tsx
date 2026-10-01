@@ -92,6 +92,7 @@ export default function Strengths() {
                 src="/images/strength-3.webp"
                 alt="Pergola moderne"
                 fill
+                sizes="(min-width: 768px) 33vw, 100vw"
                 className="object-cover"
               />
             </div>
@@ -118,6 +119,7 @@ export default function Strengths() {
                 src="/images/strength-living.webp"
                 alt="Salon avec baies vitrées"
                 fill
+                sizes="(min-width: 768px) 33vw, 100vw"
                 className="object-cover"
               />
             </div>
@@ -144,6 +146,7 @@ export default function Strengths() {
                 src="/images/strength-worker.webp"
                 alt="Technicien professionnel en intervention"
                 fill
+                sizes="(min-width: 768px) 66vw, 100vw"
                 className="object-cover"
               />
               {/* Overlay text */}

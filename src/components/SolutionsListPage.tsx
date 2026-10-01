@@ -78,7 +78,7 @@ export default function SolutionsListPage() {
                 <Link href={sol.slug} className="group block relative rounded-[24px] overflow-hidden">
                   {/* Image */}
                   <div className="relative aspect-[3/4]">
-                    <Image src={sol.image} alt={sol.name} fill className="object-cover transition-transform duration-500 group-hover:scale-105" />
+                    <Image src={sol.image} alt={sol.name} fill sizes="(min-width: 1280px) 25vw, (min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw" className="object-cover transition-transform duration-500 group-hover:scale-105" />
                     {/* Overlay — darkens on hover */}
                     <div className="absolute inset-0 bg-gradient-to-t from-primary/40 via-transparent to-transparent group-hover:from-accent/40 transition-all duration-500" />
                   </div>
@@ -292,7 +292,7 @@ export default function SolutionsListPage() {
                   </div>
                 </div>
                 <div className="relative w-full lg:w-1/2 h-56 lg:h-auto flex-shrink-0">
-                  <Image src="/images/scandinavian-window.webp" alt="Wooden Window" fill className="object-cover object-center" />
+                  <Image src="/images/scandinavian-window.webp" alt="Wooden Window" fill sizes="(min-width: 1024px) 50vw, 100vw" className="object-cover object-center" />
                 </div>
               </div>
             </FadeIn>

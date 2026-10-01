@@ -236,7 +236,7 @@ export default function ProductPage({ product }: { product: ProductData }) {
                       <p className="text-primary/70 text-[15px] leading-relaxed">{product.whyText}</p>
                     </div>
                     <div className="relative w-full lg:w-64 h-52 lg:h-auto flex-shrink-0">
-                      <img src={product.whyImage} alt={product.whyTitle} className="absolute inset-0 w-full h-full object-cover" />
+                      <img loading="lazy" decoding="async" src={product.whyImage} alt={product.whyTitle} className="absolute inset-0 w-full h-full object-cover" />
                     </div>
                   </div>
                 ) : (
@@ -254,7 +254,7 @@ export default function ProductPage({ product }: { product: ProductData }) {
                 {/* Background image */}
                 {product.advantagesImage && (
                   <>
-                    <img src={product.advantagesImage} alt="Atouts" className="absolute inset-0 w-full h-full object-cover object-center" />
+                    <img loading="lazy" decoding="async" src={product.advantagesImage} alt="Atouts" className="absolute inset-0 w-full h-full object-cover object-center" />
                     <div className="absolute inset-0 bg-primary/55" />
                   </>
                 )}
@@ -314,7 +314,7 @@ export default function ProductPage({ product }: { product: ProductData }) {
                           className="group relative rounded-[16px] overflow-hidden cursor-default h-64"
                         >
                           {type.image ? (
-                            <img src={type.image} alt={type.name} className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-110" />
+                            <img loading="lazy" decoding="async" src={type.image} alt={type.name} className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-110" />
                           ) : (
                             <div className="absolute inset-0 bg-gradient-to-br from-primary to-primary/80" />
                           )}
@@ -353,7 +353,7 @@ export default function ProductPage({ product }: { product: ProductData }) {
                           className="group relative rounded-[16px] overflow-hidden cursor-default h-64"
                         >
                           {item.image ? (
-                            <img src={item.image} alt={item.name} className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-110" />
+                            <img loading="lazy" decoding="async" src={item.image} alt={item.name} className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-110" />
                           ) : (
                             <div className="absolute inset-0 bg-gradient-to-br from-primary to-primary/80" />
                           )}
@@ -402,7 +402,7 @@ export default function ProductPage({ product }: { product: ProductData }) {
                                 <div key={j} className="flex flex-col items-center justify-center gap-3 bg-secondary/30 border border-gray-100/50 rounded-2xl p-4 text-center hover:bg-secondary/60 transition-colors">
                                   {item.image && (
                                     <div className="relative w-16 h-16 flex-shrink-0 drop-shadow-sm">
-                                      <img src={item.image} alt={item.name} className="w-full h-full object-contain" />
+                                      <img loading="lazy" decoding="async" src={item.image} alt={item.name} className="w-full h-full object-contain" />
                                     </div>
                                   )}
                                   <span className="text-[13px] font-semibold text-primary leading-tight">{item.name}</span>

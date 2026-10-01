@@ -8,7 +8,7 @@ export default function AboutPreview() {
     <section id="apropos" className="pt-8 pb-2 sm:pb-4 lg:py-12 2xl:py-16 3xl:py-24 bg-white overflow-hidden relative scroll-mt-24 lg:scroll-mt-32">
       {/* Swiss flag background — right side */}
       <div className="absolute bottom-0 right-0 lg:right-4 xl:right-8 pointer-events-none opacity-[0.07]">
-        <img src="/images/swiss-flag-bg.webp" alt="" className="w-48 lg:w-64 xl:w-80 2xl:w-[350px] 3xl:w-[500px] object-contain" />
+        <img loading="lazy" decoding="async" src="/images/swiss-flag-bg.webp" alt="" width={800} height={856} className="h-auto w-48 lg:w-64 xl:w-80 2xl:w-[350px] 3xl:w-[500px] object-contain" />
       </div>
       <div className="grid lg:grid-cols-2 2xl:grid-cols-2 gap-12 lg:gap-16 2xl:gap-18 3xl:gap-24 items-center relative">
         {/* ===== Left — Image flush to left edge ===== */}
@@ -89,60 +89,8 @@ export default function AboutPreview() {
               </FadeIn>
             </div>
 
-            {/* Bottom block: avatar stack + rating + tagline */}
+            {/* Bottom block: tagline */}
             <div>
-              <FadeIn direction="up" delay={0.4}>
-                <div className="flex items-center gap-4 lg:gap-4 xl:gap-6 mb-4 lg:mb-3 xl:mb-6">
-                  {/* Avatar stack */}
-                  <div className="flex -space-x-4">
-                    {[
-                      { src: "/avatars/client-1.png", alt: "Client Suisse 1" },
-                      { src: "/avatars/client-2.png", alt: "Client Suisse 2" },
-                      { src: "/avatars/client-3.png", alt: "Client Suisse 3" },
-                    ].map((client, i) => (
-                      <div
-                        key={i}
-                        className="w-12 h-12 lg:w-11 lg:h-11 xl:w-14 xl:h-14 rounded-full border-[3px] border-white flex items-center justify-center overflow-hidden bg-gray-100"
-                      >
-                        <Image
-                          src={client.src}
-                          alt={client.alt}
-                          width={60}
-                          height={60}
-                          className="object-cover w-full h-full"
-                        />
-                      </div>
-                    ))}
-                  </div>
-
-                  {/* Rating */}
-                  <div>
-                    <span className="block text-[15px] 2xl:text-lg 3xl:text-2xl font-semibold text-primary">
-                      4.9/5 avis clients
-                    </span>
-                    <div className="flex gap-0.5 mt-1 2xl:mt-2 3xl:mt-3">
-                      {[1, 2, 3, 4].map((star) => (
-                        <svg
-                          key={star}
-                          className="w-5 h-5 2xl:w-6 2xl:h-6 3xl:w-8 3xl:h-8 text-accent"
-                          fill="currentColor"
-                          viewBox="0 0 20 20"
-                        >
-                          <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
-                        </svg>
-                      ))}
-                      <svg
-                        className="w-5 h-5 2xl:w-6 2xl:h-6 3xl:w-8 3xl:h-8 text-accent/30"
-                        fill="currentColor"
-                        viewBox="0 0 20 20"
-                      >
-                        <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
-                      </svg>
-                    </div>
-                  </div>
-                </div>
-              </FadeIn>
-
               <FadeIn direction="up" delay={0.5}>
                 <p className="text-gray-500 leading-[1.6] text-[14px] lg:text-[13px] xl:text-[15px] 2xl:text-[16px] 3xl:text-[18px] max-w-lg 2xl:max-w-lg 3xl:max-w-xl">
                   Nous offrons des solutions fiables, adossées à des décennies

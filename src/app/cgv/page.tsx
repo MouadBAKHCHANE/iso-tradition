@@ -5,7 +5,7 @@ import type { Metadata } from "next";
 
 export const metadata: Metadata = {
   alternates: { canonical: "/cgv" },
-  title: "Conditions générales de vente – ISO Tradition",
+  title: "Conditions générales de vente",
   description: "Conditions générales de vente d'Iso Tradition SA. Modalités de commande, livraison, garantie et paiement.",
 };
 

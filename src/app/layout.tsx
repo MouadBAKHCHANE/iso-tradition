@@ -141,12 +141,6 @@ export default async function RootLayout({
                 { "@type": "State", name: "Canton du Valais" },
                 { "@type": "State", name: "Canton de Neuchâtel" },
               ],
-              aggregateRating: {
-                "@type": "AggregateRating",
-                ratingValue: "4.9",
-                bestRating: "5",
-                ratingCount: "120",
-              },
             }),
           }}
         />

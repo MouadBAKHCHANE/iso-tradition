@@ -351,7 +351,7 @@ export default function BlogPostClient({
                       <div className="relative aspect-[4/3] overflow-hidden">
                         {rel.image && (
                           /* eslint-disable-next-line @next/next/no-img-element */
-                          <img
+                          <img loading="lazy" decoding="async"
                             src={rel.image}
                             alt={rel.title || ""}
                             className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"

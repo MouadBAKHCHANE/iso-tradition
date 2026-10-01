@@ -3,6 +3,7 @@ import type { Metadata } from "next";
 import ProductPage from "@/components/ProductPage";
 import { getProductBySlug, getProductSlugs } from "@/lib/queries";
 import { urlForImage } from "@/lib/sanity";
+import { pageTitle } from "@/lib/seo";
 
 // ── Static params for ISR / SSG ──
 export async function generateStaticParams() {
@@ -21,7 +22,7 @@ export async function generateMetadata({
   if (!product) return {};
   return {
     alternates: { canonical: `/nos-solutions/${slug}` },
-    title: product.seoTitle ?? `${product.name} – ISO Tradition`,
+    title: pageTitle(product.seoTitle) || product.name,
     description:
       product.seoDescription ??
       product.intro ??
