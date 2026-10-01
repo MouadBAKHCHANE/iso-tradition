@@ -64,7 +64,7 @@ export const metadata: Metadata = {
       "Spécialiste en fenêtres, portes, volets et protections solaires en Suisse romande. Qualité suisse, conseil personnalisé et installation professionnelle.",
     images: [
       {
-        url: "/images/hero-terrace.webp",
+        url: "/images/about-family.webp",
         width: 2000,
         height: 1334,
         alt: "ISO Tradition – Fenêtres et portes suisses",
@@ -76,7 +76,7 @@ export const metadata: Metadata = {
     title: "ISO Tradition – Fenêtres & Portes en Suisse Romande",
     description:
       "Spécialiste en fenêtres, portes, volets et protections solaires en Suisse romande.",
-    images: ["/images/hero-terrace.webp"],
+    images: ["/images/about-family.webp"],
   },
   // NOTE: pas de canonical ici — sinon TOUTES les pages héritent de ce canonical
   // (= elles pointeraient toutes vers la home). Chaque page définit son propre
@@ -105,7 +105,7 @@ export default async function RootLayout({
               name: "ISO Tradition",
               url: "https://www.isotradition.ch",
               logo: "https://isotradition.ch/images/logo-couleur.webp",
-              image: "https://isotradition.ch/images/hero-terrace.webp",
+              image: "https://isotradition.ch/images/about-family.webp",
               description:
                 "Spécialiste en fenêtres, portes, volets et protections solaires en Suisse romande.",
               telephone: "+41 21 624 53 00",

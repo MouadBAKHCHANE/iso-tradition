@@ -600,7 +600,7 @@ export default function AboutPage() {
             <FadeIn direction="right" delay={0.1}>
               <div className="relative rounded-[20px] overflow-hidden shadow-2xl aspect-[4/3]">
                 <iframe
-                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2762.8!2d6.1638!3d46.2968!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x478c67ef5d8d251f%3A0xce93767682c6cdd6!2sIso%20Tradition!5e0!3m2!1sfr!2sch!4v1"
+                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d800000!2d6.4!3d46.75!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x478c67ef5d8d251f%3A0xce93767682c6cdd6!2sIso%20Tradition!5e0!3m2!1sfr!2sch!4v1"
                   className="w-full h-full min-h-[300px] border-0"
                   allowFullScreen
                   loading="lazy"

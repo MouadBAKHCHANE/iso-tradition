@@ -33,7 +33,7 @@ export async function generateMetadata(): Promise<Metadata> {
         ? [{ url: page.ogImage.asset.url }]
         : [
             {
-              url: "/images/hero-terrace.webp",
+              url: "/images/about-family.webp",
               width: 2000,
               height: 1334,
               alt: "ISO Tradition – Fenêtres et portes suisses",
