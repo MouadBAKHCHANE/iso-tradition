@@ -231,7 +231,7 @@ export default function Hero() {
           </div>
 
           {/* CTA — right, with top padding */}
-          <div className="flex items-center gap-3 pt-6">
+          <div className="flex items-center gap-3 pt-6 h-[88px] lg:h-auto">
             <a
               href="https://form.typeform.com/to/astTYipT"
               target="_blank"
@@ -249,10 +249,10 @@ export default function Hero() {
             {/* Hamburger — mobile/tablet */}
             <button
               onClick={() => setMobileOpen(!mobileOpen)}
-              className="lg:hidden p-2 text-white"
+              className="lg:hidden p-2 -mr-2 text-white"
               aria-label="Menu"
             >
-              <svg className="w-7 h-7" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+              <svg className="w-9 h-9" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
                 {mobileOpen ? (
                   <path strokeLinecap="round" strokeLinejoin="round" d="M6 18L18 6M6 6l12 12" />
                 ) : (
