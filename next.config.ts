@@ -38,6 +38,7 @@ const nextConfig: NextConfig = {
       ...to("/qui-sommes-nous", [
         "/a-propos-entreprise-isolation-suisse",
         "/nos-realisations-isolation-suisse",
+        "/nos-realisations",
         "/our-history",
         "/core-values",
         "/company-awards",
