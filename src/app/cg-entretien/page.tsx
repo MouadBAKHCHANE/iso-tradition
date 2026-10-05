@@ -6,7 +6,7 @@ import type { Metadata } from "next";
 export const metadata: Metadata = {
   alternates: { canonical: "/cg-entretien" },
   title: "Conditions générales d'entretien",
-  description: "Conditions générales des contrats d'entretien Iso Tradition SA pour fenêtres, portes et volets.",
+  description: "Conditions des contrats d'entretien ISO Tradition SA pour fenêtres, portes et volets : prestations incluses, interventions, tarifs et garantie.",
 };
 
 const sections = [

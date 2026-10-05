@@ -33,9 +33,9 @@ export async function generateMetadata(): Promise<Metadata> {
         ? [{ url: page.ogImage.asset.url }]
         : [
             {
-              url: "/images/about-family.webp",
-              width: 2000,
-              height: 1334,
+              url: "/images/og-isotradition.jpg",
+              width: 1200,
+              height: 630,
               alt: "ISO Tradition – Fenêtres et portes suisses",
             },
           ],
@@ -71,7 +71,7 @@ export default async function Home() {
             title: p.title,
             date: formatDate(p.date),
             image: p.image?.asset
-              ? urlForImage(p.image).width(800).height(600).url()
+              ? urlForImage(p.image).width(720).height(540).quality(70).auto("format").url()
               : "/images/blog-1.webp",
           }))
       : undefined;

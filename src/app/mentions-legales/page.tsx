@@ -6,7 +6,7 @@ import type { Metadata } from "next";
 export const metadata: Metadata = {
   alternates: { canonical: "/mentions-legales" },
   title: "Mentions légales",
-  description: "Mentions légales du site isotradition.ch. Informations sur l'éditeur, l'hébergeur et la propriété intellectuelle.",
+  description: "Mentions légales du site isotradition.ch : éditeur, directeur de la publication, hébergement, propriété intellectuelle et droit applicable.",
 };
 
 const sections = [

@@ -14,7 +14,7 @@ import TypeformLeadPopup from "@/components/tracking/TypeformLeadPopup";
 
 const baiJamjuree = Bai_Jamjuree({
   subsets: ["latin"],
-  weight: ["300", "400", "500", "600", "700"],
+  weight: ["400", "500", "600", "700"],
   variable: "--font-sans",
 });
 
@@ -22,6 +22,7 @@ const outfit = Outfit({
   subsets: ["latin"],
   weight: ["200", "300", "400", "500", "600", "700", "800"],
   variable: "--font-outfit",
+  preload: false,
 });
 
 export const metadata: Metadata = {
@@ -65,9 +66,9 @@ export const metadata: Metadata = {
       "Spécialiste en fenêtres, portes, volets et protections solaires en Suisse romande. Qualité suisse, conseil personnalisé et installation professionnelle.",
     images: [
       {
-        url: "/images/about-family.webp",
-        width: 2000,
-        height: 1334,
+        url: "/images/og-isotradition.jpg",
+        width: 1200,
+        height: 630,
         alt: "ISO Tradition – Fenêtres et portes suisses",
       },
     ],
@@ -77,7 +78,7 @@ export const metadata: Metadata = {
     title: "ISO Tradition – Fenêtres & Portes en Suisse Romande",
     description:
       "Spécialiste en fenêtres, portes, volets et protections solaires en Suisse romande.",
-    images: ["/images/about-family.webp"],
+    images: ["/images/og-isotradition.jpg"],
   },
   // NOTE: pas de canonical ici — sinon TOUTES les pages héritent de ce canonical
   // (= elles pointeraient toutes vers la home). Chaque page définit son propre
@@ -105,8 +106,9 @@ export default async function RootLayout({
               "@type": "HomeAndConstructionBusiness",
               name: "ISO Tradition",
               url: "https://www.isotradition.ch",
-              logo: "https://isotradition.ch/images/logo-couleur.webp",
-              image: "https://isotradition.ch/images/about-family.webp",
+              logo: "https://www.isotradition.ch/images/logo-couleur.webp",
+              image: "https://www.isotradition.ch/images/og-isotradition.jpg",
+              hasMap: "https://www.google.com/maps/search/?api=1&query=ISO+Tradition+Route+de+Suisse+7A+1295+Mies",
               description:
                 "Spécialiste en fenêtres, portes, volets et protections solaires en Suisse romande.",
               telephone: "+41 21 624 53 00",

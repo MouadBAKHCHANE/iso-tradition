@@ -11,7 +11,7 @@ export async function generateMetadata(): Promise<Metadata> {
     title: "Actualités",
     description:
       settings?.seoDescription ||
-      "Conseils, guides et actualités sur les fenêtres, portes et rénovation énergétique en Suisse par Iso Tradition.",
+      "Conseils, guides et actualités sur les fenêtres, portes, subventions et rénovation énergétique en Suisse romande, par les experts ISO Tradition.",
   };
 }
 
@@ -44,7 +44,7 @@ export default async function Actualites() {
       title: p.title,
       date: formatDate(p.date),
       image: p.image?.asset
-        ? urlForImage(p.image).width(800).height(600).url()
+        ? urlForImage(p.image).width(720).height(540).quality(70).auto("format").url()
         : "/images/blog-1.webp",
     }));
 
