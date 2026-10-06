@@ -8,7 +8,7 @@ export default function AboutPreview() {
     <section id="apropos" className="pt-8 pb-2 sm:pb-4 lg:py-12 2xl:py-16 3xl:py-24 bg-white overflow-hidden relative scroll-mt-24 lg:scroll-mt-32">
       {/* Swiss flag background — right side */}
       <div className="absolute bottom-0 right-0 lg:right-4 xl:right-8 pointer-events-none opacity-[0.07]">
-        <img loading="lazy" decoding="async" src="/images/swiss-flag-bg.webp" alt="" width={800} height={856} className="h-auto w-48 lg:w-64 xl:w-80 2xl:w-[350px] 3xl:w-[500px] object-contain" />
+        <img loading="lazy" decoding="async" src="/images/swiss-flag-bg.webp" alt="" width={520} height={556} className="h-auto w-48 lg:w-64 xl:w-80 2xl:w-[350px] 3xl:w-[500px] object-contain" />
       </div>
       <div className="grid lg:grid-cols-2 2xl:grid-cols-2 gap-12 lg:gap-16 2xl:gap-18 3xl:gap-24 items-center relative">
         {/* ===== Left — Image flush to left edge ===== */}
