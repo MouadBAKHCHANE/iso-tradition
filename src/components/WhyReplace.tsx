@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 import { useState } from "react";
-import { motion, AnimatePresence } from "framer-motion";
+import { m, AnimatePresence } from "framer-motion";
 import { FadeIn } from "./Motion";
 
 const reasons = [
@@ -110,7 +110,7 @@ export default function WhyReplace() {
 
                   <AnimatePresence initial={false}>
                     {isActive && (
-                      <motion.div
+                      <m.div
                         id={`why-replace-panel-${i}`}
                         initial={{ height: 0, opacity: 0 }}
                         animate={{ height: "auto", opacity: 1 }}
@@ -139,7 +139,7 @@ export default function WhyReplace() {
                             Demander une offre
                           </a>
                         </div>
-                      </motion.div>
+                      </m.div>
                     )}
                   </AnimatePresence>
                 </div>
@@ -151,7 +151,7 @@ export default function WhyReplace() {
           <FadeIn direction="right" delay={0.3} className="hidden lg:block lg:-mr-[calc((100vw-1024px)/2+2rem)] xl:-mr-[calc((100vw-80rem)/2+2rem)] lg:-mb-28 lg:mt-16 xl:mt-10">
             <div className="relative rounded-l-2xl overflow-hidden aspect-[4/3] lg:aspect-auto lg:h-[calc(100%-6rem)] xl:h-full lg:min-h-[400px] xl:min-h-[600px]">
               <AnimatePresence mode="wait">
-                <motion.div
+                <m.div
                   key={activeIndex}
                   initial={{ opacity: 0, scale: 1.05 }}
                   animate={{ opacity: 1, scale: 1 }}
@@ -166,7 +166,7 @@ export default function WhyReplace() {
                     sizes="(min-width: 1024px) 50vw, 100vw"
                     className="object-cover"
                   />
-                </motion.div>
+                </m.div>
               </AnimatePresence>
             </div>
           </FadeIn>

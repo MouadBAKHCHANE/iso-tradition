@@ -7,7 +7,7 @@ import Header from "./Header";
 import Footer from "./Footer";
 import BrandIcon from "./BrandIcon";
 import { FadeIn } from "./Motion";
-import { motion } from "framer-motion";
+import { m } from "framer-motion";
 
 const ease = [0.25, 0.1, 0.25, 1] as const;
 
@@ -68,7 +68,7 @@ export default function SolutionsListPage() {
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-5 lg:gap-6">
             {filtered.map((sol, i) => (
-              <motion.div
+              <m.div
                 key={sol.slug}
                 initial={{ opacity: 0, y: 30, scale: 0.95 }}
                 whileInView={{ opacity: 1, y: 0, scale: 1 }}
@@ -99,7 +99,7 @@ export default function SolutionsListPage() {
                     </div>
                   </div>
                 </Link>
-              </motion.div>
+              </m.div>
             ))}
           </div>
 
@@ -178,7 +178,7 @@ export default function SolutionsListPage() {
                 iconAspect: 1.539
               },
             ].map((card, i) => (
-              <motion.div
+              <m.div
                 key={i}
                 initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
@@ -215,7 +215,7 @@ export default function SolutionsListPage() {
                     </li>
                   ))}
                 </ul>
-              </motion.div>
+              </m.div>
             ))}
           </div>
           <FadeIn delay={0.3}>

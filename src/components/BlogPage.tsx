@@ -7,7 +7,7 @@ import Header from "./Header";
 import Footer from "./Footer";
 import BrandIcon from "./BrandIcon";
 import { FadeIn } from "./Motion";
-import { motion } from "framer-motion";
+import { m } from "framer-motion";
 
 const ease = [0.25, 0.1, 0.25, 1] as const;
 
@@ -119,7 +119,7 @@ export default function BlogPage({ articles: articlesProp }: BlogPageProps) {
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
             {paginatedArticles.map((article, i) => (
-              <motion.article
+              <m.article
                 key={article.slug}
                 initial={{ opacity: 0, y: 40 }}
                 whileInView={{ opacity: 1, y: 0 }}
@@ -149,7 +149,7 @@ export default function BlogPage({ articles: articlesProp }: BlogPageProps) {
                   </h2>
                   <p className="text-primary/50 text-sm">{article.date}</p>
                 </Link>
-              </motion.article>
+              </m.article>
             ))}
           </div>
 

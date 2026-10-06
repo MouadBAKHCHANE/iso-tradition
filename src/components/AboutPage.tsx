@@ -6,7 +6,7 @@ import Header from "./Header";
 import Footer from "./Footer";
 import BrandIcon from "./BrandIcon";
 import { FadeIn } from "./Motion";
-import { motion, useInView } from "framer-motion";
+import { m, useInView } from "framer-motion";
 
 function CountUp({ target, decimals = 0, duration = 2000, format = false, prefix = "", suffix = "" }: {
   target: number; decimals?: number; duration?: number; format?: boolean; prefix?: string; suffix?: string;
@@ -78,7 +78,7 @@ function AtoutItem({ atout, i }: { atout: string; i: number }) {
   const isInView = useInView(ref, { once: false, amount: 0.6 });
 
   return (
-    <motion.div
+    <m.div
       ref={ref}
       initial={{ opacity: 0, x: -20 }}
       whileInView={{ opacity: 1, x: 0 }}
@@ -86,17 +86,17 @@ function AtoutItem({ atout, i }: { atout: string; i: number }) {
       viewport={{ once: true, amount: 0.5 }}
       className="flex items-start gap-5 py-5 border-b border-primary/10 last:border-b-0 group"
     >
-      <motion.span
+      <m.span
         animate={{ color: isInView ? "var(--color-accent, #f59e0b)" : "rgba(33,94,132,0.15)" }}
         transition={{ duration: 0.35, delay: 0.05 }}
         className="text-3xl lg:text-4xl font-bold leading-none flex-shrink-0 w-10 lg:!text-primary/15 lg:group-hover:!text-accent"
       >
         {i + 1}
-      </motion.span>
+      </m.span>
       <h3 className="text-[15px] lg:text-base font-bold text-primary uppercase tracking-wide leading-snug pt-1.5">
         {atout}
       </h3>
-    </motion.div>
+    </m.div>
   );
 }
 
@@ -111,15 +111,15 @@ export default function AboutPage() {
         <div className="relative">
           {/* ====== CENTERED HEADING + SUBTITLE ====== */}
           <div className="relative z-10 pt-10 sm:pt-12 lg:pt-14 pb-6 lg:pb-8 text-center px-4 sm:px-6 lg:px-8">
-            <motion.h1
+            <m.h1
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.7, delay: 0.3, ease }}
               className="text-2xl sm:text-3xl lg:text-5xl xl:text-[56px] font-bold text-white leading-[1.3] mb-4 mx-auto max-w-3xl"
             >
               L&apos;excellence suisse au service de votre habitat
-            </motion.h1>
-            <motion.p
+            </m.h1>
+            <m.p
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.5, ease }}
@@ -128,14 +128,14 @@ export default function AboutPage() {
               Chez <span className="text-accent font-semibold">Iso Tradition</span>, nous accompagnons
               les propriétaires en Suisse romande depuis plus de 35 ans avec des fenêtres, portes
               et volets d&apos;exception.
-            </motion.p>
+            </m.p>
           </div>
 
           {/* ====== 3 STAGGERED IMAGES — overflow bottom ====== */}
           <div className="relative z-10 mx-auto max-w-[1400px] overflow-hidden">
             <div className="flex items-start justify-center gap-5 lg:gap-7 px-4 sm:px-6 lg:px-0">
               {/* Left image — clipped at left edge, lower */}
-              <motion.div
+              <m.div
                 initial={{ opacity: 0, y: 50, scale: 0.95 }}
                 whileInView={{ opacity: 1, y: 0, scale: 1 }}
                 transition={{ duration: 0.6, delay: 0.15, ease: [...ease] }}
@@ -151,10 +151,10 @@ export default function AboutPage() {
                     className="object-cover"
                   />
                 </div>
-              </motion.div>
+              </m.div>
 
               {/* Center image — larger, elevated, overlaps bottom */}
-              <motion.div
+              <m.div
                 initial={{ opacity: 0, y: 70, scale: 0.95 }}
                 whileInView={{ opacity: 1, y: 0, scale: 1 }}
                 transition={{ duration: 0.6, ease: [...ease] }}
@@ -171,10 +171,10 @@ export default function AboutPage() {
                     priority
                   />
                 </div>
-              </motion.div>
+              </m.div>
 
               {/* Right image — clipped at right edge, mid-height */}
-              <motion.div
+              <m.div
                 initial={{ opacity: 0, y: 50, scale: 0.95 }}
                 whileInView={{ opacity: 1, y: 0, scale: 1 }}
                 transition={{ duration: 0.6, delay: 0.3, ease: [...ease] }}
@@ -190,7 +190,7 @@ export default function AboutPage() {
                     className="object-cover"
                   />
                 </div>
-              </motion.div>
+              </m.div>
             </div>
           </div>
         </div>
@@ -335,7 +335,7 @@ export default function AboutPage() {
                 ? "shadow-[0_0_0_6px_#215e84]"
                 : "shadow-[0_0_0_6px_#ebe9e5]";
               return (
-                <motion.div
+                <m.div
                   key={i}
                   initial={{ opacity: 0, y: 40, scale: 0.95 }}
                   whileInView={{ opacity: 1, y: 0, scale: 1 }}
@@ -368,7 +368,7 @@ export default function AboutPage() {
                       {card.description}
                     </p>
                   </div>
-                </motion.div>
+                </m.div>
               );
             })}
           </div>
@@ -489,7 +489,7 @@ export default function AboutPage() {
                 const isAccent = i === 0;
                 const isDark = i % 3 === 1;
                 return (
-                  <motion.div
+                  <m.div
                     key={i}
                     initial={{ opacity: 0, y: 50, scale: 0.92 }}
                     whileInView={{ opacity: 1, y: 0, scale: 1 }}
@@ -524,7 +524,7 @@ export default function AboutPage() {
                     }`}>
                       {step.description}
                     </p>
-                  </motion.div>
+                  </m.div>
                 );
               })}
             </div>

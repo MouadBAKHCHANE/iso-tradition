@@ -1,6 +1,6 @@
 "use client";
 
-import { motion } from "framer-motion";
+import { m } from "framer-motion";
 import { FadeIn } from "./Motion";
 
 interface BlogPost {
@@ -74,7 +74,7 @@ export default function Blog({ posts: postsProp }: BlogProps) {
         {/* Cards */}
         <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
           {posts.map((post, i) => (
-            <motion.a
+            <m.a
               key={post.title}
               href={post.slug ? `/actualites/${post.slug}` : "/actualites"}
               initial={{ opacity: 0, y: 40 }}
@@ -106,7 +106,7 @@ export default function Blog({ posts: postsProp }: BlogProps) {
                 {post.title}
               </h3>
               <span className="text-gray-400 text-sm">{post.date}</span>
-            </motion.a>
+            </m.a>
           ))}
         </div>
       </div>

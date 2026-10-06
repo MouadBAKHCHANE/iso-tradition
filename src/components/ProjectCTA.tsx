@@ -1,7 +1,7 @@
 "use client";
 
 import { FadeIn } from "./Motion";
-import { motion } from "framer-motion";
+import { m } from "framer-motion";
 
 const steps = [
   { num: "01", title: "Prise de contact", description: "Nos experts locaux vous recontactent pour une prise de RDV.", icon: "M2.25 6.75c0 8.284 6.716 15 15 15h2.25a2.25 2.25 0 002.25-2.25v-1.372c0-.516-.351-.966-.852-1.091l-4.423-1.106c-.44-.11-.902.055-1.173.417l-.97 1.293c-.282.376-.769.542-1.21.38a12.035 12.035 0 01-7.143-7.143c-.162-.441.004-.928.38-1.21l1.293-.97c.363-.271.527-.734.417-1.173L6.963 3.102a1.125 1.125 0 00-1.091-.852H4.5A2.25 2.25 0 002.25 4.5v2.25z", color: "accent" as const },
@@ -29,7 +29,7 @@ for (let i = 0; i < steps.length; i += 2) {
 
 function DownArrow() {
   return (
-    <motion.div
+    <m.div
       initial={{ opacity: 0, y: -8 }}
       whileInView={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.4 }}
@@ -42,7 +42,7 @@ function DownArrow() {
           <path strokeLinecap="round" strokeLinejoin="round" d="M19.5 13.5L12 21m0 0l-7.5-7.5M12 21V3" />
         </svg>
       </div>
-    </motion.div>
+    </m.div>
   );
 }
 
@@ -111,7 +111,7 @@ export default function ProjectCTA() {
                   {row.map((step, colIdx) => {
                     const c = colorMap[step.color];
                     return (
-                      <motion.div
+                      <m.div
                         key={step.num}
                         initial={{ opacity: 0, y: 50, scale: 0.92 }}
                         whileInView={{ opacity: 1, y: 0, scale: 1 }}
@@ -149,7 +149,7 @@ export default function ProjectCTA() {
                             <p className={`${c.desc} text-[13px] leading-relaxed`}>{step.description}</p>
                           </div>
                         </div>
-                      </motion.div>
+                      </m.div>
                     );
                   })}
                 </div>

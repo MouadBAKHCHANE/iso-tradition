@@ -6,7 +6,7 @@ import Header from "./Header";
 import Footer from "./Footer";
 import BrandIcon from "./BrandIcon";
 import { FadeIn } from "./Motion";
-import { motion } from "framer-motion";
+import { m } from "framer-motion";
 
 const ease = [0.25, 0.1, 0.25, 1] as const;
 
@@ -119,7 +119,7 @@ export default function ContactPage() {
           {/* 3 Contact cards */}
           <div className="grid md:grid-cols-3 gap-5 lg:gap-6 mb-14 lg:mb-20">
             {contactCards.map((card, i) => (
-              <motion.a
+              <m.a
                 key={i}
                 href={card.href}
                 target={card.href.startsWith("http") ? "_blank" : undefined}
@@ -159,7 +159,7 @@ export default function ContactPage() {
                     {card.value}
                   </p>
                 </div>
-              </motion.a>
+              </m.a>
             ))}
           </div>
 

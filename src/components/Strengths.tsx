@@ -1,12 +1,12 @@
 "use client";
 
 import Image from "next/image";
-import { motion } from "framer-motion";
+import { m } from "framer-motion";
 import { FadeIn } from "./Motion";
 
 function CardWrap({ children, i, className = "" }: { children: React.ReactNode; i: number; className?: string }) {
   return (
-    <motion.div
+    <m.div
       initial={{ opacity: 0, y: 40, scale: 0.95 }}
       whileInView={{ opacity: 1, y: 0, scale: 1 }}
       transition={{ duration: 0.6, delay: i * 0.12, ease: [0.25, 0.1, 0.25, 1] }}
@@ -14,7 +14,7 @@ function CardWrap({ children, i, className = "" }: { children: React.ReactNode; 
       className={className}
     >
       {children}
-    </motion.div>
+    </m.div>
   );
 }
 

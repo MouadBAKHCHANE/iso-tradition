@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { motion, AnimatePresence } from "framer-motion";
+import { m, AnimatePresence } from "framer-motion";
 import { FadeIn } from "./Motion";
 
 const faqs = [
@@ -103,7 +103,7 @@ export default function FAQ() {
 
                     <AnimatePresence initial={false}>
                       {isOpen && (
-                        <motion.div
+                        <m.div
                           initial={{ height: 0, opacity: 0 }}
                           animate={{ height: "auto", opacity: 1 }}
                           exit={{ height: 0, opacity: 0 }}
@@ -116,7 +116,7 @@ export default function FAQ() {
                           <p className="text-gray-500 text-[15px] leading-relaxed pb-6 max-w-2xl">
                             {faq.answer}
                           </p>
-                        </motion.div>
+                        </m.div>
                       )}
                     </AnimatePresence>
                   </div>

@@ -8,7 +8,7 @@ import Footer from "./Footer";
 import BrandIcon from "./BrandIcon";
 import Breadcrumbs from "./Breadcrumbs";
 import { FadeIn } from "./Motion";
-import { motion, AnimatePresence } from "framer-motion";
+import { m, AnimatePresence } from "framer-motion";
 
 const ease = [0.25, 0.1, 0.25, 1] as const;
 
@@ -275,7 +275,7 @@ export default function ProductPage({ product }: { product: ProductData }) {
                   </h2>
                   <div className="grid sm:grid-cols-2 gap-3">
                     {product.advantages.map((adv, i) => (
-                      <motion.div
+                      <m.div
                         key={i}
                         initial={{ opacity: 0, y: 20 }}
                         whileInView={{ opacity: 1, y: 0 }}
@@ -285,7 +285,7 @@ export default function ProductPage({ product }: { product: ProductData }) {
                       >
                         <svg className="w-5 h-5 text-accent flex-shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}><path strokeLinecap="round" strokeLinejoin="round" d="M4.5 12.75l6 6 9-13.5" /></svg>
                         <span className="text-white text-[14px] font-medium leading-snug">{adv}</span>
-                      </motion.div>
+                      </m.div>
                     ))}
                   </div>
                 </div>
@@ -310,7 +310,7 @@ export default function ProductPage({ product }: { product: ProductData }) {
                       )}
                     <div className="grid grid-cols-1 lg:grid-cols-2 gap-3">
                       {product.types.map((type, i) => (
-                        <motion.div
+                        <m.div
                           key={i}
                           initial={{ opacity: 0, scale: 0.88, y: 20 }}
                           whileInView={{ opacity: 1, scale: 1, y: 0 }}
@@ -333,7 +333,7 @@ export default function ProductPage({ product }: { product: ProductData }) {
                               <p className="text-white/70 text-[12px] leading-relaxed mt-2">{type.description}</p>
                             </div>
                           </div>
-                        </motion.div>
+                        </m.div>
                       ))}
                     </div>
                     </div>
@@ -349,7 +349,7 @@ export default function ProductPage({ product }: { product: ProductData }) {
                       )}
                     <div className="grid grid-cols-1 lg:grid-cols-2 gap-3">
                       {product.personalisation.map((item, i) => (
-                        <motion.div
+                        <m.div
                           key={i}
                           initial={{ opacity: 0, scale: 0.88, y: 20 }}
                           whileInView={{ opacity: 1, scale: 1, y: 0 }}
@@ -372,7 +372,7 @@ export default function ProductPage({ product }: { product: ProductData }) {
                               <p className="text-white/70 text-[12px] leading-relaxed mt-2">{item.description}</p>
                             </div>
                           </div>
-                        </motion.div>
+                        </m.div>
                       ))}
                     </div>
                     </div>
@@ -382,7 +382,7 @@ export default function ProductPage({ product }: { product: ProductData }) {
                   {product.personalisationOptions && product.personalisationOptions.length > 0 && (
                     <div className="space-y-4">
                       {product.personalisationOptions.map((opt, i) => (
-                        <motion.div
+                        <m.div
                           key={i}
                           initial={{ opacity: 0, y: 10 }}
                           whileInView={{ opacity: 1, y: 0 }}
@@ -415,7 +415,7 @@ export default function ProductPage({ product }: { product: ProductData }) {
                               ))}
                             </div>
                           )}
-                        </motion.div>
+                        </m.div>
                       ))}
                     </div>
                   )}
@@ -465,7 +465,7 @@ export default function ProductPage({ product }: { product: ProductData }) {
                       </button>
                       <AnimatePresence>
                         {openFaq === i && (
-                          <motion.div
+                          <m.div
                             initial={{ height: 0, opacity: 0 }}
                             animate={{ height: "auto", opacity: 1 }}
                             exit={{ height: 0, opacity: 0 }}
@@ -473,7 +473,7 @@ export default function ProductPage({ product }: { product: ProductData }) {
                             className="overflow-hidden"
                           >
                             <p className="text-white/60 text-[13px] leading-relaxed pb-5 pr-10">{item.answer}</p>
-                          </motion.div>
+                          </m.div>
                         )}
                       </AnimatePresence>
                     </div>

@@ -3,7 +3,7 @@
 import { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
-import { motion, AnimatePresence } from "framer-motion";
+import { m, AnimatePresence } from "framer-motion";
 
 const ease = [0.25, 0.1, 0.25, 1] as const;
 
@@ -83,46 +83,46 @@ export default function Hero() {
         <div className="relative z-10 flex flex-col justify-end min-h-[85vh] sm:min-h-screen lg:min-h-[85vh] 2xl:min-h-[84vh] 3xl:min-h-[82vh] px-5 sm:px-12 lg:px-20 2xl:px-24 3xl:px-28 pb-8 sm:pb-12 lg:pb-16 2xl:pb-18 3xl:pb-20">
           <div className="max-w-xl xl:max-w-3xl 2xl:max-w-3xl 3xl:max-w-4xl">
             {/* Overline */}
-            <motion.div
+            <m.div
               initial={{ opacity: 0, x: -30 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.6, delay: 0.3, ease }}
-              className="flex items-center gap-3 mb-3 sm:mb-4"
+              className="flex items-center gap-3 mb-3 sm:mb-4 max-lg:opacity-100! max-lg:transform-none!"
             >
               <span className="h-px w-12 bg-white/50" />
               <h1 className="font-secondary text-white font-medium text-sm uppercase tracking-[0.2em]">
                 Fenêtres &amp; portes en Suisse romande
               </h1>
-            </motion.div>
+            </m.div>
 
             {/* Headline */}
-            <motion.p
+            <m.p
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.7, delay: 0.5, ease }}
-              className="text-[26px] sm:text-4xl lg:text-5xl xl:text-[56px] 2xl:text-[64px] 3xl:text-[95px] font-bold text-white leading-[1.1] mb-3 sm:mb-4 2xl:mb-6 3xl:mb-10"
+              className="text-[26px] sm:text-4xl lg:text-5xl xl:text-[56px] 2xl:text-[64px] 3xl:text-[95px] font-bold text-white leading-[1.1] mb-3 sm:mb-4 2xl:mb-6 3xl:mb-10 max-lg:opacity-100! max-lg:transform-none!"
             >
               Votre nouvel <span className="text-accent">art de vivre</span>
-            </motion.p>
+            </m.p>
 
             {/* Subtext */}
-            <motion.p
+            <m.p
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.7, ease }}
-              className="text-sm sm:text-base 2xl:text-lg 3xl:text-2xl text-white max-w-lg 2xl:max-w-2xl 3xl:max-w-3xl mb-6 sm:mb-8 2xl:mb-10 3xl:mb-16 leading-relaxed"
+              className="text-sm sm:text-base 2xl:text-lg 3xl:text-2xl text-white max-w-lg 2xl:max-w-2xl 3xl:max-w-3xl mb-6 sm:mb-8 2xl:mb-10 3xl:mb-16 leading-relaxed max-lg:opacity-100! max-lg:transform-none!"
             >
               Des fenêtres et portes d&apos;exception, alliant savoir-faire
               traditionnel suisse et technologies de pointe pour un confort
               inégalé.
-            </motion.p>
+            </m.p>
 
             {/* CTA + Phone */}
-            <motion.div
+            <m.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.9, ease }}
-              className="flex flex-wrap items-center gap-5"
+              className="flex flex-wrap items-center gap-5 max-lg:opacity-100! max-lg:transform-none!"
             >
               <Link
                 href="/nos-solutions"
@@ -147,7 +147,7 @@ export default function Hero() {
                 </span>
                 <span className="font-semibold text-[15px]">021 624 53 00</span>
               </a>
-            </motion.div>
+            </m.div>
           </div>
 
           {/* Brand icon — decorative bottom-right */}
@@ -263,7 +263,7 @@ export default function Hero() {
         {/* Mobile menu dropdown */}
         <AnimatePresence>
           {mobileOpen && (
-            <motion.div
+            <m.div
               initial={{ opacity: 0, y: -10 }}
               animate={{ opacity: 1, y: 0 }}
               exit={{ opacity: 0, y: -10 }}
@@ -335,7 +335,7 @@ export default function Hero() {
                   </a>
                 </div>
               </div>
-            </motion.div>
+            </m.div>
           )}
         </AnimatePresence>
       </div>

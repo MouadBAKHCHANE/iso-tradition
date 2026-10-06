@@ -3,6 +3,7 @@ import { Bai_Jamjuree, Outfit } from "next/font/google";
 import "./globals.css";
 import ScrollToTop from "@/components/ScrollToTop";
 import BackToTop from "@/components/BackToTop";
+import MotionProvider from "@/components/MotionProvider";
 import ThemeProvider from "@/components/ThemeProvider";
 import { getSiteSettings, getMarketingSettings } from "@/lib/queries";
 import {
@@ -166,7 +167,7 @@ export default async function RootLayout({
         } : null} />
         <ScrollToTop />
         <BackToTop />
-        {children}
+        <MotionProvider>{children}</MotionProvider>
         <TypeformLeadPopup />
         <TrackingBodyEnd data={marketing} />
       </body>
