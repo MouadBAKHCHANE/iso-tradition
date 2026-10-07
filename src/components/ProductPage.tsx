@@ -19,7 +19,6 @@ const allSolutions = [
   { label: "Volets", href: "/nos-solutions/volets" },
   { label: "Portes de garage", href: "/nos-solutions/portes-garage" },
   { label: "Stores bannes", href: "/nos-solutions/stores-bannes" },
-  { label: "Films solaires", href: "/nos-solutions/films-solaires" },
   { label: "Carports & Pergolas", href: "/nos-solutions/carports-pergolas" },
 ];
 

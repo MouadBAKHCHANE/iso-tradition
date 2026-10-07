@@ -59,6 +59,8 @@ const nextConfig: NextConfig = {
         "/our-solutions-image/:slug",
       ]),
       ...to("/contact", ["/pricing-and-plans"]),
+      // Films solaires is temporarily hidden: temporary redirect (not permanent) so the page can return later
+      { source: "/nos-solutions/films-solaires", destination: "/nos-solutions", permanent: false },
       // Theme demo / sample pages
       ...to("/", [
         "/home-:n(\\d+)",

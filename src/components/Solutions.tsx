@@ -13,7 +13,6 @@ const solutions = [
   { title: "Volets", slug: "/nos-solutions/volets", image: "/images/sol-volets.webp" },
   { title: "Portes de garage", slug: "/nos-solutions/portes-garage", image: "/images/sol-garage.webp" },
   { title: "Stores bannes", slug: "/nos-solutions/stores-bannes", image: "/images/sol-stores.webp" },
-  { title: "Films solaires", slug: "/nos-solutions/films-solaires", image: "/images/sol-film.webp" },
   { title: "Carports & Pergolas", slug: "/nos-solutions/carports-pergolas", image: "/images/sol-carport.webp" },
 ];
 

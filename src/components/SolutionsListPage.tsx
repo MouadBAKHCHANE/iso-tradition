@@ -18,11 +18,10 @@ const solutions = [
   { name: "Volets", slug: "/nos-solutions/volets", image: "/images/sol-volets.webp", tags: ["PVC", "Aluminium", "Bois"] },
   { name: "Portes de garage", slug: "/nos-solutions/portes-garage", image: "/images/sol-garage.webp", tags: ["Aluminium", "Acier"] },
   { name: "Stores bannes", slug: "/nos-solutions/stores-bannes", image: "/images/sol-stores.webp", tags: ["Aluminium"] },
-  { name: "Films solaires", slug: "/nos-solutions/films-solaires", image: "/images/sol-film.webp", tags: ["Anti-UV", "Anti-chaleur"] },
   { name: "Carports & Pergolas", slug: "/nos-solutions/carports-pergolas", image: "/images/sol-carport.webp", tags: ["Aluminium", "Bois"] },
 ];
 
-const materials = ["Tous", "PVC", "Bois", "Aluminium", "Acier", "Anti-UV"];
+const materials = ["Tous", "PVC", "Bois", "Aluminium", "Acier"];
 
 export default function SolutionsListPage() {
   const [filter, setFilter] = useState("Tous");

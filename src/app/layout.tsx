@@ -41,7 +41,6 @@ export const metadata: Metadata = {
     "volets roulants",
     "portes de garage",
     "stores bannes",
-    "films solaires",
     "carports pergolas",
     "rénovation énergétique Suisse",
     "ISO Tradition",

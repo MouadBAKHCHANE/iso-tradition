@@ -15,7 +15,6 @@ const navCols = [
       { label: "Volets (roulants & battants)", href: "/nos-solutions/volets" },
       { label: "Portes de garage", href: "/nos-solutions/portes-garage" },
       { label: "Stores bannes", href: "/nos-solutions/stores-bannes" },
-      { label: "Films solaires", href: "/nos-solutions/films-solaires" },
       { label: "Carports & pergolas", href: "/nos-solutions/carports-pergolas" },
     ],
   },
@@ -24,6 +23,7 @@ const navCols = [
     links: [
       { label: "Accueil", href: "/" },
       { label: "Qui sommes-nous", href: "/qui-sommes-nous" },
+      { label: "Nos partenaires", href: "/nos-partenaires" },
       { label: "Nos solutions", href: "/nos-solutions" },
       { label: "Actualités", href: "/actualites" },
       { label: "Contact", href: "/contact" },

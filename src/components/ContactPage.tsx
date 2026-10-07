@@ -54,7 +54,6 @@ const services = [
   "Volets",
   "Portes de garage",
   "Stores bannes",
-  "Films solaires",
   "Carports & pergolas",
 ];
 
