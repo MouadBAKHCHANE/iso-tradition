@@ -7,16 +7,10 @@ import { m, AnimatePresence } from "framer-motion";
 
 const ease = [0.25, 0.1, 0.25, 1] as const;
 
-const navLinks = [
-  { label: "Accueil", href: "/" },
-  { label: "Nos solutions", href: "/nos-solutions", dropdown: true },
-  { label: "Qui sommes-nous", href: "/qui-sommes-nous" },
-  { label: "Actualités", href: "/actualites" },
-  { label: "Contact", href: "/contact" },
-];
+type NavItem = { label: string; href: string; main?: boolean };
 
-const solutionsDropdown = [
-  { label: "Toutes nos solutions", href: "/nos-solutions" },
+const solutionsDropdown: NavItem[] = [
+  { label: "Toutes nos solutions", href: "/nos-solutions", main: true },
   { label: "Fenêtres", href: "/nos-solutions/fenetres" },
   { label: "Baies coulissantes", href: "/nos-solutions/baies-coulissantes" },
   { label: "Portes d'entrée", href: "/nos-solutions/portes-entree" },
@@ -26,9 +20,22 @@ const solutionsDropdown = [
   { label: "Carports & Pergolas", href: "/nos-solutions/carports-pergolas" },
 ];
 
+const aboutDropdown: NavItem[] = [
+  { label: "Qui sommes-nous", href: "/qui-sommes-nous" },
+  { label: "Nos partenaires", href: "/nos-partenaires" },
+  { label: "Actualités", href: "/actualites" },
+];
+
+const navLinks = [
+  { label: "Accueil", href: "/" },
+  { label: "Nos solutions", href: "/nos-solutions", dropdown: solutionsDropdown },
+  { label: "À propos", href: "/qui-sommes-nous", dropdown: aboutDropdown },
+  { label: "Contact", href: "/contact" },
+];
+
 export default function Hero() {
   const [mobileOpen, setMobileOpen] = useState(false);
-  const [solutionsOpen, setSolutionsOpen] = useState(false);
+  const [openDropdown, setOpenDropdown] = useState<string | null>(null);
 
   return (
     <section className="relative px-2 sm:px-4 pt-2 2xl:pb-0">
@@ -189,11 +196,11 @@ export default function Hero() {
                       </Tag>
                       <div className="absolute top-full left-1/2 -translate-x-1/2 pt-1 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50">
                         <div className="bg-white rounded-[16px] shadow-2xl shadow-black/20 p-2 min-w-[240px] border border-gray-100">
-                          {solutionsDropdown.map((item, i) => (
+                          {link.dropdown.map((item, i) => (
                             <Link
                               key={item.href}
                               href={item.href}
-                              className={`block px-4 py-2.5 rounded-xl text-[13px] font-medium text-primary/85 hover:text-primary hover:bg-secondary transition-colors ${i === 0 ? "font-bold text-primary border-b border-gray-100 mb-1" : ""}`}
+                              className={`block px-4 py-2.5 rounded-xl text-[13px] font-medium text-primary/85 hover:text-primary hover:bg-secondary transition-colors ${item.main ? "font-bold text-primary border-b border-gray-100 mb-1" : ""}`}
                             >
                               {item.label}
                             </Link>
@@ -277,22 +284,22 @@ export default function Hero() {
                     return (
                       <div key={link.label}>
                         <button
-                          onClick={() => setSolutionsOpen(!solutionsOpen)}
+                          onClick={() => setOpenDropdown(openDropdown === link.label ? null : link.label)}
                           className="w-full flex items-center justify-between px-4 py-3 text-primary/85 hover:text-primary hover:bg-secondary rounded-xl font-medium text-[15px] transition-colors"
                         >
                           {link.label}
-                          <svg className={`w-4 h-4 transition-transform duration-200 ${solutionsOpen ? "rotate-180" : ""}`} fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
+                          <svg className={`w-4 h-4 transition-transform duration-200 ${openDropdown === link.label ? "rotate-180" : ""}`} fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
                             <path strokeLinecap="round" strokeLinejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5" />
                           </svg>
                         </button>
-                        <div className={`overflow-hidden transition-all duration-300 ${solutionsOpen ? "max-h-96" : "max-h-0"}`}>
+                        <div className={`overflow-hidden transition-all duration-300 ${openDropdown === link.label ? "max-h-96" : "max-h-0"}`}>
                           <div className="pl-4 pb-1 space-y-0.5">
-                            {solutionsDropdown.map((item, i) => (
+                            {link.dropdown.map((item, i) => (
                               <Link
                                 key={item.href}
                                 href={item.href}
-                                onClick={() => { setMobileOpen(false); setSolutionsOpen(false); }}
-                                className={`block px-4 py-2.5 rounded-xl text-[13px] transition-colors ${i === 0 ? "font-bold text-primary hover:bg-secondary" : "text-primary/85 hover:text-primary hover:bg-secondary"}`}
+                                onClick={() => { setMobileOpen(false); setOpenDropdown(null); }}
+                                className={`block px-4 py-2.5 rounded-xl text-[13px] transition-colors ${item.main ? "font-bold text-primary hover:bg-secondary" : "text-primary/85 hover:text-primary hover:bg-secondary"}`}
                               >
                                 {item.label}
                               </Link>
