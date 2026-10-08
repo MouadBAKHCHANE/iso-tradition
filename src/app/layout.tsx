@@ -85,7 +85,9 @@ export const metadata: Metadata = {
   // `alternates.canonical` (relatif) ; sinon Next.js laisse l'auto-canonical par page.
 };
 
-export const revalidate = 60;
+// Content changes reach the site through the Sanity webhook (/api/revalidate);
+// this daily refresh is only a safety net. A short value here burns Vercel ISR writes.
+export const revalidate = 86400;
 
 export default async function RootLayout({
   children,
