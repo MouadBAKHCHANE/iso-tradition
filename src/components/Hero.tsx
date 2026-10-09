@@ -53,7 +53,7 @@ export default function Hero() {
             className="object-cover blur-2xl scale-110"
           />
           {/* Mobile/tablet — zoomed-out photo, top */}
-          <div className="lg:hidden absolute inset-x-0 top-0 h-[65%] [mask-image:linear-gradient(to_bottom,#000_70%,transparent)]">
+          <div className="lg:hidden absolute inset-x-0 top-16 sm:top-20 aspect-[3/2] [mask-image:linear-gradient(to_bottom,transparent,#000_15%,#000_75%,transparent)]">
             <Image
               src="/images/about-family.webp"
               alt="Deux enfants devant une grande baie vitrée en hiver"
@@ -65,7 +65,7 @@ export default function Hero() {
             />
           </div>
           {/* Desktop — zoomed-out photo, anchored right */}
-          <div className="hidden lg:block absolute right-0 top-1/2 -translate-y-1/2 h-[110%] aspect-[3/2] min-w-full [mask-image:linear-gradient(to_right,transparent,#000_12%)]">
+          <div className="hidden lg:block absolute right-0 top-1/2 -translate-y-1/2 h-full aspect-[3/2] [mask-image:linear-gradient(to_right,transparent,#000_12%)]">
             <Image
               src="/images/about-family.webp"
               alt="Deux enfants devant une grande baie vitrée en hiver"
